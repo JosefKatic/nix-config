@@ -37,18 +37,21 @@
     { device = "/dev/disk/by-uuid/38140f11-e04d-480c-a90e-c925a27003f6";
       fsType = "btrfs";
       options = [ "subvol=@persist" "compress=zstd" "noatime" ];
+      neededForBoot = true;
     };
 
   fileSystems."/var/log" =
     { device = "/dev/disk/by-uuid/38140f11-e04d-480c-a90e-c925a27003f6";
       fsType = "btrfs";
       options = [ "subvol=@log" "compress=zstd" "noatime" ];
+      neededForBoot = true;
     };
 
   fileSystems."/.snapshots" =
     { device = "/dev/disk/by-uuid/38140f11-e04d-480c-a90e-c925a27003f6";
       fsType = "btrfs";
       options = [ "subvol=@snapshots" "compress=zstd" "noatime" ];
+      neededForBoot = true;
     };
 
   fileSystems."/.swap" =

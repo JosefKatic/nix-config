@@ -12,7 +12,6 @@
     ../common/global
     ../common/users/joka
 
-    ../common/optional/gamemode.nix
     ../common/optional/greetd.nix
     ../common/optional/pipewire.nix
     ../common/optional/quietboot.nix
@@ -20,11 +19,6 @@
 
   networking = {
     hostName = "T14";
-    useDHCP = true;
-    interfaces.en01 = {
-      useDHCP = true;
-      wakeOnLan.enable = true;
-    };
     networkmanager = {
       enable = true;
     };
