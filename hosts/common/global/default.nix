@@ -7,6 +7,7 @@
     ./fonts.nix
     ./locale.nix
     ./nix.nix
+    ./packages.nix
     ./programs.nix
     ./optin-persistence.nix
     ./secureboot.nix

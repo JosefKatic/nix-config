@@ -29,5 +29,6 @@ in
   home-manager.users.joka = import ../../../../home/joka/${config.networking.hostName}.nix;
   services.geoclue2.enable = true;
   services.gnome.gnome-keyring.enable = true;
+  programs.seahorse.enable = true;
   security.pam.services = { swaylock = { }; };
 }

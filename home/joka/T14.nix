@@ -5,6 +5,7 @@
     ./features/productivity
     ./features/games
     ./features/music
+    ./features/desktop/common/wayland-wm/wezterm.nix
   ];
 
   colorscheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;

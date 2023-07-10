@@ -5,6 +5,7 @@
 { config, pkgs, inputs, ... }: {
   imports = [
     inputs.hardware.nixosModules.common-cpu-amd
+    inputs.hardware.nixosModules.common-gpu-amd
     inputs.hardware.nixosModules.common-pc-ssd
 
     ./hardware-configuration.nix
@@ -15,6 +16,7 @@
     ../common/optional/greetd.nix
     ../common/optional/pipewire.nix
     ../common/optional/quietboot.nix
+    ../common/optional/xdg-portal.nix
   ];
 
   networking = {
@@ -23,28 +25,10 @@
       enable = true;
     };
   };
-
+  services.gnome.gnome-keyring.enable = true;
+  hardware.opengl.enable = true;
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-  };
-
-  programs = {
-    adb.enable = true;
-    dconf.enable = true;
-    kdeconnect.enable = true;
-  };
-
-  environment.systemPackages = [
-    pkgs.libsecret
-    pkgs.curl
-  ];
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = [
-      inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gtk
-    ];
   };
 
   system.stateVersion = "23.05"; # Did you read the comment?

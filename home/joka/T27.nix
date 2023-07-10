@@ -7,6 +7,8 @@
     ./features/pass
     ./features/games
     ./features/music
+    ./features/desktop/common/wayland-wm/kitty.nix
+
   ];
 
   colorscheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;

@@ -15,7 +15,6 @@
     nativeBuildInputs = with pkgs; [
       nix
       home-manager
-      git
       gnupg
       rnix-lsp
     ];

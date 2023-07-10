@@ -73,6 +73,7 @@ in
   bind=SUPER,q,exec,${TERMINAL}
   bind=SUPER,w,exec,makoctl dismiss
   bind=SUPER,v,exec,${TERMINAL} $SHELL -ic ${EDITOR}
+  bind=SUPER,c,exec,code
   bind=SUPER,b,exec,brave
   bind=SUPER,a,exec,wofi -S drun -x 10 -y 10 -W 25% -H 60%
   bind=SUPER,d,exec,wofi -S run

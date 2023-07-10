@@ -28,14 +28,11 @@
   ];
 
   home.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = 1;
+    WLR_RENDERER_ALLOW_SOFTWARE = 1;
     MOZ_ENABLE_WAYLAND = 1;
     QT_QPA_PLATFORM = "wayland";
     LIBSEAT_BACKEND = "logind";
-    LIBVA_DRIVER_NAME = "nvidia";
-    XDG_SESSION_TYPE = "wayland";
-    GBM_BACKEND = "nvidia-drm";
-    __GLX_VENDOR_LIBRARY = "nvidia";
-    WLR_NO_HARDWARE_CURSORS = 1;
     NIXOS_OZONE_WL = "1";
   };
 }
