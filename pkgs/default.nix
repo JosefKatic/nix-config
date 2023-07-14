@@ -11,6 +11,7 @@
 
   # Personal scripts
   minicava = pkgs.callPackage ./minicava { };
+  nordvpn = pkgs.callPackage ./nordvpn { };
   pass-wofi = pkgs.callPackage ./pass-wofi { };
   primary-xwayland = pkgs.callPackage ./primary-xwayland { };
   wl-mirror-pick = pkgs.callPackage ./wl-mirror-pick { };

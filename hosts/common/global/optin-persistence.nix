@@ -14,6 +14,7 @@
         "/var/lib/systemd"
         "/var/lib/nixos"
         "/var/lib/libvirt"
+        "/var/lib/nordvpn"
         "/srv"
       ];
     };
