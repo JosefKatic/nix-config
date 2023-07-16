@@ -8,14 +8,16 @@
       graph = "log --decorate --oneline --graph";
       add-nowhitespace = "!git diff -U0 -w --no-color | git apply --cached --ignore-whitespace --unidiff-zero -";
     };
-    userName = "JosefKatic";
+    userName = "Josef Katič";
     userEmail = "josef@joka00.dev";
+    signing = {
+      key = "0xD277FD44273C2B8D";
+      gpgPath = "${config.programs.gpg.package}/bin/gpg2";
+    };
     extraConfig = {
       feature.manyFiles = true;
       init.defaultBranch = "main";
-      user.signing.key = "1010A0AA27AC29C8314E45087BBDA0942D46A993";
       commit.gpgSign = true;
-      gpg.program = "${config.programs.gpg.package}/bin/gpg2";
     };
     lfs.enable = true;
     ignores = [ ".direnv" "result" ];
