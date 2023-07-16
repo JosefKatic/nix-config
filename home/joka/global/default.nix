@@ -35,9 +35,7 @@ in
 
   programs = {
     vscode.enable = true;
-    firefox.enable = true;
     home-manager.enable = true;
-    git.enable = true;
   };
 
   home = {

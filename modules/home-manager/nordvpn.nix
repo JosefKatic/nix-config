@@ -14,7 +14,6 @@ with lib; {
 
   config = mkIf config.services.nordvpn.enable {
     environment.systemPackages = [ pkgs.nordvpn ];
-
     users.groups.nordvpn = { };
     systemd = {
       services.nordvpn = {
