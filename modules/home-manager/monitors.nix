@@ -40,9 +40,31 @@ in
           type = types.bool;
           default = true;
         };
-        workspace = mkOption {
-          type = types.nullOr types.str;
-          default = null;
+        workspaces = mkOption {
+          type = types.listOf (types.submodule {
+            options = {
+              id = mkOption {
+                type = types.int;
+                example = 1;
+              };
+              name = mkOption {
+                type = types.nullOr types.str;
+                example = "My workspace 1";
+              };
+              monitor = mkOption {
+                type = types.str;
+                example = "DP-1";
+              };
+              default = mkOption {
+                type = types.bool;
+                default = false;
+              };
+              enabled = mkOption {
+                type = types.bool;
+                default = true;
+              };
+            };
+          });
         };
       };
     });

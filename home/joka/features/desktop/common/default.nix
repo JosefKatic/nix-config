@@ -1,7 +1,9 @@
 { pkgs, lib, outputs, ... }:
 {
   imports = [
+    ./brave.nix
     ./deluge.nix
+    ./firefox.nix
     ./font.nix
     ./gtk.nix
     ./kdeconnect.nix

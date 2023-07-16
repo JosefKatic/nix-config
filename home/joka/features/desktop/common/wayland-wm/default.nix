@@ -1,14 +1,13 @@
 { pkgs, ... }:
 {
   imports = [
-    ./hyprland-vnc.nix
     ./gammastep.nix
-    ./kitty.nix
     ./mako.nix
     ./swayidle.nix
     ./swaylock.nix
     ./waybar.nix
     ./wofi.nix
+    ./wezterm.nix
     ./zathura.nix
   ];
 

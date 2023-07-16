@@ -13,23 +13,18 @@
     ../common/global
     ../common/users/joka
 
+    ../common/optional/bluetooth.nix
     ../common/optional/greetd.nix
     ../common/optional/pipewire.nix
+    ../common/optional/opengl.nix
     ../common/optional/quietboot.nix
     ../common/optional/xdg-portal.nix
-  ];
 
-  networking = {
-    hostName = "T14";
-    networkmanager = {
-      enable = true;
-    };
-  };
-  services.gnome.gnome-keyring.enable = true;
-  hardware.opengl.enable = true;
-  boot = {
-    kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-  };
+    ./kernel.nix
+    ./networking.nix
+    ./programs.nix
+    ./services.nix
+  ];
 
   system.stateVersion = "23.05"; # Did you read the comment?
 

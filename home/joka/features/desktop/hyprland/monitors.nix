@@ -2,9 +2,16 @@
 { lib, monitors }:
 let enabledMonitors = lib.filter (m: m.enabled) monitors;
 in
-
-lib.concatStringsSep "\n" (lib.forEach enabledMonitors (m: ''
-  monitor=${m.name},${toString m.width}x${toString m.height}@${toString m.refreshRate},${toString m.x}x${toString m.y},1
-  ${lib.optionalString (m.workspace != null)"workspace=${m.name},${m.workspace}"}
-''))
+lib.concatStringsSep "\n" (lib.forEach enabledMonitors (m: 
+  ''
+    monitor=${m.name},${toString m.width}x${toString m.height}@${toString m.refreshRate},${toString m.x}x${toString m.y},1
+    ${lib.concatStringsSep "\n" (lib.forEach m.workspaces (w: 
+    ''
+    workspace=${toString w.id},display:${w.monitor},default:${lib.boolToString w.default}
+    ''
+    )
+  )}
+  ''
+  )
+)
 

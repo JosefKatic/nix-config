@@ -16,7 +16,7 @@
       nix
       home-manager
       gnupg
-      rnix-lsp
+      nil
     ];
   };
 }

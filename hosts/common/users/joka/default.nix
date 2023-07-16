@@ -6,7 +6,7 @@ in
   users.users.joka = {
     isNormalUser = true;
     shell = pkgs.fish;
-    initialPassword = "pwd123";
+    hashedPassword = "$6$pdq4U5Lo7FhsG7Dc$vrwg5E6SVbwlUurJ.7vDGBdL2dXB35khzdfcebhOo212FjQmolLYo0FwxMQL5mwKpioKbnkYsJxxqh.S1zf1G.";
     extraGroups = [
       "wheel"
       "video"

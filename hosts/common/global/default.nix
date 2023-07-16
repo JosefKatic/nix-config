@@ -7,8 +7,6 @@
     ./fonts.nix
     ./locale.nix
     ./nix.nix
-    ./packages.nix
-    ./programs.nix
     ./optin-persistence.nix
     ./secureboot.nix
     ./systemd-initrd.nix
@@ -26,7 +24,7 @@
   environment.enableAllTerminfo = true;
 
   hardware.enableRedistributableFirmware = true;
-
+  
   # Increase open file limit for sudoers
   security.pam.loginLimits = [
     {

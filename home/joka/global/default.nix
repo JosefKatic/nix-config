@@ -36,7 +36,6 @@ in
   programs = {
     vscode.enable = true;
     firefox.enable = true;
-    brave.enable = true;
     home-manager.enable = true;
     git.enable = true;
   };

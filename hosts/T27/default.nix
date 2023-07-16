@@ -14,12 +14,19 @@
     ../common/global
     ../common/users/joka
 
+    ../common/optional/bluetooth.nix
     ../common/optional/gamemode.nix
     ../common/optional/greetd.nix
+    ../common/optional/opengl.nix
     ../common/optional/nvidia.nix
     ../common/optional/pipewire.nix
     ../common/optional/quietboot.nix
     ../common/optional/xdg-portal.nix
+
+    ./kernel.nix
+    ./networking.nix
+    ./programs.nix
+    ./services.nix
   ];
 
   networking = {
