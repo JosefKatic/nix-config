@@ -17,6 +17,7 @@ in
       "wireshark"
       "i2c"
       "mysql"
+      "nordvpn"
       "docker"
       "podman"
       "git"

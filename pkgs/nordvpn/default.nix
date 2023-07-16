@@ -1,9 +1,20 @@
-{ autoPatchelfHook, buildFHSEnvChroot, dpkg, fetchurl, lib, stdenv, sysctl
-, iptables, iproute2, procps, cacert, libxml2, libidn2, zlib, wireguard-tools }:
+{ autoPatchelfHook, buildFHSEnvChroot ? false, buildFHSUserEnv ? false, dpkg
+, fetchurl, lib, stdenv, sysctl, iptables, iproute2, procps, cacert, libxml2
+, libidn2, zlib, wireguard-tools }:
 
 let
   pname = "nordvpn";
   version = "3.16.2";
+  LuisChDev = {
+    name = "Luis Chavarriaga";
+    email = "luischa123@gmail.com";
+    github = "LuisChDev";
+    githubId = 24978009;
+  };
+  buildEnv = if builtins.typeOf buildFHSEnvChroot == "set" then
+    buildFHSEnvChroot
+  else
+    buildFHSUserEnv;
 
   nordVPNBase = stdenv.mkDerivation {
     inherit pname version;
@@ -36,7 +47,7 @@ let
     '';
   };
 
-  nordVPNfhs = buildFHSEnvChroot {
+  nordVPNfhs = buildEnv {
     name = "nordvpnd";
     runScript = "nordvpnd";
 
@@ -68,7 +79,7 @@ in stdenv.mkDerivation {
     mkdir -p $out/bin $out/share
     ln -s ${nordVPNBase}/bin/nordvpn $out/bin
     ln -s ${nordVPNfhs}/bin/nordvpnd $out/bin
-    ln -s ${nordVPNBase}/share/* $out/share/
+    ln -s ${nordVPNBase}/share* $out/share
     ln -s ${nordVPNBase}/var $out/
     runHook postInstall
   '';
@@ -77,7 +88,7 @@ in stdenv.mkDerivation {
     description = "CLI client for NordVPN";
     homepage = "https://www.nordvpn.com";
     license = licenses.unfree;
-    maintainers = with maintainers; [];
+    maintainers = with maintainers; [ ];
     platforms = [ "x86_64-linux" ];
   };
 }

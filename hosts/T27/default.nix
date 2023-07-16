@@ -8,7 +8,6 @@
     inputs.hardware.nixosModules.common-cpu-intel
     inputs.hardware.nixosModules.common-gpu-intel
     inputs.hardware.nixosModules.common-pc-ssd
-
     ./hardware-configuration.nix
 
     ../common/global
@@ -29,18 +28,17 @@
     ./services.nix
   ];
 
-  networking = {
+    systemd.network.enable = true;
+    networking = {
     hostName = "T27";
-    useDHCP = true;
-    interfaces.en01 = {
-      useDHCP = true;
-      wakeOnLan.enable = true;
-      ipv4 = {
-        addresses = [{
-          address = "10.34.71.16";
-          prefixLength = 23;
-        }];
-      };
+    useNetworkd = true;
+    firewall = {
+      enable = true;
+      checkReversePath = "loose";
+    };
+    networkmanager = {
+      enable = true;
+      dns = "systemd-resolved";
     };
   };
 

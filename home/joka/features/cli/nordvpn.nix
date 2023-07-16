@@ -1,3 +1,0 @@
-{
-  services.nordvpn.enable = true;
-}

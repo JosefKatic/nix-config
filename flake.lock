@@ -426,6 +426,19 @@
         "type": "github"
       }
     },
+    "nur": {
+      "locked": {
+        "lastModified": 1689350417,
+        "narHash": "sha256-wg1XJpfTp8MUyjHHG2Q5h6V60LLmTSYpmnsveE1nKtY=",
+        "path": "/nix/store/xif1mxccm44rp2jsbfmzb0fj61z8ryz8-source",
+        "rev": "f056f658230c121d72bdbb6de0408fbd7e9ef97e",
+        "type": "path"
+      },
+      "original": {
+        "id": "nur",
+        "type": "indirect"
+      }
+    },
     "pre-commit-hooks-nix": {
       "inputs": {
         "flake-compat": [
@@ -468,7 +481,8 @@
         "lanzaboote": "lanzaboote",
         "nix-colors": "nix-colors",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-stable": "nixpkgs-stable_2"
+        "nixpkgs-stable": "nixpkgs-stable_2",
+        "nur": "nur"
       }
     },
     "rust-overlay": {
