@@ -23,6 +23,9 @@
     };
     hyprland = {
       url = "github:hyprwm/Hyprland/v0.26.0";
+    };
+    hyprsome = {
+      url = "github:sopa0/hyprsome";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprwm-contrib = {

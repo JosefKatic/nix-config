@@ -25,6 +25,7 @@
 
   home.packages = with pkgs; [
     inputs.hyprwm-contrib.packages.${system}.grimblast
+    inputs.hyprsome.packages.${system}.default
     swaybg
     swayidle
   ];

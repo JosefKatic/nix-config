@@ -27,6 +27,11 @@ in
   };
 
   home-manager.users.joka = import ../../../../home/joka/${config.networking.hostName}.nix;
+  security.sudo = {
+    extraConfig = ''
+      Defaults passprompt="🔒 Enter password for %p... "
+    '';
+  };
   services.geoclue2.enable = true;
   services.gnome.gnome-keyring.enable = true;
   programs.seahorse.enable = true;

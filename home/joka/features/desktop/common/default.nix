@@ -7,6 +7,7 @@
     ./font.nix
     ./gtk.nix
     ./kdeconnect.nix
+    ./nautilus.nix
     ./pavucontrol.nix
     ./qt.nix
   ];

@@ -15,7 +15,7 @@ let
   wofi = "${pkgs.wofi}/bin/wofi";
   ikhal = "${pkgs.khal}/bin/ikhal";
 
-  terminal = "${pkgs.kitty}/bin/kitty";
+  terminal = "${pkgs.wezterm}/bin/wezterm";
   terminal-spawn = cmd: "${terminal} $SHELL -i -c ${cmd}";
 
   calendar = terminal-spawn ikhal;
@@ -329,13 +329,13 @@ in
         opacity: 0.95;
         padding: 0;
         background-color: #${colors.base00};
-        border: 2px solid #${colors.base0C};
+        border: 2px solid #${colors.base0B};
         border-radius: 10px;
       }
       window#waybar.bottom {
         opacity: 0.90;
         background-color: #${colors.base00};
-        border: 2px solid #${colors.base0C};
+        border: 2px solid #${colors.base0B};
         border-radius: 10px;
       }
 
@@ -354,12 +354,12 @@ in
       }
       #workspaces button.focused,
       #workspaces button.active {
-        background-color: #${colors.base0A};
+        background-color: #${colors.base0B};
         color: #${colors.base00};
       }
 
       #clock {
-        background-color: #${colors.base0C};
+        background-color: #${colors.base0B};
         color: #${colors.base00};
         padding-left: 15px;
         padding-right: 15px;
@@ -369,7 +369,7 @@ in
       }
 
       #custom-menu {
-        background-color: #${colors.base0C};
+        background-color: #${colors.base0B};
         color: #${colors.base00};
         padding-left: 15px;
         padding-right: 22px;
@@ -380,7 +380,7 @@ in
         border-radius: 10px;
       }
       #custom-hostname {
-        background-color: #${colors.base0C};
+        background-color: #${colors.base0B};
         color: #${colors.base00};
         padding-left: 15px;
         padding-right: 18px;
