@@ -35,6 +35,7 @@ in
   };
   services.geoclue2.enable = true;
   services.gnome.gnome-keyring.enable = true;
+  services.nordvpn.enable = true;
   programs.seahorse.enable = true;
   security.pam.services = { swaylock = { }; };
 }
