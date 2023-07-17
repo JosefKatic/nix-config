@@ -15,7 +15,14 @@
     nativeBuildInputs = with pkgs; [
       nix
       home-manager
+      git
       nil
+      nixops
+
+      sops
+      ssh-to-age
+      gnupg
+      age
     ];
   };
 }

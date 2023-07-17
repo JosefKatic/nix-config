@@ -1,7 +1,7 @@
 {
-  systemd.network.enable = true;
-  networking = {
-    hostName = "T14";
+   systemd.network.enable = true;
+   networking = {
+    hostName = "alcedo";
     useNetworkd = true;
     firewall = {
       enable = true;

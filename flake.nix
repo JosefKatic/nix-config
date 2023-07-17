@@ -36,6 +36,7 @@
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix.url = "github:mic92/sops-nix";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -64,26 +65,30 @@
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
-        T27 = nixpkgs.lib.nixosSystem {
+        alcedo = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
-          modules = [ ./hosts/T27 ];
+          modules = [ ./hosts/alcedo ];
         };
-        T14 = nixpkgs.lib.nixosSystem {
+        hirundo = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
-          modules = [ ./hosts/T14 ];
+          modules = [ ./hosts/hirundo ];
+        };
+        falco = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/eagle ];
         };
       };
 
       # Standalone home-manager configuration entrypoint
       # Available through 'home-manager --flake .#joka@T27'
       homeConfigurations = {
-        "joka@T27" = lib.homeManagerConfiguration {
-          modules = [ ./home/joka/T27.nix ];
+        "joka@alcedo" = lib.homeManagerConfiguration {
+          modules = [ ./home/joka/alcedo.nix ];
           pkgs = pkgsFor.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
         };
-        "joka@T14" = lib.homeManagerConfiguration {
-          modules = [ ./home/joka/T14.nix ];
+        "joka@hirundo" = lib.homeManagerConfiguration {
+          modules = [ ./home/joka/hirundo.nix ];
           pkgs = pkgsFor.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
         };

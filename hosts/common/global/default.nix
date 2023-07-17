@@ -2,14 +2,21 @@
 { config, inputs, outputs, lib, pkgs, ... }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
+    #./acme.nix
+    #./auto-upgrade.nix
     ./fish.nix
     ./flatpak.nix
     ./fonts.nix
     ./locale.nix
     ./nix.nix
+    #./openssh.nix
     ./optin-persistence.nix
+    #./sops.nix
+    #./ssh-serve-store.nix
+    ./steam-hardware.nix
     ./secureboot.nix
     ./systemd-initrd.nix
+    ./yubikey.nix
   ] ++ (builtins.attrValues outputs.nixosModules);
 
   home-manager.extraSpecialArgs = { inherit inputs outputs; };

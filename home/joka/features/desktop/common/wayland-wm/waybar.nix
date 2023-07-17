@@ -120,7 +120,7 @@ in
           on-click = calendar;
         };
         cpu = {
-          format = "   {usage}%";
+          format = "󰍛  {usage}%";
           on-click = systemMonitor;
         };
         "custom/gpu" = {
@@ -130,11 +130,11 @@ in
             text = "$(cat /sys/class/drm/card0/device/gpu_busy_percent)";
             tooltip = "GPU Usage";
           };
-          format = "󰒋  {}%";
+          format = "󰢮  {}%";
           on-click = systemMonitor;
         };
         memory = {
-          format = "󰍛  {}%";
+          format = "󰘚  {}%";
           interval = 5;
           on-click = systemMonitor;
         };
