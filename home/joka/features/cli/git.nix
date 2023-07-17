@@ -11,7 +11,7 @@
     userName = "Josef Katič";
     userEmail = "josef@joka00.dev";
     signing = {
-      key = "AD8664AA34ACBE803A39276AB7EB703386D5E878";
+      key = "A092C3815667A849";
       gpgPath = "${config.programs.gpg.package}/bin/gpg2";
     };
     extraConfig = {
