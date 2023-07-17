@@ -3,11 +3,11 @@
   imports = [
     ./gammastep.nix
     ./mako.nix
+    ./kitty.nix
     ./swayidle.nix
     ./swaylock.nix
     ./waybar.nix
     ./wofi.nix
-    ./wezterm.nix
     ./zathura.nix
   ];
 
