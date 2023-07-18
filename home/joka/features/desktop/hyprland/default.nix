@@ -1,4 +1,8 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, lib, config, pkgs, ... }: 
+  let
+    inherit (lib) mkIf;
+    hasNvidia = config.hardware.nvidia.modesetting.enable;
+in {
   imports = [
     ../common
     ../common/wayland-wm
@@ -39,6 +43,7 @@
     xwayland = {
       enable = true;
     };
+    nvidiaPatches = mkIf hasNvidia true;
     package = inputs.hyprland.packages.${pkgs.system}.default;
     extraConfig =
       (import ./monitors.nix {

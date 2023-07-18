@@ -1,19 +1,13 @@
 keys:
   # Users
   - &users:
-    - &joka 742FE6210FE60A4AF4A08F1F57F8DBA0EC0126A3
+    - &joka 7A0AF5B9AABC2CC6
   # Hosts
   - &hosts:
     - &alcedo age1frx3zkwt6qmnnwq5tz2mvylf7ry7ft4vzahs4ajlzcxx3l45950qc0k40x
-    - &hirundo age1j9ld6ey62hqd33xkyd2fg9362k6xhm5gavsrpsfalwpcs8smxfdqpk84a2
+    - &hirundo age1gghr2ul49papjh9c6cdrh209p29nf64wnfpjhj34a2jat6tu64pqjx5g7n
 
 creation_rules:
-  - path_regex: hosts/alcedo/secrets.ya?ml$
-    key_groups:
-    - age:
-      - *alcedo
-      pgp:
-      - *joka
   - path_regex: hosts/hirundo/secrets.ya?ml$
     key_groups:
     - age:

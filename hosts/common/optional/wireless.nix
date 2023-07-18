@@ -11,20 +11,20 @@
     # Declarative
     environmentFile = config.sops.secrets.wireless.path;
     networks = {
-      "PS3471" = {
-        psk = "@PS3471@";
+      "@home_ssid@" = {
+        pskRaw = "@home_psk@";
       };
-      "Hack my wifi if you can" = {
-        psk = "@HACK_MY_WIFI_IF_YOU_CAN@";
+      "@flat_ssid@" = {
+        pskRaw = "@flat_psk@";
       };
       "eduroam" = {
         auth = ''
           key_mgmt=WPA-EAP
           pairwise=CCMP
           auth_alg=OPEN
-          eap=PEAP
-          identity="katj00@vse.cz"
-          password="@EDUROAM@"
+          eap=TTLS
+          identity="@eduroam_login@"
+          password="@eduroam_psk@"
           phase2="auth=MSCHAPV2"
         '';
       };

@@ -18,6 +18,7 @@
     ../common/optional/opengl.nix
     ../common/optional/quietboot.nix
     ../common/optional/xdg-portal.nix
+    ../common/optional/wireless.nix
 
     ./kernel.nix
     ./networking.nix

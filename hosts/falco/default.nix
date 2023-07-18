@@ -10,7 +10,7 @@
   ];
 
   networking = {
-    hostName = "eagle";
+    hostName = "falco";
     useDHCP = true;
   };
   system.stateVersion = "23.05";

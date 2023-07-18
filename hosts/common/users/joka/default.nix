@@ -6,7 +6,6 @@ in
   users.users.joka = {
     isNormalUser = true;
     shell = pkgs.fish;
-    hashedPassword = "$6$pdq4U5Lo7FhsG7Dc$vrwg5E6SVbwlUurJ.7vDGBdL2dXB35khzdfcebhOo212FjQmolLYo0FwxMQL5mwKpioKbnkYsJxxqh.S1zf1G.";
     extraGroups = [
       "wheel"
       "video"
@@ -24,7 +23,15 @@ in
       "libvirtd"
       "deluge"
     ];
+    
+    passwordFile = config.sops.secrets.joka-password.path;
     packages = [ pkgs.home-manager ];
+  };
+
+
+  sops.secrets.joka-password = {
+    sopsFile = ../../secrets.yaml;
+    neededForUsers = true;
   };
 
   home-manager.users.joka = import ../../../../home/joka/${config.networking.hostName}.nix;
@@ -36,6 +43,5 @@ in
   services.geoclue2.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.nordvpn.enable = true;
-  programs.seahorse.enable = true;
   security.pam.services = { swaylock = { }; };
 }
