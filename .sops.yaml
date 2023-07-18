@@ -4,10 +4,8 @@ keys:
     - &joka 742FE6210FE60A4AF4A08F1F57F8DBA0EC0126A3
   # Hosts
   - &hosts:
-    - &alcedo age1hm5lf4qk84r4wh00atn6hpts7mpdx80adq26wht2e5qh9ewvhyaszfv82d
-    - &falco age1709qfrwglm75v5x8lpuhryt83k6p6c90npplzzec6a5w8ct93ejscpqpc3
+    - &alcedo age1frx3zkwt6qmnnwq5tz2mvylf7ry7ft4vzahs4ajlzcxx3l45950qc0k40x
     - &hirundo age1j9ld6ey62hqd33xkyd2fg9362k6xhm5gavsrpsfalwpcs8smxfdqpk84a2
-    - &regulus age1dn7pkareh83k8el2yt4dmdfdzn7f45fuc785cnnxgzf3h4r5gqhqd4l93h
 
 creation_rules:
   - path_regex: hosts/alcedo/secrets.ya?ml$
@@ -22,19 +20,10 @@ creation_rules:
       - *hirundo
       pgp:
       - *joka
-  - path_regex: hosts/regulus/secrets.ya?ml$
-    key_groups:
-    - age:
-      - *regulus
-      pgp:
-      - *joka
-
   - path_regex: hosts/common/secrets.ya?ml$
     key_groups:
     - age:
       - *alcedo
-      - *falco
       - *hirundo
-      - *regulus
       pgp:
       - *joka
