@@ -22,7 +22,7 @@
     nvidia = {
       prime = {
         offload.enable = false;
-        nvidiaBusId = "PCI:01:0:0";
+        nvidiaBusId = "PCI:01:00:0";
         intelBusId = "PCI:00:02:0";
       };
       # Modesetting is needed for most wayland compositors
