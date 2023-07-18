@@ -4,7 +4,8 @@
     config = {
       allowUnfreePredicate = pkg:
         builtins.elem (lib.getName pkg) [
-          "nvidia-x11"
+        "nvidia-x11"
+        "nvidia-settings"        
         ];
     };
   };
@@ -19,7 +20,11 @@
     openrgb.enable = true;
     opentabletdriver.enable = true;
     nvidia = {
-
+      prime = {
+        offload.enable = false;
+        nvidiaBusId = "PCI:01:0:0";
+        intelBusId = "PCI:00:02:0";
+      };
       # Modesetting is needed for most wayland compositors
       modesetting.enable = true;
 
