@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    ./hyprland-vnc.nix
     ./gammastep.nix
     ./mako.nix
     ./kitty.nix

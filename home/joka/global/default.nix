@@ -34,8 +34,8 @@ in
   systemd.user.startServices = "sd-switch";
 
   programs = {
-    vscode.enable = true;
     home-manager.enable = true;
+    git.enable = true;
   };
 
   home = {

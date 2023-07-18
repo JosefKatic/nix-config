@@ -10,6 +10,7 @@
     ./nautilus.nix
     ./pavucontrol.nix
     ./qt.nix
+    ./vscode.nix
   ];
 
   xdg.mimeApps.enable = true;
