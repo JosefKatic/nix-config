@@ -9,13 +9,14 @@
     ./fonts.nix
     ./locale.nix
     ./nix.nix
-    #./openssh.nix
+    ./openssh.nix
     ./optin-persistence.nix
     ./sops.nix
-    #./ssh-serve-store.nix
+    ./ssh-serve-store.nix
     ./steam-hardware.nix
     ./secureboot.nix
     ./systemd-initrd.nix
+    ./tailscale.nix
     ./yubikey.nix
   ] ++ (builtins.attrValues outputs.nixosModules);
 

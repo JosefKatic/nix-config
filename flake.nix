@@ -36,8 +36,14 @@
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    firefly = {
+      url = "github:timhae/firefly";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
     nur.url = "github:nix-community/NUR";
     sops-nix.url = "github:mic92/sops-nix";
+    # website.url = "git+ssh://git@github.com:JosefKatic/joka00.dev.git";
   };
 
   outputs = { self, nixpkgs, home-manager, nur, ... }@inputs:
@@ -76,7 +82,7 @@
         };
         falco = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
-          modules = [ ./hosts/eagle ];
+          modules = [ ./hosts/falco ];
         };
       };
 

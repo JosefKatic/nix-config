@@ -1,18 +1,23 @@
+{ modulesPath, lib, ... }:
 {
-  imports = [
-    ./services
-    ./hardware-configuration.nix
 
-    ../common/global
-    ../common/users/misterio
-    ../common/optional/fail2ban.nix
-    ../common/optional/tailscale-exit-node.nix
-  ];
+    imports = [
+    # ./services
 
-  networking = {
+    # ../common/global
+    # ../common/users/misterio
+    # ../common/optional/fail2ban.nix
+    # ../common/optional/tailscale-exit-node.nix
+  ] ++ 
+   (lib.optional (builtins.pathExists ./do-userdata.nix) ./do-userdata.nix ++ 
+   [(modulesPath + "/virtualisation/digital-ocean-config.nix")]);
+
+   networking = {
     hostName = "falco";
-    useDHCP = true;
-  };
-  system.stateVersion = "23.05";
-}
+   };
 
+     
+     
+   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+   system.stateVersion = "23.05";
+}
