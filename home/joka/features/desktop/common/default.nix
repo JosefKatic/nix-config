@@ -2,7 +2,7 @@
 {
   imports = [
     ./brave.nix
-    ./deluge.nix
+    ./discord.nix
     ./firefox.nix
     ./font.nix
     ./gtk.nix
