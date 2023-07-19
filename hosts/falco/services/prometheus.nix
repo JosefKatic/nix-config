@@ -12,28 +12,28 @@
           job_name = "hydra";
           scheme = "https";
           static_configs = [{
-            targets = [ "hydra.m7.rs" ];
+            targets = [ "hydra.joka00.dev" ];
           }];
         }
         {
           job_name = "headscale";
           scheme = "https";
           static_configs = [{
-            targets = [ "tailscale.m7.rs" ];
+            targets = [ "tailscale.joka00.dev" ];
           }];
         }
         {
           job_name = "nginx";
           scheme = "https";
           static_configs = [{
-            targets = [ "alcyone.m7.rs" "celaeno.m7.rs" "merope.m7.rs" ];
+            targets = [ "alcyone.joka00.dev" "celaeno.joka00.dev" "merope.joka00.dev" ];
           }];
         }
         {
           job_name = "sitespeed";
           scheme = "https";
           static_configs = [{
-            targets = [ "sitespeed.m7.rs" ];
+            targets = [ "sitespeed.joka00.dev" ];
           }];
           metric_relabel_configs = [
             # Only keep metrics that are not aggregations or are medians
@@ -66,7 +66,7 @@
       ];
     };
     nginx.virtualHosts = {
-      "metrics.m7.rs" = {
+      "metrics.joka00.dev" = {
         forceSSL = true;
         enableACME = true;
         locations."/".proxyPass =

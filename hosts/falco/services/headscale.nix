@@ -55,7 +55,7 @@ in
       "tailscale.misterio.me" = {
         forceSSL = true;
         enableACME = true;
-        locations."/".return = "302 https://tailscale.m7.rs$request_uri";
+        locations."/".return = "302 https://tailscale.joka00.dev$request_uri";
       };
     };
   };

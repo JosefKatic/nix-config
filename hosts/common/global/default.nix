@@ -2,8 +2,8 @@
 { config, inputs, outputs, lib, pkgs, ... }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    #./acme.nix
-    #./auto-upgrade.nix
+    ./acme.nix
+    # ./auto-upgrade.nix
     ./fish.nix
     ./flatpak.nix
     ./fonts.nix
