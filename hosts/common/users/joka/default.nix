@@ -25,7 +25,9 @@ in
     ];
     
     passwordFile = config.sops.secrets.joka-password.path;
-    packages = [ pkgs.home-manager ];
+    packages = [
+      pkgs.home-manager 
+    ];
   };
 
 

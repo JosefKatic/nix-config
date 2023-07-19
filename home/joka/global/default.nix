@@ -5,6 +5,7 @@ let
 in
 {
   imports = [
+    inputs.nur.nixosModules.nur
     inputs.impermanence.nixosModules.home-manager.impermanence
     inputs.nix-colors.homeManagerModule
     ../features/cli
