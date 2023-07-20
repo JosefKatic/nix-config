@@ -12,10 +12,11 @@
         nvidia-vaapi-driver
       ];
     };
-    nvidia = {
-      modesetting.enable = true;
-      open = true;
-      nvidiaSettings = true;
-    };
+   nvidia = {
+     modesetting.enable = true;
+     open = true;
+     nvidiaSettings = true;
+     package = pkgs.linuxKernel.packages.linux_zen.nvidia_x11;
+   };
   };
 }
