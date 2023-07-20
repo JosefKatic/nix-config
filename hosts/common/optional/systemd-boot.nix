@@ -6,4 +6,5 @@
     };
     efi.canTouchEfiVariables = true;
     efi.efiSysMountPoint = "/efi";
-  }
+  };
+}

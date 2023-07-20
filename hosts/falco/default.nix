@@ -4,10 +4,10 @@
     imports = [
     # ./services
 
-    # ../common/global
-    # ../common/users/misterio
-    # ../common/optional/fail2ban.nix
-    # ../common/optional/tailscale-exit-node.nix
+    ../common/global
+    ../common/users/joka
+    ../common/optional/fail2ban.nix
+    ../common/optional/tailscale-exit-node.nix
   ] ++ 
    (lib.optional (builtins.pathExists ./do-userdata.nix) ./do-userdata.nix ++ 
    [(modulesPath + "/virtualisation/digital-ocean-config.nix")]);

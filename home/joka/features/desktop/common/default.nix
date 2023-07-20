@@ -8,6 +8,7 @@
     ./gtk.nix
     ./kdeconnect.nix
     ./nautilus.nix
+    ./obs.nix
     ./pavucontrol.nix
     ./qt.nix
     ./vscode.nix
