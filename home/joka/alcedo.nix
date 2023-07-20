@@ -10,7 +10,15 @@
 
   colorscheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
   wallpaper = outputs.wallpapers.astronaut-minimalism;
-
+  # TODO: Make nvidia environment automatic
+  home.sessionVariables = {
+    GBM_BACKEND = "nvidia-drm";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    LIBVA_DRIVER_NAME = "nvidia";
+    __GL_VRR_ALLOWED = 0;
+    WLR_DRM_NO_ATOMIC = 1;
+    WLR_NO_HARDWARE_CURSORS = 1;
+  };
   #  -------  -------
   # | DP-3 | | DP-2 |
   # -------  -------

@@ -1,5 +1,7 @@
-{ pkgs, ... }:
-{
+{ config, pkgs, lib, ... }:
+let
+
+in {
   imports = [
     ./hyprland-vnc.nix
     ./gammastep.nix
@@ -28,10 +30,18 @@
   ];
 
   home.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = 1;
+    GDK_BACKEND = "wayland,x11";
+    SDL_VIDEODRIVER = "wayland";
+    CLUTTER_BACKEND = "wayland";
+
+    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_SESSION_TYPE = "wayland";
+    XDG_SESSION_DESKTOP = "Hyprland";
+
+    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+    QT_QPA_PLATFORM = "wayland;xcb";
     WLR_RENDERER_ALLOW_SOFTWARE = 1;
     MOZ_ENABLE_WAYLAND = 1;
-    QT_QPA_PLATFORM = "wayland";
     LIBSEAT_BACKEND = "logind";
     NIXOS_OZONE_WL = "1";
   };
