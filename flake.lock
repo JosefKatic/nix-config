@@ -466,22 +466,6 @@
     },
     "nixpkgs-stable_2": {
       "locked": {
-        "lastModified": 1688177999,
-        "narHash": "sha256-JZ5nk90Ym79b4J593xYb0mI79QxU0efJLuCU3sXDalQ=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "0de86059128947b2438995450f2c2ca08cc783d5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-23.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-stable_3": {
-      "locked": {
         "lastModified": 1689473667,
         "narHash": "sha256-41ePf1ylHMTogSPAiufqvBbBos+gtB6zjQlYFSEKFMM=",
         "owner": "NixOS",
@@ -635,7 +619,6 @@
         "lanzaboote": "lanzaboote",
         "nix-colors": "nix-colors",
         "nixpkgs": "nixpkgs_5",
-        "nixpkgs-stable": "nixpkgs-stable_2",
         "nur": "nur",
         "sops-nix": "sops-nix"
       }
@@ -670,7 +653,7 @@
     "sops-nix": {
       "inputs": {
         "nixpkgs": "nixpkgs_6",
-        "nixpkgs-stable": "nixpkgs-stable_3"
+        "nixpkgs-stable": "nixpkgs-stable_2"
       },
       "locked": {
         "lastModified": 1689534977,

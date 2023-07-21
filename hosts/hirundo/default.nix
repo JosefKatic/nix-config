@@ -13,13 +13,17 @@
     ../common/users/joka
 
     ../common/optional/bluetooth.nix
+    ../common/optional/flatpak.nix
     ../common/optional/greetd.nix
+    ../common/optional/nordvpn.nix
     ../common/optional/pipewire.nix
     ../common/optional/opengl.nix
     ../common/optional/printing.nix
     ../common/optional/quietboot.nix
+    ../common/optional/steam-hardware.nix
     ../common/optional/xdg-portal.nix
     ../common/optional/wireless.nix
+    ../common/optional/yubikey.nix
 
     ./kernel.nix
     ./networking.nix
@@ -27,7 +31,7 @@
     ./services.nix
   ];
 
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "23.11"; # Did you read the comment?
 
 }
 

@@ -12,12 +12,8 @@
    (lib.optional (builtins.pathExists ./do-userdata.nix) ./do-userdata.nix ++ 
    [(modulesPath + "/virtualisation/digital-ocean-config.nix")]);
 
-   networking = {
-    hostName = "falco";
-   };
-
-     
+   networking.hostName = "falco";
      
    nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-   system.stateVersion = "23.05";
+   system.stateVersion = "23.11";
 }

@@ -39,7 +39,7 @@ in
     };
 
     nginx.virtualHosts = {
-      "tailscale.joka00.dev" = {
+      "tsc.joka00.dev" = {
         forceSSL = true;
         enableACME = true;
         locations = {
@@ -52,7 +52,7 @@ in
           };
         };
       };
-      "tailscale.misterio.me" = {
+      "tailscale.joka00.dev" = {
         forceSSL = true;
         enableACME = true;
         locations."/".return = "302 https://tailscale.joka00.dev$request_uri";
