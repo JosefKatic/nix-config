@@ -3,6 +3,7 @@
     ./global
     ./features/desktop/hyprland
     ./features/productivity
+    ./features/pass
     ./features/games
     ./features/music
   ];

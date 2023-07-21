@@ -29,7 +29,6 @@
     ./kernel.nix
     ./networking.nix
     ./programs.nix
-    ./services.nix
   ];
 
 

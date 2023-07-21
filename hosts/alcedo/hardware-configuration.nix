@@ -4,80 +4,24 @@
 { config, lib, pkgs, inputs, modulesPath, ... }:
 
 {
-  imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [
+    ../common/optional/ephemeral-btrfs.nix
+    ../common/optional/encrypted-root.nix
+  ];
 
-  boot.extraModulePackages = [];
-  boot = {
-    initrd = {
-      availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "sr_mod" ];
-      kernelModules = [ "kvm-intel" ];
-    };
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "sr_mod" ];
+  boot.kernelModules = ["kvm-intel"];
+
+
+  fileSystems."/efi" = {
+    device = "/dev/disk/by-uuid/6862-CF6E";
+    fsType = "vfat";
   };
 
-  fileSystems."/" =
-    {
-      device = "/dev/disk/by-uuid/4daa3383-c8de-4525-9d2a-66e764487686";
-      fsType = "btrfs";
-      options = [ "subvol=@root" "compress=zstd" "noatime" ];
-    };
-
-  boot.initrd.luks.devices."system".device = "/dev/disk/by-uuid/04cec760-4eda-494c-934b-686798c6fe8c";
-
-  fileSystems."/home" =
-    {
-      device = "/dev/disk/by-uuid/4daa3383-c8de-4525-9d2a-66e764487686";
-      fsType = "btrfs";
-      options = [ "subvol=@home" "compress=zstd" "noatime" ];
-    };
-
-  fileSystems."/nix" =
-    {
-      device = "/dev/disk/by-uuid/4daa3383-c8de-4525-9d2a-66e764487686";
-      fsType = "btrfs";
-      options = [ "subvol=@nix" "compress=zstd" "noatime" ];
-    };
-
-  fileSystems."/persist" =
-    {
-      device = "/dev/disk/by-uuid/4daa3383-c8de-4525-9d2a-66e764487686";
-      fsType = "btrfs";
-      options = [ "subvol=@persist" "compress=zstd" "noatime" ];
-      neededForBoot = true;
-    };
-
-  fileSystems."/var/log" =
-    {
-      device = "/dev/disk/by-uuid/4daa3383-c8de-4525-9d2a-66e764487686";
-      fsType = "btrfs";
-      options = [ "subvol=@log" "compress=zstd" "noatime" ];
-      neededForBoot = true;
-    };
-
-  fileSystems."/.snapshots" =
-    {
-      device = "/dev/disk/by-uuid/4daa3383-c8de-4525-9d2a-66e764487686";
-      fsType = "btrfs";
-      options = [ "subvol=@snapshots" "compress=zstd" "noatime" ];
-      neededForBoot = true;
-    };
-
-  fileSystems."/.swap" =
-    {
-      device = "/dev/disk/by-uuid/4daa3383-c8de-4525-9d2a-66e764487686";
-      fsType = "btrfs";
-      options = [ "subvol=@swap" "compress=zstd" "noatime" ];
-    };
-
-  fileSystems."/efi" =
-    {
-      device = "/dev/disk/by-uuid/6862-CF6E";
-      fsType = "vfat";
-    };
-
-swapDevices = [ { device = "/.swap/swapfile"; } ];
+  swapDevices = [ { 
+    device = "/.swap/swapfile"; 
+    size = 34816; 
+  } ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -87,6 +31,5 @@ swapDevices = [ { device = "/.swap/swapfile"; } ];
   # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

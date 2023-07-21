@@ -28,7 +28,6 @@
     ./kernel.nix
     ./networking.nix
     ./programs.nix
-    ./services.nix
   ];
 
   system.stateVersion = "23.11"; # Did you read the comment?
