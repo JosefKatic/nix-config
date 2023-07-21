@@ -1,0 +1,1 @@
+It's still mostly the same as [nix-config from misterio77](https://github.com/Misterio77/nix-config) need to figure things out first :D
