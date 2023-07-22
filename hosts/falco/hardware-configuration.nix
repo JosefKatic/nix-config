@@ -9,9 +9,10 @@
     };
   };
     
-  fileSystems."/efi" = {
-    device = "/dev/disk/by-label/EFI";
-    fsType = "vfat";
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-label/system";
+    fsType = "btrfs";
+    options = [ "subvol=@boot" ];
   };
 
   swapDevices = [{

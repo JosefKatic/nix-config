@@ -3,15 +3,10 @@
     initrd.systemd.enable = true;
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
     bootspec.enable = true;
-    loader = {
-      systemd-boot = {
+    loader.grub = {
         enable = true;
-        consoleMode = "max";
-      };
-      efi = {
-        canTouchEfiVariables = true;
-        efiSysMountPoint = "/efi";
-      };
+        version = 2;
+        device = "/dev/vda";
     };
   };
 }

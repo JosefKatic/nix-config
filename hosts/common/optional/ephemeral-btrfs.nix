@@ -51,7 +51,6 @@ in
       options = [ "subvol=@root" "compress=zstd" "noatime"  ];
     };
 
-
   "/home" =
     { device = "/dev/disk/by-label/system";
       fsType = "btrfs";
@@ -70,13 +69,7 @@ in
       options = [ "subvol=@persist" "compress=zstd" "noatime" ];
       neededForBoot = true;
     };
-
-  "/.snapshots" = { 
-      device = "/dev/disk/by-label/system";
-      fsType = "btrfs";
-      options = [ "subvol=@snapshots" "compress=zstd" "noatime" ];
-      neededForBoot = true;
-    };
+    
   "/.swap" = {
       device = "/dev/disk/by-label/system";
       fsType = "btrfs";
