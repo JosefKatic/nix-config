@@ -15,7 +15,7 @@
   environment.systemPackages = with pkgs; [
     libgnome-keyring
     libsecret
-    curl
+    curlFull
     rustup
   ];
 }

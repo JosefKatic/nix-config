@@ -5,7 +5,7 @@ keys:
   # Hosts
   - &hosts:
     - &alcedo age1frx3zkwt6qmnnwq5tz2mvylf7ry7ft4vzahs4ajlzcxx3l45950qc0k40x
-    - &hirundo age1gghr2ul49papjh9c6cdrh209p29nf64wnfpjhj34a2jat6tu64pqjx5g7n
+    - &hirundo age1uhqk26zf6qn35y745lgqy296nlapdjz2hyazdy2a5yg6mw4303dss96629
 
 creation_rules:
   - path_regex: hosts/hirundo/secrets.ya?ml$

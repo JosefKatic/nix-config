@@ -11,11 +11,18 @@
   environment.persistence = {
     "/persist" = {
       directories = [
-        "/var/lib/systemd"
+        "/var/log"
+        "/var/lib/bluetooth"
         "/var/lib/nixos"
+        "/var/lib/systemd"
         "/var/lib/libvirt"
         "/var/lib/nordvpn"
         "/srv"
+        "/etc/nixos"
+        "/etc/secureboot"
+      ];
+      files = [
+        "/etc/machine-id"
       ];
     };
   };

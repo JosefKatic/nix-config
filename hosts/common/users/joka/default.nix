@@ -23,8 +23,8 @@ in
       "libvirtd"
       "deluge"
     ];
-    
-    passwordFile = config.sops.secrets.joka-password.path;
+    initialHashedPassword = "$6$FsOCT1XcMC0RqJef$j/ahrihdhvrlp5FyBPufwG5eLvmXEV8MpBxpm6Lk2kIKQyuTH0ecbpEWBYDEmYH1E1Ck2ijfGZ65DCAPcQx7G1";
+    # passwordFile = config.sops.secrets.joka-password.path;
     packages = [
       pkgs.home-manager 
     ];

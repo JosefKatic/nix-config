@@ -2,7 +2,6 @@
 # TODO: perhaps partition using disko in the future
 { lib, config, ... }:
 let
-  hostname = config.networking.hostName;
   wipeScript = ''
     mkdir /tmp -p
     MNTPOINT=$(mktemp -d)
@@ -33,11 +32,11 @@ in
       description = "Rollback btrfs rootfs";
       wantedBy = [ "initrd.target" ];
       requires = [
-        "dev-disk-by\\x2dlabel-${hostname}.device"
+        "dev-disk-by\\x2dlabel-system.device"
       ];
       after = [
-        "dev-disk-by\\x2dlabel-${hostname}.device"
-        "systemd-cryptsetup@${hostname}.service"
+        "dev-disk-by\\x2dlabel-system.device"
+        "systemd-cryptsetup@system.service"
       ];
       before = [ "sysroot.mount" ];
       unitConfig.DefaultDependencies = "no";
@@ -69,13 +68,6 @@ in
     { device = "/dev/disk/by-label/system";
       fsType = "btrfs";
       options = [ "subvol=@persist" "compress=zstd" "noatime" ];
-      neededForBoot = true;
-    };
-
-  "/var/log" = {   
-      device = "/dev/disk/by-label/system";
-      fsType = "btrfs";
-      options = [ "subvol=@log" "compress=zstd" "noatime" ];
       neededForBoot = true;
     };
 

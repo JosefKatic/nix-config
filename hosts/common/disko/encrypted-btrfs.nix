@@ -46,9 +46,9 @@
                       mountpoint = "/persist";
                       mountOptions = [ "subvol=@persist" "compress=zstd" "noatime" ];
                     };
-                    "/@var/log" = {
+                    "/@log" = {
                       mountpoint = "/var/log";
-                      mountOptions = [ "subvol=@var/log" "compress=zstd" "noatime" ];
+                      mountOptions = [ "subvol=@log" "compress=zstd" "noatime" ];
                     };
                     "/@snapshots" = {
                       mountpoint = "/.snapshots";

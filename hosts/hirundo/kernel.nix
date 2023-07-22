@@ -1,4 +1,8 @@
-{ config, inputs, lib, pkgs, ... } : {
+{ config, inputs, lib, pkgs, ... }:
+let
+  hasOptinPersistence = config.environment.persistence ? "/persist";
+in
+{
   imports = [
     inputs.lanzaboote.nixosModules.lanzaboote
   ];
@@ -18,7 +22,7 @@
     };
     lanzaboote = {
       enable = true;
-      pkiBundle = "/etc/secureboot";
+      pkiBundle = "${lib.optionalString hasOptinPersistence "/persist"}/etc/secureboot";
     };
   };
 }
