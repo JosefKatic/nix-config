@@ -10,6 +10,6 @@
     ./headscale.nix
     ./prometheus.nix
 
-    ./cgit
+    # ./cgit
   ];
 }
