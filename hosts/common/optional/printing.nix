@@ -7,8 +7,8 @@
       hplip
      ];
   };
-  # services.avahi.enable = true;
-  # services.avahi.nssmdns = true;
+  services.avahi.enable = true;
+  services.avahi.nssmdns = true;
   # for a WiFi printer
-  # services.avahi.openFirewall = true;
+  services.avahi.openFirewall = true;
 }

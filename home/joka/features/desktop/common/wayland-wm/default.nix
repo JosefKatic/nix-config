@@ -1,7 +1,4 @@
-{ config, pkgs, lib, ... }:
-let
-
-in {
+{ config, pkgs, lib, ... }: {
   imports = [
     ./hyprland-vnc.nix
     ./gammastep.nix

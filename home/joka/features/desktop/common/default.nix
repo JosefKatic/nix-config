@@ -3,7 +3,7 @@
   imports = [
     ./brave.nix
     ./discord.nix
-    ./firefox.nix
+    ./firefox
     ./font.nix
     ./gtk.nix
     ./kdeconnect.nix

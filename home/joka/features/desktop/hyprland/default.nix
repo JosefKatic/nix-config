@@ -2,7 +2,6 @@
   imports = [
     ../common
     ../common/wayland-wm
-    inputs.hyprland.homeManagerModules.default
   ];
 
   programs = {
@@ -24,9 +23,9 @@
   };
 
   home.packages = with pkgs; [
-    inputs.hyprwm-contrib.packages.${system}.grimblast
+    inputs.hyprwm-contrib.packages.${pkgs.system}.grimblast
     inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
-    inputs.hyprsome.packages.${system}.default
+    inputs.hyprsome.packages.${pkgs.system}.default
     swaybg
     swayidle
   ];
@@ -40,6 +39,8 @@
     xwayland = {
       enable = true;
     };
+    enableNvidiaPatches = true;
+    package = inputs.hyprland.packages.${pkgs.system}.default;
     extraConfig =
       (import ./monitors.nix {
         inherit lib;

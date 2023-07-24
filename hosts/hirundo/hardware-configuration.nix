@@ -7,6 +7,7 @@
   imports = [
     ../common/optional/ephemeral-btrfs.nix
     ../common/optional/encrypted-root.nix
+    ../common/optional/swap-file.nix
   ];
 
   boot.initrd.availableKernelModules = [ "nvme" "ehci_pci" "xhci_pci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
@@ -18,8 +19,8 @@
     };
 
   swapDevices = [ { 
-    device = "/.swap/swapfile"; 
-    size = 18432; 
+    device = "/swap/swapfile"; 
+    size = (1024 * 16) + (1024 * 2); 
   } ];
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

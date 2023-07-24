@@ -17,6 +17,14 @@
       "@flat_ssid@" = {
         pskRaw = "@flat_psk@";
       };
+      "@mobile_ssid@" = {
+        pskRaw = "@mobile_psk@";
+      };
+      "CDWiFi" = {
+        auth = ''
+          key_mgmt=NONE
+        '';
+      };
       "eduroam" = {
         auth = ''
           key_mgmt=WPA-EAP
