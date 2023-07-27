@@ -17,5 +17,6 @@
     libsecret
     curlFull
     rustup
+    virt-manager
   ];
 }

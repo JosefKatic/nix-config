@@ -45,6 +45,8 @@ in
     animation=workspaces,1,2,easeout,slide
   }
   dwindle {
+    pseudotile = yes # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+    preserve_split = yes # you probably want this
     split_width_multiplier=1.35
   }
   misc {
@@ -56,11 +58,11 @@ in
     kb_model =
     numlock_by_default = true
   }
-  # Passthrough mode (e.g. for VNC)
-  bind=SUPER,P,submap,passthrough
-  submap=passthrough
-  bind=SUPER,P,submap,reset
-  submap=reset
+  # # Passthrough mode (e.g. for VNC)
+  # bind=SUPER,P,submap,passthrough
+  # submap=passthrough
+  # bind=SUPER,P,submap,reset
+  # submap=reset
   # Startup
   exec-once=waybar
   exec=swaybg -i ${wallpaper} --mode fill
@@ -129,6 +131,8 @@ in
   bind=SUPER,l,movefocus,r
   bind=SUPER,k,movefocus,u
   bind=SUPER,j,movefocus,d
+  bind=SUPER,P, pseudo, # dwindle
+  bind=SUPER, J, togglesplit, # dwindle
   bind=SUPERSHIFT,left,swapwindow,l
   bind=SUPERSHIFT,right,swapwindow,r
   bind=SUPERSHIFT,up,swapwindow,u

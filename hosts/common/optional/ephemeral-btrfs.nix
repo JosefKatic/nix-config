@@ -26,7 +26,7 @@ let
 in
 {
   boot.initrd = {
-    supportedFilesystems = [ "btrfs" ];
+    supportedFilesystems = [ "btrfs" "ntfs" ];
     postDeviceCommands = lib.mkIf (!phase1Systemd) (lib.mkBefore wipeScript);
     systemd.services.restore-root = lib.mkIf phase1Systemd {
       description = "Rollback btrfs rootfs";

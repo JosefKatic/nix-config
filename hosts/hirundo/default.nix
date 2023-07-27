@@ -15,9 +15,10 @@
     ../common/optional/bluetooth.nix
     ../common/optional/flatpak.nix
     ../common/optional/greetd.nix
+    ../common/optional/libvirtd.nix
     ../common/optional/nordvpn.nix
-    ../common/optional/pipewire.nix
     ../common/optional/opengl.nix
+    ../common/optional/pipewire.nix
     ../common/optional/printing.nix
     ../common/optional/quietboot.nix
     ../common/optional/steam-hardware.nix

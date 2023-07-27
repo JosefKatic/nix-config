@@ -6,6 +6,7 @@
 
   imports = [
     inputs.hardware.nixosModules.common-cpu-intel
+    inputs.hardware.nixosModules.common-gpu-intel
     inputs.hardware.nixosModules.common-pc-ssd
     ./hardware-configuration.nix
 
@@ -16,9 +17,10 @@
     ../common/optional/flatpak.nix
     ../common/optional/gamemode.nix
     ../common/optional/greetd.nix
-    ../common/optional/opengl.nix
+    ../common/optional/libvirtd.nix
     ../common/optional/nordvpn.nix
     ../common/optional/nvidia.nix
+    ../common/optional/opengl.nix
     ../common/optional/pipewire.nix
     ../common/optional/printing.nix
     ../common/optional/steam-hardware.nix

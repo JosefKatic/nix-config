@@ -7,7 +7,7 @@
       directories = [
         {
           # Use symlink, as games may be IO-heavy
-          directory = "Games/Lutris";
+          directory = "Games";
           method = "symlink";
         }
         ".config/lutris"
