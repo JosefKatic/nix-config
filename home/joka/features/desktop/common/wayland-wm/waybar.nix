@@ -2,6 +2,7 @@
 
 let
   # Dependencies
+
   jq = "${pkgs.jq}/bin/jq";
   xml = "${pkgs.xmlstarlet}/bin/xml";
   gamemoded = "${pkgs.gamemode}/bin/gamemoded";
@@ -39,21 +40,70 @@ in
   programs.waybar = {
     enable = true;
     settings = {
+      # TODO: Remove this duplicity
+      bottom-main = {
+        mode = "dock";
+        layer = "top";
+        height = 32;
+        margin = "6";
+        position = "bottom";
+        output = builtins.map (m: m.name) (builtins.filter (m: ! m.noBar) config.monitors);
+        modules-left = [
+          "clock"
+        ];
+        modules-center = [
+          "wlr/workspaces"
+        ];
+        modules-right = [
+          "tray"
+        ];
 
-      secondary = {
+        clock = {
+          format = "{:%b %e %R %p}";
+          tooltip-format = ''
+            <big>{:%Y %B}</big>
+            <tt><small>{calendar}</small></tt>'';
+          on-click = calendar;
+        };
+        "wlr/workspaces" = {
+          on-click = "activate";
+          sort-by-number = true;
+          persistent_workspaces = {
+            "1" = ["eDP-1" "DP-1"];
+            "2" = ["eDP-1" "DP-1"];
+            "3" = ["eDP-1" "DP-1"];
+            "4" = ["eDP-1" "DP-1"];
+            "5" = ["eDP-1" "DP-1"];
+            "6" = ["eDP-1" "DP-1"];
+            "7" = ["eDP-1" "DP-1"];
+            "8" = ["eDP-1" "DP-1"];
+            "9" = ["eDP-1" "DP-1"];
+            "10" = ["eDP-1" "DP-1"];
+
+            "11" = ["DP-2" "HDMI-A-1"];
+            "12" = ["DP-2" "HDMI-A-1"];
+            "13" = ["DP-2" "HDMI-A-1"];
+            "14" = ["DP-2" "HDMI-A-1"];
+            "15" = ["DP-2" "HDMI-A-1"];
+            "16" = ["DP-2" "HDMI-A-1"];
+            "17" = ["DP-2" "HDMI-A-1"];
+            "18" = ["DP-2" "HDMI-A-1"];
+            "19" = ["DP-2" "HDMI-A-1"];
+            "20" = ["DP-2" "HDMI-A-1"];
+          };
+        };
+      };
+      bottom = {
         mode = "dock";
         layer = "top";
         height = 32;
         width = 100;
         margin = "6";
         position = "bottom";
-        modules-center = (lib.optionals config.wayland.windowManager.sway.enable [
-          "sway/workspaces"
-          "sway/mode"
-        ]) ++ (lib.optionals config.wayland.windowManager.hyprland.enable [
+        output = builtins.map (m: m.name) (builtins.filter (m: m.noBar) config.monitors);
+        modules-center = [
           "wlr/workspaces"
-        ]);
-
+        ];
         "wlr/workspaces" = {
           on-click = "activate";
           sort-by-number = true;
@@ -99,28 +149,19 @@ in
           "cpu"
           "custom/gpu"
           "memory"
-          "clock"
-          "pulseaudio"
           "custom/gammastep"
         ];
         modules-right = [
           "custom/gamemode"
+          "pulseaudio"
           "network"
           "custom/tailscale-ping"
           "battery"
-          "tray"
           "custom/hostname"
         ];
-
-        clock = {
-          format = "{:%d/%m %H:%M}";
-          tooltip-format = ''
-            <big>{:%Y %B}</big>
-            <tt><small>{calendar}</small></tt>'';
-          on-click = calendar;
-        };
         cpu = {
-          format = "󰍛  {usage}%";
+          format = "   {usage}%";
+          icon = "";
           on-click = systemMonitor;
         };
         "custom/gpu" = {
@@ -328,23 +369,27 @@ in
       window#waybar.top {
         opacity: 0.95;
         padding: 0;
-        background-color: #${colors.base00};
+        background: transparent;
         border: 2px solid #${colors.base0B};
         border-radius: 10px;
       }
       window#waybar.bottom {
-        opacity: 0.90;
-        background-color: #${colors.base00};
-        border: 2px solid #${colors.base0B};
-        border-radius: 10px;
+        background: transparent;
       }
 
       window#waybar {
+        background: transparent;
         color: #${colors.base05};
       }
 
+      #workspaces {
+        opacity: 0.90;
+        border: 2px solid #${colors.base0B};
+        border-radius: 10px;
+        background: transparent;
+      }
+
       #workspaces button {
-        background-color: #${colors.base01};
         color: #${colors.base05};
         margin: 4px;
       }
@@ -359,8 +404,6 @@ in
       }
 
       #clock {
-        background-color: #${colors.base0B};
-        color: #${colors.base00};
         padding-left: 15px;
         padding-right: 15px;
         margin-top: 0;

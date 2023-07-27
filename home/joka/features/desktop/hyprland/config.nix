@@ -7,10 +7,10 @@ in
     gaps_in=15
     gaps_out=20
     border_size=2.7
-    col.active_border=0xff${colorscheme.colors.base0C}
-    col.inactive_border=0xff${colorscheme.colors.base02}
+    col.active_border=0xff${colorscheme.colors.base0B}
+    col.inactive_border=0xff${colorscheme.colors.base00}
     col.group_border_active=0xff${colorscheme.colors.base0B}
-    col.group_border=0xff${colorscheme.colors.base04}
+    col.group_border=0xff${colorscheme.colors.base02}
   }
   decoration {
     active_opacity=0.94
@@ -186,5 +186,4 @@ in
   bind=SUPERSHIFT,8,exec,hyprctl dispatch exec hyprsome movefocus 8
   bind=SUPERSHIFT,9,exec,hyprctl dispatch exec hyprsome movefocus 9
   bind=SUPERSHIFT,0,exec,hyprctl dispatch exec hyprsome movefocus 10
-  blurls=waybar
 ''

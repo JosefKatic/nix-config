@@ -12,16 +12,23 @@
 
   boot.initrd.availableKernelModules = [ "nvme" "ehci_pci" "xhci_pci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.kernelModules = [ "kvm-amd" ];
+  boot.resumeDevice = "/dev/disk/by-label/system";
+  boot.kernelParams = [ "resume_offset=23078144" ];
 
   fileSystems."/efi" = {
       device = "/dev/disk/by-label/EFI";
       fsType = "vfat";
     };
 
-  swapDevices = [ { 
+  swapDevices = [ 
+    { 
     device = "/swap/swapfile"; 
     size = (1024 * 16) + (1024 * 2); 
-  } ];
+    } 
+  ];
+
+
+
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction

@@ -7,11 +7,13 @@
   imports = [
     ../common/optional/ephemeral-btrfs.nix
     ../common/optional/encrypted-root.nix
+    ../common/optional/swap-file.nix
   ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "sr_mod" ];
   boot.kernelModules = ["kvm-intel"];
-
+  boot.resumeDevice = "/dev/disk/by-label/system";
+  boot.kernelParams = [ "resume_offset=23078144" ];
 
   fileSystems."/efi" = {
     device = "/dev/disk/by-label/EFI";
@@ -19,8 +21,8 @@
   };
 
   swapDevices = [ { 
-    device = "/.swap/swapfile"; 
-    size = 34816; 
+    device = "/swap/swapfile"; 
+    size = (1024 * 32) + (1024 * 2); 
   } ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

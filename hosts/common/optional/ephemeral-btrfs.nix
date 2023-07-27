@@ -70,10 +70,10 @@ in
       neededForBoot = true;
     };
     
-  "/.swap" = {
+  "/swap" = {
       device = "/dev/disk/by-label/system";
       fsType = "btrfs";
-      options = [ "subvol=@swap" "nodatacow" "noatime" ];
+      options = [ "subvol=@swap" "compress=zstd" "noatime" ];
     };
   };
 }

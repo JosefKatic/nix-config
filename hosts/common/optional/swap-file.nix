@@ -1,12 +1,17 @@
 {pkgs, ...}: {
-systemd.services = {
+  systemd.services = {
     create-swapfile = {
       serviceConfig.Type = "oneshot";
       wantedBy = [ "swap-swapfile.swap" ];
       script = ''
-        ${pkgs.coreutils}/bin/truncate -s 0 /swap/swapfile
-        ${pkgs.e2fsprogs}/bin/chattr +C /swap/swapfile
-        ${pkgs.btrfs-progs}/bin/btrfs property set /swap/swapfile compression none
+       swapfile="/swap/swapfile"
+        if [[ -f "$swapfile" ]]; then
+          echo "Swap file $swapfile already exists, taking no action"
+        else
+          echo "Setting up swap file $swapfile"
+          ${pkgs.coreutils}/bin/truncate -s 0 "$swapfile"
+          ${pkgs.e2fsprogs}/bin/chattr +C "$swapfile"
+        fi
       '';
     };
   };

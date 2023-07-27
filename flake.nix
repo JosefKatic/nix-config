@@ -19,7 +19,7 @@
     firefly.url = "github:timhae/firefly";
     nur.url = "github:nix-community/NUR";
     sops-nix.url = "github:mic92/sops-nix";
-    # website.url = "git+ssh://git@github.com:JosefKatic/joka00.dev.git";
+    web.url = "github:JosefKatic/web";
   };
 
   outputs = { self, nixpkgs, home-manager, nur, ... }@inputs:

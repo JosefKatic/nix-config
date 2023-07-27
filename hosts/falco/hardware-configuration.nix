@@ -16,8 +16,8 @@
   };
 
   swapDevices = [{
-    device = "/.swap/swapfile";
-    size = 2048;
+    device = "/swap/swapfile";
+    size = (1024 * 2);
   }];
 
   hardware.cpu.amd.updateMicrocode = true;
