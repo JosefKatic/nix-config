@@ -14,7 +14,8 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.resumeDevice = "/dev/disk/by-label/system";
   boot.kernelParams = [ "resume_offset=23078144" ];
-
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  
   fileSystems."/efi" = {
       device = "/dev/disk/by-label/EFI";
       fsType = "vfat";

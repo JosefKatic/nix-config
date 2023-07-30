@@ -60,7 +60,7 @@ in
     cache-root=/run/cgit
 
     root-title=Git
-    root-desc=This is a cgit mirror for some of my projects. You might want to check them out on github (github.com/joka00) instead.
+    root-desc=This is a cgit mirror for some of my projects. You might want to check them out on github (github.com/JosefKatic) instead.
 
     enable-http-clone=1
     noplainemail=1
