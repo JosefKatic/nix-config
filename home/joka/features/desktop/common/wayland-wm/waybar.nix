@@ -160,7 +160,7 @@ in
           "custom/hostname"
         ];
         cpu = {
-          format = "   {usage}%";
+          format = "󰘚  {usage}%";
           icon = "";
           on-click = systemMonitor;
         };
@@ -175,7 +175,7 @@ in
           on-click = systemMonitor;
         };
         memory = {
-          format = "󰘚  {}%";
+          format = "  {}%";
           interval = 5;
           on-click = systemMonitor;
         };
@@ -227,8 +227,8 @@ in
             let
               inherit (builtins) concatStringsSep attrNames;
               hosts = attrNames outputs.nixosConfigurations;
-              homeMachine = "merope";
-              remoteMachine = "alcyone";
+              homeMachine = "falco";
+              remoteMachine = "regulus";
             in
             jsonOutput "tailscale-ping" {
               # Build variables for each host

@@ -8,7 +8,9 @@
     ./features/music
   ];
 
+
   colorscheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
+
   wallpaper = outputs.wallpapers.astronaut-minimalism;
   # wallpaper = outputs.wallpapers.ringed-planet-cartoon;
 

@@ -13,7 +13,7 @@ in
           override_local_dns = true;
           base_domain = "joka00.dev";
           magic_dns = true;
-          domains = [ "tailscale.joka00.dev" ];
+          domains = [ "tsc.joka00.dev" ];
           nameservers = [
             "9.9.9.9"
           ];
@@ -39,7 +39,7 @@ in
     };
 
     nginx.virtualHosts = {
-      "tsc.joka00.dev" = {
+      "tailscale.joka00.dev" = {
         forceSSL = true;
         enableACME = true;
         locations = {
@@ -51,11 +51,6 @@ in
             proxyPass = "http://${config.services.headscale.settings.metrics_listen_addr}/metrics";
           };
         };
-      };
-      "tailscale.joka00.dev" = {
-        forceSSL = true;
-        enableACME = true;
-        locations."/".return = "302 https://tailscale.joka00.dev$request_uri";
       };
     };
   };

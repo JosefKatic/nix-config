@@ -6,6 +6,8 @@
     hardware.url = "github:nixos/nixos-hardware";
     impermanence.url = "github:nix-community/impermanence";
     nix-colors.url = "github:misterio77/nix-colors";
+    nur.url = "github:nix-community/NUR";
+    nixvim.url = "github:nix-community/nixvim";
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
     hyprland.url = "github:hyprwm/Hyprland/v0.27.2";
@@ -17,12 +19,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     firefly.url = "github:timhae/firefly";
-    nur.url = "github:nix-community/NUR";
     sops-nix.url = "github:mic92/sops-nix";
     web.url = "github:JosefKatic/web";
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nur, nixvim, ... }@inputs:
     let
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib;
@@ -34,7 +35,7 @@
       inherit lib;
       nixosModules = import ./modules/nixos;
       homeManagerModules = import ./modules/home-manager;
-      templates = import ./templates;
+      # templates = import ./templates;
 
       overlays = import ./overlays { inherit inputs outputs; };
       #hydraJobs = import ./hydra.nix { inherit inputs outputs; };
