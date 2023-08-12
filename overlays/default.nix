@@ -40,6 +40,8 @@ in
     # https://gitlab.com/CalcProgrammer1/OpenRGB/-/issues/2918
     openrgb = addPatches prev.openrgb [ ./openrgb-all-devices.diff ];
 
+    xwaylandvideobridge = addPatches prev.xwaylandvideobridge [ ./xwaylandvideobridge.diff ];
+
     xdg-utils-spawn-terminal = addPatches prev.xdg-utils [ ./xdg-open-spawn-terminal.diff ];
 
     pfetch = prev.pfetch.overrideAttrs (oldAttrs: {

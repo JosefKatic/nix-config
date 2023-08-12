@@ -10,7 +10,7 @@
     nixvim.url = "github:nix-community/nixvim";
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
-    hyprland.url = "github:hyprwm/Hyprland/v0.27.2";
+    hyprland.url = "github:hyprwm/Hyprland/v0.28.0";
     hyprsome.url = "github:sopa0/hyprsome";
     hyprpicker.url = "github:hyprwm/hyprpicker";
     hyprwm-contrib.url = "github:hyprwm/contrib";

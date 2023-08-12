@@ -1,7 +1,19 @@
 { outputs, config, lib, pkgs, ... }:
 
 let
-  # Dependencies
+ # Dependencies
+  cat = "${pkgs.coreutils}/bin/cat";
+  cut = "${pkgs.coreutils}/bin/cut";
+  find = "${pkgs.findutils}/bin/find";
+  grep = "${pkgs.gnugrep}/bin/grep";
+  perl = "${pkgs.perl}/bin/perl";
+  pgrep = "${pkgs.procps}/bin/pgrep";
+  sed = "${pkgs.gnused}/bin/sed";
+  tail = "${pkgs.coreutils}/bin/tail";
+  wc = "${pkgs.coreutils}/bin/wc";
+  xargs = "${pkgs.findutils}/bin/xargs";
+  timeout = "${pkgs.coreutils}/bin/timeout";
+  ping = "${pkgs.iputils}/bin/ping";
 
   jq = "${pkgs.jq}/bin/jq";
   xml = "${pkgs.xmlstarlet}/bin/xml";
@@ -12,7 +24,7 @@ let
   playerctld = "${pkgs.playerctl}/bin/playerctld";
   neomutt = "${pkgs.neomutt}/bin/neomutt";
   pavucontrol = "${pkgs.pavucontrol}/bin/pavucontrol";
-  btm = "${pkgs.bottom}/bin/btm";
+  btop = "${pkgs.bottom}/bin/btop";
   wofi = "${pkgs.wofi}/bin/wofi";
   ikhal = "${pkgs.khal}/bin/ikhal";
 
@@ -20,7 +32,7 @@ let
   terminal-spawn = cmd: "${terminal} $SHELL -i -c ${cmd}";
 
   calendar = terminal-spawn ikhal;
-  systemMonitor = terminal-spawn btm;
+  systemMonitor = terminal-spawn btop;
   mail = terminal-spawn neomutt;
 
   # Function to simplify making waybar outputs
@@ -55,6 +67,7 @@ in
           "wlr/workspaces"
         ];
         modules-right = [
+          "idle_inhibitor"
           "tray"
         ];
 
@@ -90,6 +103,13 @@ in
             "18" = ["DP-2" "HDMI-A-1"];
             "19" = ["DP-2" "HDMI-A-1"];
             "20" = ["DP-2" "HDMI-A-1"];
+          };
+        };
+        idle_inhibitor = {
+          format = "{icon}";
+          format-icons = {
+            activated = "󰒳";
+            deactivated = "󰒲";
           };
         };
       };
@@ -150,6 +170,7 @@ in
           "custom/gpu"
           "memory"
           "custom/gammastep"
+          "custom/gpg-agent"
         ];
         modules-right = [
           "custom/gamemode"
@@ -190,13 +211,6 @@ in
           };
           on-click = pavucontrol;
         };
-        idle_inhibitor = {
-          format = "{icon}";
-          format-icons = {
-            activated = "󰒳";
-            deactivated = "󰒲";
-          };
-        };
         battery = {
           bat = "BAT0";
           interval = 10;
@@ -227,15 +241,15 @@ in
             let
               inherit (builtins) concatStringsSep attrNames;
               hosts = attrNames outputs.nixosConfigurations;
-              homeMachine = "falco";
-              remoteMachine = "regulus";
+              homeMachine = "alcedo";
+              remoteMachine = "falco";
             in
             jsonOutput "tailscale-ping" {
               # Build variables for each host
               pre = ''
                 set -o pipefail
                 ${concatStringsSep "\n" (map (host: ''
-                  ping_${host}="$(timeout 2 ping -c 1 -q ${host} 2>/dev/null | tail -1 | cut -d '/' -f5 | cut -d '.' -f1)ms" || ping_${host}="Disconnected"
+                  ping_${host}="$(${timeout} 2 ${ping} -c 1 -q ${host} 2>/dev/null | ${tail} -1 | ${cut} -d '/' -f5 | ${cut} -d '.' -f1)ms" || ping_${host}="Disconnected"
                 '') hosts)}
               '';
               # Access a remote machine's and a home machine's ping
@@ -257,6 +271,24 @@ in
         "custom/hostname" = {
           exec = "echo $USER@$(hostname)";
           on-click = terminal;
+        };
+        "custom/gpg-agent" = {
+          interval = 2;
+          return-type = "json";
+          exec =
+            let gpgCmds = import ../../../cli/gpg-commands.nix { inherit pkgs; };
+            in
+            jsonOutput "gpg-agent" {
+              pre = ''status=$(${gpgCmds.isUnlocked} && echo "unlocked" || echo "locked")'';
+              alt = "$status";
+              tooltip = "GPG is $status";
+            };
+          format = "{icon}";
+          format-icons = {
+            "locked" = "";
+            "unlocked" = "";
+          };
+          on-click = "";
         };
         "custom/gamemode" = {
           exec-if = "${gamemoded} --status | grep 'is active' -q";

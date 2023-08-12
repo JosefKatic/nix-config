@@ -17,16 +17,18 @@ in
     inactive_opacity=0.84
     fullscreen_opacity=1.0
     rounding=5
-    blur=true
-    blur_size=5
-    blur_passes=3
-    blur_new_optimizations=true
-    blur_ignore_opacity=true
     drop_shadow=true
     shadow_range=12
     shadow_offset=3 3
     col.shadow=0x44000000
     col.shadow_inactive=0x66000000
+    blur {
+      enabled=true
+      size=5
+      passes=3
+      new_optimizations=true
+      ignore_opacity=true
+    }
   }
   animations {
     enabled=true
@@ -68,6 +70,7 @@ in
   exec=swaybg -i ${wallpaper} --mode fill
   exec-once=mako
   exec-once=swayidle -w
+  exec-once=xwaylandvideobridge
   # Mouse binding
   bindm=SUPER,mouse:272,movewindow
   bindm=SUPER,mouse:273,resizewindow
@@ -190,4 +193,11 @@ in
   bind=SUPERSHIFT,8,exec,hyprctl dispatch exec hyprsome movefocus 8
   bind=SUPERSHIFT,9,exec,hyprctl dispatch exec hyprsome movefocus 9
   bind=SUPERSHIFT,0,exec,hyprctl dispatch exec hyprsome movefocus 10
+
+  # xwaylandvideobridge
+  windowrule = noblur,^(xwaylandvideobridge)$
+  windowrulev2 = opacity 0.0 override 0.0 override,class:^(xwaylandvideobridge)$
+  windowrulev2 = noanim,class:^(xwaylandvideobridge)$
+  windowrulev2 = nofocus,class:^(xwaylandvideobridge)$
+  windowrulev2 = noinitialfocus,class:^(xwaylandvideobridge)$
 ''

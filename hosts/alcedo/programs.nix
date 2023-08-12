@@ -13,7 +13,6 @@
     ntfs3g
 
         # ...
-
     (wine.override { wineBuild = "wine64"; })
 
     # winetricks (all versions)
@@ -23,5 +22,7 @@
     wineWowPackages.waylandFull
 
     teamspeak_client
+
+    xwaylandvideobridge
   ];
 }

@@ -12,6 +12,7 @@
     ./pavucontrol.nix
     ./qt.nix
     ./vscode.nix
+    ./youtube-music.nix
   ];
 
   xdg.mimeApps.enable = true;
