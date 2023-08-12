@@ -1,19 +1,37 @@
-{ lib, ... }: {
+{
   imports = [
     ../common/optional/ephemeral-btrfs.nix
   ];
 
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-label/system";
-    fsType = "btrfs";
-    options = [ "subvol=@boot" ];
+  boot = {
+    initrd = {
+      availableKernelModules = [ "xhci_pci" ];
+    };
+    loader.timeout = 5;
+  };
+
+  fileSystems = {
+    "/boot" = {
+      device = "/dev/disk/by-label/BOOT";
+      fsType = "ext4";
+      neededForBoot = true;
+    };
+
+    "/firmware" = {
+      device = "/dev/disk/by-label/FIRMWARE";
+      fsType = "vfat";
+    };
   };
 
   swapDevices = [{
     device = "/swap/swapfile";
-    size = (1024 * 8);
+    size = 8196;
   }];
 
-  nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
+  hardware.raspberry-pi."4".i2c1.enable = true;
+
+  nixpkgs.hostPlatform.system = "aarch64-linux";
+
+  powerManagement.cpuFreqGovernor = "ondemand";
 }
