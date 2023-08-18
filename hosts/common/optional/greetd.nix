@@ -1,27 +1,46 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 let
-  user = "joka";
-  greetd = "${pkgs.greetd.greetd}/bin/greetd";
-  gtkgreet = "${pkgs.greetd.gtkgreet}/bin/gtkgreet";
+  homeCfgs = config.home-manager.users;
+  homePaths = lib.mapAttrsToList (n: v: "${v.home.path}/share") homeCfgs;
+  extraDataPaths = lib.concatStringsSep ":" homePaths;
+  vars = ''XDG_DATA_DIRS="$XDG_DATA_DIRS:${extraDataPaths}"'';
 
   sway-kiosk = command: "${pkgs.sway}/bin/sway --unsupported-gpu --config ${pkgs.writeText "kiosk.config" ''
     output * bg #000000 solid_color
-    exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-    exec "${command}; ${pkgs.sway}/bin/swaymsg exit"
+    exec "dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK"
+    xwayland disable
+    input "type:touchpad" {
+      tap enabled
+    }
+    exec '${vars} ${command} -l debug; ${pkgs.sway}/bin/swaymsg exit'
   ''}";
+
+  jokaCfg = homeCfgs.joka;
 in
 {
-  services.greetd = {
+  users.extraUsers.greeter.packages = [
+    jokaCfg.gtk.theme.package
+    jokaCfg.gtk.iconTheme.package
+  ];
+
+  programs.regreet = {
     enable = true;
     settings = {
-      default_session = {
-        command = sway-kiosk "${gtkgreet} -l -c '$SHELL -l'";
-        inherit user;
+      GTK = {
+        icon_theme_name = "ePapirus";
+        theme_name = jokaCfg.gtk.theme.name;
       };
-      initial_session = {
-        command = "$SHELL -l";
-        inherit user;
+      background = {
+        path = jokaCfg.wallpaper;
+        fit = "Cover";
       };
     };
+  };
+  environment.sessionVariables = rec {
+	WLR_NO_HARDWARE_CURSORS = "1";
+  };
+  services.greetd = {
+    enable = true;
+    settings.default_session.command = sway-kiosk (lib.getExe config.programs.regreet.package);
   };
 }

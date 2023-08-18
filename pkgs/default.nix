@@ -13,6 +13,7 @@
   nordvpn = pkgs.callPackage ./nordvpn { };
   pass-wofi = pkgs.callPackage ./pass-wofi { };
   primary-xwayland = pkgs.callPackage ./primary-xwayland { };
+  tly = pkgs.callPackage ./tly { };
   wl-mirror-pick = pkgs.callPackage ./wl-mirror-pick { };
   xpo = pkgs.callPackage ./xpo { };
   hyprslurp = pkgs.callPackage ./hyprslurp { };

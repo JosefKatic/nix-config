@@ -1,7 +1,7 @@
 { outputs, config, lib, pkgs, ... }:
 
 let
- # Dependencies
+  # Dependencies
   cat = "${pkgs.coreutils}/bin/cat";
   cut = "${pkgs.coreutils}/bin/cut";
   find = "${pkgs.findutils}/bin/find";
@@ -51,10 +51,13 @@ in
 {
   programs.waybar = {
     enable = true;
+    package = pkgs.waybar.overrideAttrs (oa: {
+      mesonFlags = (oa.mesonFlags or  [ ]) ++ [ "-Dexperimental=true" ];
+    });
+    systemd.enable = true;
     settings = {
       # TODO: Remove this duplicity
       bottom-main = {
-        mode = "dock";
         layer = "top";
         height = 32;
         margin = "6";
@@ -114,7 +117,6 @@ in
         };
       };
       bottom = {
-        mode = "dock";
         layer = "top";
         height = 32;
         width = 100;
@@ -154,7 +156,6 @@ in
       };
 
       primary = {
-        mode = "dock";
         layer = "top";
         height = 40;
         margin = "6";
@@ -183,22 +184,19 @@ in
         cpu = {
           format = "󰘚  {usage}%";
           icon = "";
-          on-click = systemMonitor;
         };
         "custom/gpu" = {
           interval = 5;
           return-type = "json";
           exec = jsonOutput "gpu" {
-            text = "$(cat /sys/class/drm/card0/device/gpu_busy_percent)";
+            text = "$(${cat} /sys/class/drm/card0/device/gpu_busy_percent)";
             tooltip = "GPU Usage";
           };
           format = "󰢮  {}%";
-          on-click = systemMonitor;
         };
         memory = {
           format = "  {}%";
           interval = 5;
-          on-click = systemMonitor;
         };
         pulseaudio = {
           format = "{icon}  {volume}%";
@@ -264,12 +262,12 @@ in
           return-type = "json";
           exec = jsonOutput "menu" {
             text = "";
-            tooltip = ''$(cat /etc/os-release | grep PRETTY_NAME | cut -d '"' -f2)'';
+            tooltip = ''$(${cat} /etc/os-release | ${grep} PRETTY_NAME | ${cut} -d '"' -f2)'';
           };
           on-click = "${wofi} -S drun -x 10 -y 10 -W 25% -H 60%";
         };
         "custom/hostname" = {
-          exec = "echo $USER@$(hostname)";
+          exec = "echo $USER@$HOSTNAME";
           on-click = terminal;
         };
         "custom/gpg-agent" = {
@@ -291,7 +289,7 @@ in
           on-click = "";
         };
         "custom/gamemode" = {
-          exec-if = "${gamemoded} --status | grep 'is active' -q";
+          exec-if = "${gamemoded} --status | ${grep} 'is active' -q";
           interval = 2;
           return-type = "json";
           exec = jsonOutput "gamemode" {
@@ -305,7 +303,7 @@ in
           exec = jsonOutput "gammastep" {
             pre = ''
               if unit_status="$(${systemctl} --user is-active gammastep)"; then
-                status="$unit_status ($(${journalctl} --user -u gammastep.service -g 'Period: ' | tail -1 | cut -d ':' -f6 | xargs))"
+                status="$unit_status ($(${journalctl} --user -u gammastep.service -g 'Period: ' | ${tail} -1 | ${cut} -d ':' -f6 | ${xargs}))"
               else
                 status="$unit_status"
               fi
@@ -334,8 +332,8 @@ in
           return-type = "json";
           exec = jsonOutput "currentplayer" {
             pre = ''
-              player="$(${playerctl} status -f "{{playerName}}" 2>/dev/null || echo "No player active" | cut -d '.' -f1)"
-              count="$(${playerctl} -l | wc -l)"
+              player="$(${playerctl} status -f "{{playerName}}" 2>/dev/null || echo "No player active" | ${cut} -d '.' -f1)"
+              count="$(${playerctl} -l | ${wc} -l)"
               if ((count > 1)); then
                 more=" +$((count - 1))"
               else
