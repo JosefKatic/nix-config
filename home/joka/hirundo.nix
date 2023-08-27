@@ -23,6 +23,7 @@
       width = 1920;
       height = 1080;
       x = 0;
+      primary = true;
     }
   ];
   workspaces = [

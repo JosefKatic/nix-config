@@ -28,6 +28,7 @@
       width = 2560;
       height = 1440;
       x = 2560;
+      primary = true;
     }
     {
       name = "DP-2";
