@@ -15,7 +15,7 @@ in
         }];
       };
       trusted = lib.hm.dag.entryBefore [ "net" ] {
-        host = "joka00.dev *.joka00.dev";
+        host = "joka00.dev *.joka00.dev *.ts.joka00.dev";
         forwardAgent = true;
       };
     };

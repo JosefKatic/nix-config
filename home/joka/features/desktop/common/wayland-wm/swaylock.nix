@@ -7,9 +7,7 @@ in
     enable = true;
     package = pkgs.swaylock-effects;
     settings = {
-      screenshots = true;
-      clock = true;
-      effect-blur = "9x5";
+      effect-blur = "20x3";
       fade-in = 0.1;
 
       font = config.fontProfiles.regular.family;

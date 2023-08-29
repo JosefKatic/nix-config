@@ -17,7 +17,7 @@
 
   swapDevices = [{
     device = "/swap/swapfile";
-    size = (1024 * 2);
+    size = (1024 * 4);
   }];
 
   hardware.cpu.amd.updateMicrocode = true;

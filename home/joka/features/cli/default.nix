@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }: {
   imports = [
     ./bash.nix
     ./bat.nix
@@ -7,6 +7,7 @@
     ./gh.nix
     ./git.nix
     ./gpg.nix
+    ./jujutsu.nix
     ./nix-index.nix
     ./pfetch.nix
     ./ranger.nix
@@ -14,6 +15,7 @@
     ./shellcolor.nix
     ./ssh.nix
     ./starship.nix
+    ./xpo.nix
   ];
   home.packages = with pkgs; [
     comma # Install and run programs by sticking a , before them
@@ -30,10 +32,16 @@
     diffsitter # Better diff
     jq # JSON pretty printer and manipulator
     trekscii # Cute startrek cli printer
+    timer # To help with my ADHD paralysis
 
     nil # Nix LSP
     nixfmt # Nix formatter
+    nix-inspect # See which pkgs are in your PATH
 
     ltex-ls # Spell checking LSP
+
+    tly # Tally counter
+
+    inputs.nh.packages.${pkgs.system}.default # nixos-rebuild and home-manager CLI wrapper
   ];
 }
