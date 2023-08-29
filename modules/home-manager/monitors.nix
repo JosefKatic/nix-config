@@ -5,12 +5,16 @@ let
   cfg = config.monitors;
 in
 {
-  options.monitors = mkOption {
+   options.monitors = mkOption {
     type = types.listOf (types.submodule {
       options = {
         name = mkOption {
           type = types.str;
           example = "DP-1";
+        };
+        primary = mkOption {
+          type = types.bool;
+          default = false;
         };
         noBar = mkOption {
           type = types.bool;
@@ -28,11 +32,6 @@ in
           type = types.int;
           default = 60;
         };
-        primary = mkOption {
-          type = types.bool;
-          default = false;
-        
-        };
         x = mkOption {
           type = types.int;
           default = 0;
@@ -47,11 +46,13 @@ in
         };
       };
     });
+    default = [ ];
   };
-  config = {
+   config = {
     assertions = [{
-	assertion = (lib.length (lib.filter (m: m.primary) config.monitors)) == 1;
-	message = "Exactly one monitor must be set to primary";
+      assertion = ((lib.length config.monitors) != 0) ->
+        ((lib.length (lib.filter (m: m.primary) config.monitors)) == 1);
+      message = "Exactly one monitor must be set to primary.";
     }];
   };
   options.workspaces = mkOption {

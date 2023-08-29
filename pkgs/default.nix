@@ -9,6 +9,7 @@
   qt6gtk2 = pkgs.qt6Packages.callPackage ./qt6gtk2 { };
 
   # Personal scripts
+  nix-inspect = pkgs.callPackage ./nix-inspect { };
   minicava = pkgs.callPackage ./minicava { };
   nordvpn = pkgs.callPackage ./nordvpn { };
   pass-wofi = pkgs.callPackage ./pass-wofi { };

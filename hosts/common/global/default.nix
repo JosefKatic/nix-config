@@ -3,7 +3,7 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     ./acme.nix
-    # ./auto-upgrade.nix
+    ./auto-upgrade.nix
     ./fish.nix
     ./fonts.nix
     ./locale.nix
@@ -24,10 +24,17 @@
     };
   };
 
+  # Fix for qt6 plugins
+  # TODO: maybe upstream this?
+  environment.profileRelativeSessionVariables = {
+    QT_PLUGIN_PATH = [ "/lib/qt-6/plugins" ];
+  };
+
   environment.enableAllTerminfo = true;
 
   hardware.enableRedistributableFirmware = true;
-  
+  networking.domain = "joka00.dev";
+
   # Increase open file limit for sudoers
   security.pam.loginLimits = [
     {
