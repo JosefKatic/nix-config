@@ -10,6 +10,7 @@
     ./nautilus.nix
     ./obs.nix
     ./pavucontrol.nix
+    ./playerctl.nix
     ./qt.nix
     ./vscode.nix
     ./youtube-music.nix

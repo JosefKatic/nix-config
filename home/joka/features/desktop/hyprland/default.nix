@@ -149,9 +149,13 @@
       ]) ++
       # Screen lock
       (lib.optionals config.programs.swaylock.enable [
-        ",XF86Launch5,exec,${swaylock} -S"
-        ",XF86Launch4,exec,${swaylock} -S"
-        "SUPER,backspace,exec,${swaylock} -S"
+        ",XF86Launch5,exec,${swaylock} -i ${config.wallpaper}"
+        ",XF86Launch4,exec,${swaylock} -i ${config.wallpaper}"
+        "SUPER,backspace,exec,${swaylock} -i ${config.wallpaper}"
+      ]) ++
+      # Waybar
+      (lib.optionals config.programs.waybar.enable [
+        "SUPERALT,w,exec,pkill -USR1 waybar"
       ]) ++
       # Notification manager
       (lib.optionals config.services.mako.enable [
