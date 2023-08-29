@@ -1,4 +1,4 @@
-{ modulesPath, ... }:
+{ modulesPath, lib, ... }:
 {
   imports = [
     ../common/optional/ephemeral-btrfs.nix
@@ -7,10 +7,17 @@
 
   boot = {
     initrd = {
-      availableKernelModules = [ "xhci_pci" "virtio_pci" "usbhid" ];
+      availableKernelModules = [ "ata_piix" "uhci_hcd" "virtio_pci" "sr_mod" "virtio_blk" ];
     };
+    kernelModules = [ "kvm-amd" ];
     # Enable nested virtualization
     extraModprobeConfig = "options kvm nested=1";
+  };
+
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-label/system";
+    fsType = "btrfs";
+    options = [ "subvol=@boot" ];
   };
 
   swapDevices = [{
@@ -18,5 +25,8 @@
     size = 8196;
   }];
 
-  nixpkgs.hostPlatform.system = "x86_64-linux";
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  hardware.cpu.amd.updateMicrocode = true;
+  virtualisation.hypervGuest.enable = true;
+  systemd.services.hv-kvp.unitConfig.ConditionPathExists = [ "/dev/vmbus/hv_kvp" ];
 }
