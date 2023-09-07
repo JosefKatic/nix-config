@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> { } }: rec {
+{ pkgs ? import <nixpkgs> { config.allowUnfree = true; } }: rec {
 
   # Packages with an actual source
   # lando = pkgs.callPackage ./lando { };
