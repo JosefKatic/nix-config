@@ -5,12 +5,6 @@
 let
   pname = "nordvpn";
   version = "3.16.5";
-  LuisChDev = {
-    name = "Luis Chavarriaga";
-    email = "luischa123@gmail.com";
-    github = "LuisChDev";
-    githubId = 24978009;
-  };
   buildEnv = if builtins.typeOf buildFHSEnvChroot == "set" then
     buildFHSEnvChroot
   else
@@ -87,7 +81,7 @@ in stdenv.mkDerivation {
   meta = with lib; {
     description = "CLI client for NordVPN";
     homepage = "https://www.nordvpn.com";
-    license = licenses.unfree;
+    license = licenses.gpl3Only;
     maintainers = with maintainers; [ ];
     platforms = [ "x86_64-linux" ];
   };
