@@ -14,7 +14,7 @@
     ./qt.nix
     ./vscode.nix
     ./youtube-music.nix
-  ];
+  ] ;
 
   xdg.mimeApps.enable = true;
   home.packages = with pkgs; [

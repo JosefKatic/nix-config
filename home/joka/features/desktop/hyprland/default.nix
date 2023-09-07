@@ -13,7 +13,6 @@
     inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
     hyprslurp
     inputs.hyprsome.packages.${pkgs.system}.default
-    hyprslurp
   ];
 
   wayland.windowManager.hyprland = {
@@ -149,8 +148,6 @@
       ]) ++
       # Screen lock
       (lib.optionals config.programs.swaylock.enable [
-        ",XF86Launch5,exec,${swaylock} -i ${config.wallpaper}"
-        ",XF86Launch4,exec,${swaylock} -i ${config.wallpaper}"
         "SUPER,backspace,exec,${swaylock} -i ${config.wallpaper}"
       ]) ++
       # Waybar

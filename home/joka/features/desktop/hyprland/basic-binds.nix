@@ -52,6 +52,7 @@ in {
       "SUPERSHIFT,2,exec,hyprctl dispatch exec hyprsome movefocus 2"
       "SUPERSHIFT,3,exec,hyprctl dispatch exec hyprsome movefocus 3"
       "SUPERSHIFT,4,exec,hyprctl dispatch exec hyprsome movefocus 4"
+      "SUPERSHIFT,5,exec,hyprctl dispatch exec hyprsome movefocus 5"
       "SUPERSHIFT,6,exec,hyprctl dispatch exec hyprsome movefocus 6"
       "SUPERSHIFT,7,exec,hyprctl dispatch exec hyprsome movefocus 7"
       "SUPERSHIFT,8,exec,hyprctl dispatch exec hyprsome movefocus 8"

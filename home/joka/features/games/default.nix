@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   imports = [
+    ./lunar.nix
     ./lutris.nix
     ./steam.nix
     ./prism-launcher.nix

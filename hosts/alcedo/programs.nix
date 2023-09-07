@@ -21,8 +21,6 @@
     # native wayland support (unstable)
     wineWowPackages.waylandFull
 
-    teamspeak_client
-
     xwaylandvideobridge
   ];
 }

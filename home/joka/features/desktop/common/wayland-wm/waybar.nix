@@ -67,7 +67,7 @@ in
           "clock"
         ];
         modules-center = [
-          "wlr/workspaces"
+          "hyprland/workspaces"
         ];
         modules-right = [
           "idle_inhibitor"
@@ -81,7 +81,7 @@ in
             <tt><small>{calendar}</small></tt>'';
           on-click = calendar;
         };
-        "wlr/workspaces" = {
+        "hyprland/workspaces" = {
           on-click = "activate";
           sort-by-number = true;
           persistent_workspaces = {

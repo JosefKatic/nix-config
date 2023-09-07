@@ -32,6 +32,8 @@
   ];
 
   system.stateVersion = "23.05"; # Did you read the comment?
-
+  nix.extraOptions = ''
+    extra-platforms = aarch64-linux
+  '';
 }
 

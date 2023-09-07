@@ -6,21 +6,23 @@
 
     ../common/global
     ../common/users/joka
+
+    ../common/optional/bluetooth.nix
+    ../common/optional/flatpak.nix
+    ../common/optional/greetd.nix
+    # ../common/optional/nordvpn.nix
+    ../common/optional/opengl.nix
+    ../common/optional/pipewire.nix
+    ../common/optional/quietboot.nix
+    ../common/optional/xdg-portal.nix
+    ../common/optional/wireless.nix
+    ../common/optional/yubikey.nix
   ];
 
   # Static IP address
   networking = {
     hostName = "regulus";
     useDHCP = true;
-    interfaces.eth0 = {
-      useDHCP = true;
-      wakeOnLan.enable = true;
-
-      ipv4.addresses = [{
-        address = "10.34.70.20";
-        prefixLength = 24;
-      }];
-    };
   };
 
   # Enable argonone fan daemon
@@ -34,29 +36,3 @@
 
   system.stateVersion = "23.05";
 }
-
-
-# { pkgs, ... }: {
-
-#   imports = [
-#     ./hardware-configuration.nix
-
-#     ../common/global
-#     ../common/users/joka
-#   ];
-
-
-#   boot = {
-#     initrd.systemd.enable = true;
-#     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-#     bootspec.enable = true;
-#     loader.grub = {
-#         enable = true;
-#         device = "/dev/by-label/system";
-#     };
-#   };
-
-#   networking = {
-#     hostname = "regulus";
-#   };
-# }

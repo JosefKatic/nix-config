@@ -2,6 +2,7 @@
   imports = [
     ./global
     ./features/desktop/hyprland
+    ./features/desktop/wireless
     ./features/productivity
     ./features/pass
     ./features/games
@@ -23,7 +24,16 @@
       width = 1920;
       height = 1080;
       x = 0;
+      y = 1080;
       primary = true;
+    }
+    {
+      name = "HDMI-A-1";
+      width = 1920;
+      height = 1080;
+      x = 0;
+      y = 0;
+      noBar = true;
     }
   ];
   workspaces = [
@@ -67,6 +77,47 @@
     {
       id = 10;
       monitor = "eDP-1";
+    }
+    {
+      id = 11;
+      monitor = "HDMI-A-1";
+      default = true;
+    }
+    {
+      id = 12;
+      monitor = "HDMI-A-1";
+    }
+    {
+      id = 13;
+      monitor = "HDMI-A-1";
+    }
+    {
+      id = 14;
+      monitor = "HDMI-A-1";
+    }
+    {
+      id = 15;
+      monitor = "HDMI-A-1";
+    }
+    {
+      id = 16;
+      monitor = "HDMI-A-1";
+    }
+    {
+      id = 17;
+      monitor = "HDMI-A-1";
+    }
+    {
+      id = 18;
+      monitor = "HDMI-A-1";
+    }
+    {
+      id = 19;
+      monitor = "HDMI-A-1";
+    }
+    {
+      id = 20;
+      monitor = "HDMI-A-1";
     }
   ];
 }

@@ -70,6 +70,10 @@
           specialArgs = { inherit inputs outputs; };
           modules = [ ./hosts/falco ];
         };
+        regulus = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/regulus ];
+        };
         strix = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [ ./hosts/strix ];
@@ -92,6 +96,11 @@
         "joka@falco" = lib.homeManagerConfiguration {
           modules = [ ./home/joka/falco.nix ];
           pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+        };
+        "joka@regulus" = lib.homeManagerConfiguration {
+          modules = [ ./home/joka/regulus.nix ];
+          pkgs = pkgsFor.aarch64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
         };
         "joka@strix" = lib.homeManagerConfiguration {

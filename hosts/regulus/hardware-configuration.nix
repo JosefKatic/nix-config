@@ -3,18 +3,49 @@
     ../common/optional/ephemeral-btrfs.nix
   ];
 
+  nixpkgs.overlays = let
+    ubootWithBtrfsAndZstd = oldAttrs: {
+      extraConfig = ''
+        CONFIG_CMD_BTRFS=y
+        CONFIG_ZSTD=y
 
-  boot = {
-    initrd = {
-      availableKernelModules = [ "xhci_pci" ];
+        CONFIG_BOOTCOMMAND="setenv boot_prefixes / /boot/ /@root/ /@boot/; run distro_bootcmd;"
+      '';
     };
-    loader.timeout = 5;
+  in [
+    (self: super: {
+      ubootRaspberryPi3_64bit = super.ubootRaspberryPi3_64bit.overrideAttrs ubootWithBtrfsAndZstd;
+      ubootRaspberryPi4_64bit = super.ubootRaspberryPi4_64bit.overrideAttrs ubootWithBtrfsAndZstd;
+    })
+  ];
+  boot = {
+    kernelParams = [
+      "console=ttyS0,115200n8"
+      "console=ttyAMA0,115200n8"
+      "console=tty0"
+      "root=LABEL=system"
+      "rootfstype=btrfs"
+      "rootflags=subvol=@root"
+      "rootwait"
+    ];
+    initrd = {
+      kernelModules = ["zstd" "btrfs"];
+      availableKernelModules = [ "xhci_pci" "hid_cherry"];
+    };
+    loader = {
+      grub.enable = false;
+      generic-extlinux-compatible = {
+        enable = true;
+        configurationLimit = 20;
+      };
+    };
   };
 
   fileSystems = {
     "/boot" = {
-      device = "/dev/disk/by-label/BOOT";
-      fsType = "ext4";
+      device = "/dev/disk/by-label/system";
+      fsType = "btrfs";
+      options = [ "subvol=@boot" ];
       neededForBoot = true;
     };
 
