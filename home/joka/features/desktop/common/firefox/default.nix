@@ -90,10 +90,6 @@
   };
   home = {
     sessionVariables.BROWSER = "firefox";
-    persistence = {
-      # Not persisting is safer
-      # "/persist/home/misterio".directories = [ ".mozilla/firefox" ];
-    };
   };
   xdg.mimeApps.defaultApplications = {
     "text/html" = [ "firefox.desktop" ];
