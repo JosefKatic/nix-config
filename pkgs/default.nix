@@ -4,7 +4,6 @@
   # lando = pkgs.callPackage ./lando { };
   shellcolord = pkgs.callPackage ./shellcolord { };
   speedtestpp = pkgs.callPackage ./speedtestpp { };
-  sitespeedio = pkgs.callPackage ./sitespeedio { };
   trekscii = pkgs.callPackage ./trekscii { };
   qt6gtk2 = pkgs.qt6Packages.callPackage ./qt6gtk2 { };
 
