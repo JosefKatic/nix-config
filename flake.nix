@@ -16,6 +16,12 @@
       url = "github:viperml/nh";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos-mailserver = {
+      url = "gitlab:simple-nixos-mailserver/nixos-mailserver";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-22_11.follows = "nixpkgs";
+      inputs.nixpkgs-23_05.follows = "nixpkgs";
+    };
     nixvim.url = "github:nix-community/nixvim";
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
@@ -28,7 +34,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     firefly.url = "github:timhae/firefly";
-    sops-nix.url = "github:mic92/sops-nix";
+    sops-nix = {
+      url = "github:mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-stable.follows = "nixpkgs";
+    };
     web.url = "github:JosefKatic/web";
   };
 
