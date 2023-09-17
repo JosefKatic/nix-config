@@ -12,6 +12,7 @@
     ./pavucontrol.nix
     ./playerctl.nix
     ./qt.nix
+    ./teamspeak.nix
     ./vscode.nix
     ./youtube-music.nix
   ] ;

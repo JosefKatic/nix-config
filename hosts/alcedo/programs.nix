@@ -2,6 +2,7 @@
 
   programs = {
     dconf.enable = true;
+    kdeconnect.enable = true;
   };
 
   environment.systemPackages = with pkgs; [

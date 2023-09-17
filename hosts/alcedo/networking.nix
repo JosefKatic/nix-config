@@ -1,9 +1,8 @@
 {
    networking = {
     hostName = "alcedo";
-    # firewall = {
-    #   enable = true;
-    #   checkReversePath = "loose";
-    # };
+    firewall = {
+      enable = true;
+    };
   };
 }
