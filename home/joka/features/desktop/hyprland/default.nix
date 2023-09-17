@@ -5,6 +5,7 @@
 
     ./tty-init.nix
     ./basic-binds.nix
+    ./hyprpaper.nix
     ./systemd-fixes.nix
   ];
 
@@ -81,8 +82,8 @@
         ];
       };
 
-      exec = [
-        "${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper} --mode fill"
+      exec-once = [
+        "${pkgs.hyprpaper}"
       ];
 
       bind = let

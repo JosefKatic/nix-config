@@ -5,7 +5,8 @@ let
   vncsh = pkgs.writeShellScriptBin "vnc.sh" ''
     ssh $1 bash <<'EOF'
         pgrep "wayvnc" && exit
-        export HYPRLAND_INSTANCE_SIGNATURE="$(ls /tmp/hypr/ -lt | grep '^d' | head -2 | tail -1 | rev | cut -d ' ' -f1 | rev)"
+        pid=$(pidof Hyprland)
+        export HYPRLAND_INSTANCE_SIGNATURE="$(grep -l $pid /tmp/hypr/*.lock | sed 's/.*\///;s/\..*$//')"
         export WAYLAND_DISPLAY="wayland-1"
         ip="$(ip addr show dev tailscale0 | grep 'inet ' | xargs | cut -d ' ' -f2 | cut -d '/' -f1)"
         xpos="$(hyprctl monitors -j | jq -r 'sort_by(.x)[-1] | .x + .width')"
