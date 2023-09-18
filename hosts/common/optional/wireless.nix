@@ -32,7 +32,7 @@
           auth_alg=OPEN
           eap=TTLS
           identity="@eduroam_login@"
-          password="@eduroam_psk@"
+          password="@eduroam_password@"
           phase2="auth=MSCHAPV2"
         '';
       };

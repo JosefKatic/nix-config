@@ -5,6 +5,7 @@
     ../../common/optional/postgres.nix
 
     ./binary-cache.nix
+    ./teamspeak.nix
 
     ./hydra
     # ./minecraft

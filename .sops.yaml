@@ -7,7 +7,7 @@ keys:
     - &alcedo age1frx3zkwt6qmnnwq5tz2mvylf7ry7ft4vzahs4ajlzcxx3l45950qc0k40x
     - &hirundo age1uhqk26zf6qn35y745lgqy296nlapdjz2hyazdy2a5yg6mw4303dss96629
     - &falco age1uwlzhmu3pw3rzpjtj5gu07qxge9tvr5vsq4995xxy7d4mtw7cugsh7d709
-    - &regulus age1my90un62gdzjmld5xm05xhy002nz5sedd0fwypdxck9ynttqrdtszqmshn
+    - &regulus age16gjj9yknddze5jkpk34ffdskysrm2gzdqt34ct0vzxmh6tdz8gssc08dn6
     - &strix age1nuvx2zd6keg07mjt8n88rxzuavuzs75yzydy477ae6fyg4g4eu4q09k2jz
 creation_rules:
   - path_regex: hosts/strix/secrets.ya?ml$

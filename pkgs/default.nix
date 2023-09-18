@@ -10,6 +10,7 @@
   # Personal scripts
   nix-inspect = pkgs.callPackage ./nix-inspect { };
   minicava = pkgs.callPackage ./minicava { };
+  nordpass = pkgs.callPackage ./nordpass { };
   nordvpn = pkgs.callPackage ./nordvpn { };
   pass-wofi = pkgs.callPackage ./pass-wofi { };
   primary-xwayland = pkgs.callPackage ./primary-xwayland { };

@@ -8,7 +8,8 @@
       extraConfig = ''
         CONFIG_CMD_BTRFS=y
         CONFIG_ZSTD=y
-
+        CONFIG_USB_UHCI=y
+        CONFIG_USB_KEYBOARD=y
         CONFIG_BOOTCOMMAND="setenv boot_prefixes / /boot/ /@root/ /@boot/; run distro_bootcmd;"
       '';
     };

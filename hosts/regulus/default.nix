@@ -7,7 +7,7 @@
     ../common/global
     ../common/users/joka
 
-    # ../common/optional/bluetooth.nix
+    ../common/optional/bluetooth.nix
     # ../common/optional/flatpak.nix
     # ../common/optional/greetd.nix
     # ../common/optional/nordvpn.nix
@@ -15,7 +15,7 @@
     # ../common/optional/pipewire.nix
     # ../common/optional/quietboot.nix
     # ../common/optional/xdg-portal.nix
-    # ../common/optional/wireless.nix
+    ../common/optional/wireless.nix
     # ../common/optional/yubikey.nix
   ];
 

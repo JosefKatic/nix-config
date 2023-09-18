@@ -8,6 +8,7 @@
     ./gtk.nix
     ./kdeconnect.nix
     ./nautilus.nix
+    ./nordpass.nix
     ./obs.nix
     ./pavucontrol.nix
     ./playerctl.nix
