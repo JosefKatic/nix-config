@@ -74,6 +74,9 @@
           };
           settings = {
               "general.smoothScroll" = true;
+              "dom.security.https_only_mode" = true;
+              "identity.fxaccounts.enabled" = false;
+              "privacy.trackingprotection.enabled" = true;
           };
           extraConfig = ''
               user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
