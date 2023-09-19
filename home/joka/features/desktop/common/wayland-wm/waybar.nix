@@ -124,9 +124,9 @@ in
         position = "bottom";
         output = builtins.map (m: m.name) (builtins.filter (m: m.noBar) config.monitors);
         modules-center = [
-          "wlr/workspaces"
+          "hyprland/workspaces"
         ];
-        "wlr/workspaces" = {
+        "hyprland/workspaces" = {
           on-click = "activate";
           sort-by-number = true;
           persistent_workspaces = {
