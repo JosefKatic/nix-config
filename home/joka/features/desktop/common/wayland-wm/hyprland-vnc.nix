@@ -5,8 +5,7 @@ let
   vncsh = pkgs.writeShellScriptBin "vnc.sh" ''
     ssh $1 bash <<'EOF'
         pgrep "wayvnc" && exit
-        pid=$(pidof Hyprland)
-        export HYPRLAND_INSTANCE_SIGNATURE="$(grep -l $pid /tmp/hypr/*.lock | sed 's/.*\///;s/\..*$//')"
+        export HYPRLAND_INSTANCE_SIGNATURE="$(ls /tmp/hypr/ -lt | head -2 | tail -1 | rev | cut -d ' ' -f1 | rev)"       
         export WAYLAND_DISPLAY="wayland-1"
         ip="$(ip addr show dev tailscale0 | grep 'inet ' | xargs | cut -d ' ' -f2 | cut -d '/' -f1)"
         xpos="$(hyprctl monitors -j | jq -r 'sort_by(.x)[-1] | .x + .width')"
@@ -15,13 +14,13 @@ let
           hyprctl output create headless
           monitor="$(hyprctl monitors -j | jq -r 'map(.name)[-1]')"
           hyprctl keyword monitor $monitor,${toString m.width}x${toString m.height}@${toString m.refreshRate},$(($xpos + ${toString m.x}))x${toString m.y},1
-          screen -d -m wayvnc -k br -S /tmp/vnc-1 -f 60 -o $monitor $ip 5901
-          sudo iptables -I INPUT -j ACCEPT -p tcp --dport 5901
+          screen -d -m wayvnc -k br -S /tmp/vnc-21 -f 60 -o $monitor $ip 59021
+          sudo iptables -I INPUT -j ACCEPT -p tcp --dport 59021
         ''))}
     EOF
 
     ${lib.concatLines (lib.forEach enabledMonitors (m: ''
-      vncviewer $1::5901 &
+      vncviewer $1::59021 &
     ''))}
 
     wait
