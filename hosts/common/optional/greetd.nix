@@ -4,8 +4,13 @@ let
   homePaths = lib.mapAttrsToList (n: v: "${v.home.path}/share") homeCfgs;
   extraDataPaths = lib.concatStringsSep ":" homePaths;
   vars = ''XDG_DATA_DIRS="$XDG_DATA_DIRS:${extraDataPaths}"'';
-
-  sway-kiosk = command: "${pkgs.sway}/bin/sway --config ${pkgs.writeText "kiosk.config" ''
+  nvidiaEnabled = (lib.elem "nvidia" config.services.xserver.videoDrivers);
+  swayParams = 
+  if nvidiaEnabled 
+  then "--unsupported-gpu"
+  else
+    "";
+  swayKiosk = command: "${pkgs.sway}/bin/sway ${swayParams} --config ${pkgs.writeText "kiosk.config" ''
     output * bg #000000 solid_color
     exec "dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK"
     xwayland disable
@@ -38,7 +43,7 @@ in
   };
   services.greetd = {
     enable = true;
-    settings.default_session.command = sway-kiosk (lib.getExe config.programs.regreet.package);
+    settings.default_session.command = swayKiosk (lib.getExe config.programs.regreet.package);
   };
 }
 
