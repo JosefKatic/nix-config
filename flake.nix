@@ -25,10 +25,16 @@
     nixvim.url = "github:nix-community/nixvim";
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland = {
+      url = "github:hyprwm/hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprwm-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprsome.url = "github:sopa0/hyprsome";
     hyprpicker.url = "github:hyprwm/hyprpicker";
-    hyprwm-contrib.url = "github:hyprwm/contrib";
     lanzaboote = {
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
