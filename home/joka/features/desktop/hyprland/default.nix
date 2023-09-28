@@ -10,11 +10,12 @@
   ];
 
   home.packages = with pkgs; [
-    inputs.hyprwm-contrib.packages.${pkgs.system}.grimblast
-    inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
     hyprslurp
     inputs.hyprsome.packages.${pkgs.system}.default
-  ];
+  ] ++ (lib.optionals (pkgs.system != "aarch64-linux") [
+      inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
+      inputs.hyprwm-contrib.packages.${pkgs.system}.grimblast
+    ]);
 
   wayland.windowManager.hyprland = {
     enable = true;

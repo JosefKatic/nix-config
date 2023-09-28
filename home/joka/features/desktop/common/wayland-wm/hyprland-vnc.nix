@@ -14,13 +14,13 @@ let
           hyprctl output create headless
           monitor="$(hyprctl monitors -j | jq -r 'map(.name)[-1]')"
           hyprctl keyword monitor $monitor,${toString m.width}x${toString m.height}@${toString m.refreshRate},$(($xpos + ${toString m.x}))x${toString m.y},1
-          screen -d -m wayvnc -k br -S /tmp/vnc-21 -f 60 -o $monitor $ip 59021
-          sudo iptables -I INPUT -j ACCEPT -p tcp --dport 59021
+          screen -d -m wayvnc -k br -S /tmp/vnc-1 -f 60 -o $monitor $ip 5901
+          sudo iptables -I INPUT -j ACCEPT -p tcp --dport 5901
         ''))}
     EOF
 
     ${lib.concatLines (lib.forEach enabledMonitors (m: ''
-      vncviewer $1::59021 &
+      vncviewer $1::5901 &
     ''))}
 
     wait

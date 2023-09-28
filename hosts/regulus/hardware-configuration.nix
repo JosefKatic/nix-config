@@ -45,9 +45,7 @@
   fileSystems = {
     "/boot" = {
       device = "/dev/disk/by-label/system";
-      fsType = "btrfs";
       options = [ "subvol=@boot" ];
-      neededForBoot = true;
     };
 
     "/firmware" = {
