@@ -5,7 +5,6 @@
   shellcolord = pkgs.callPackage ./shellcolord { };
   speedtestpp = pkgs.callPackage ./speedtestpp { };
   trekscii = pkgs.callPackage ./trekscii { };
-  qt6gtk2 = pkgs.qt6Packages.callPackage ./qt6gtk2 { };
 
   # Personal scripts
   nix-inspect = pkgs.callPackage ./nix-inspect { };
