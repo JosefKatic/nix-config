@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-export NIX_SSHOPTS="-tt -A"
+export NIX_SSHOPTS="-t -A"
 
 build_remote=false
 

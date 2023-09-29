@@ -3,10 +3,10 @@
   # Add hyprland
   imports = [ 
     ./global
-    ./features/desktop/hyprland
-    ./features/desktop/wireless
-    ./features/productivity
-    ./features/pass
+    # ./features/desktop/hyprland
+    # ./features/desktop/wireless
+    # ./features/productivity
+    # ./features/pass
   ];
 
   # wallpaper = outputs.wallpapers.aenami-lunar;
