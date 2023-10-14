@@ -30,7 +30,7 @@
           key_mgmt=WPA-EAP
           pairwise=CCMP
           auth_alg=OPEN
-          eap=TTLS
+          eap=PEAP
           identity="@eduroam_login@"
           password="@eduroam_password@"
           phase2="auth=MSCHAPV2"

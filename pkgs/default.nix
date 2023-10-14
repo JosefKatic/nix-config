@@ -5,7 +5,6 @@
   shellcolord = pkgs.callPackage ./shellcolord { };
   speedtestpp = pkgs.callPackage ./speedtestpp { };
   trekscii = pkgs.callPackage ./trekscii { };
-
   # Personal scripts
   nix-inspect = pkgs.callPackage ./nix-inspect { };
   minicava = pkgs.callPackage ./minicava { };
