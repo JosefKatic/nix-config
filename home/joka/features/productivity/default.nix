@@ -1,7 +1,7 @@
 {
   imports = [
-    ./khal.nix
-    ./khard.nix
+    #./khal.nix
+    #./khard.nix
     ./todoman.nix
 
     ./neomutt.nix

@@ -26,12 +26,12 @@ let
   pavucontrol = "${pkgs.pavucontrol}/bin/pavucontrol";
   btop = "${pkgs.bottom}/bin/btop";
   wofi = "${pkgs.wofi}/bin/wofi";
-  ikhal = "${pkgs.khal}/bin/ikhal";
+#  ikhal = "${pkgs.khal}/bin/ikhal";
 
   terminal = "${pkgs.wezterm}/bin/wezterm";
   terminal-spawn = cmd: "${terminal} $SHELL -i -c ${cmd}";
 
-  calendar = terminal-spawn ikhal;
+  #calendar = terminal-spawn ikhal;
   systemMonitor = terminal-spawn btop;
   mail = terminal-spawn neomutt;
 
@@ -76,10 +76,10 @@ in
 
         clock = {
           format = "{:%b %e %R %p}";
-          tooltip-format = ''
-            <big>{:%Y %B}</big>
-            <tt><small>{calendar}</small></tt>'';
-          on-click = calendar;
+          #tooltip-format = ''
+          #  <big>{:%Y %B}</big>
+          #  <tt><small>{calendar}</small></tt>'';
+          #on-click = calendar;
         };
         "hyprland/workspaces" = {
           on-click = "activate";
