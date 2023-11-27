@@ -3,7 +3,6 @@
   # Packages with an actual source
   # lando = pkgs.callPackage ./lando { };
   shellcolord = pkgs.callPackage ./shellcolord { };
-  speedtestpp = pkgs.callPackage ./speedtestpp { };
   trekscii = pkgs.callPackage ./trekscii { };
   # Personal scripts
   nix-inspect = pkgs.callPackage ./nix-inspect { };
