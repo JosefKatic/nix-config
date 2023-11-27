@@ -14,7 +14,6 @@
     ../common/users/joka
 
     ../common/optional/bluetooth.nix
-    ../common/optional/flatpak.nix
     ../common/optional/gamemode.nix
     ../common/optional/greetd.nix
     ../common/optional/libvirtd.nix

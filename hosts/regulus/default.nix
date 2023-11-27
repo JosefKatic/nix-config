@@ -8,7 +8,6 @@
     ../common/users/joka
 
     ../common/optional/bluetooth.nix
-    # ../common/optional/flatpak.nix
     # ../common/optional/greetd.nix
     # ../common/optional/nordvpn.nix
     # ../common/optional/opengl.nix
