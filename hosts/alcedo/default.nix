@@ -25,7 +25,6 @@
     ../common/optional/printing.nix
     ../common/optional/steam-hardware.nix
     ../common/optional/quietboot.nix
-    ../common/optional/xdg-portal.nix
     ../common/optional/yubikey.nix
 
     ./kernel.nix

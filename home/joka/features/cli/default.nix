@@ -41,7 +41,5 @@
     ltex-ls # Spell checking LSP
 
     tly # Tally counter
-
-    inputs.nh.packages.${pkgs.system}.default # nixos-rebuild and home-manager CLI wrapper
   ];
 }

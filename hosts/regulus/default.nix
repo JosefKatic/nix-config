@@ -14,7 +14,6 @@
     # ../common/optional/opengl.nix
     # ../common/optional/pipewire.nix
     # ../common/optional/quietboot.nix
-    # ../common/optional/xdg-portal.nix
     ../common/optional/wireless.nix
     ../common/optional/yubikey.nix
   ];

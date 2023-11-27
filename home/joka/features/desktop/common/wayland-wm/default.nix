@@ -24,23 +24,15 @@
     wl-clipboard
     wl-mirror
     wl-mirror-pick
+    xdg-utils-spawn-terminal # Patched to open terminal
     ydotool
   ];
-
+  xdg.mimeApps.enable = true;
   home.sessionVariables = {
-    GDK_BACKEND = "wayland,x11";
-    SDL_VIDEODRIVER = "wayland";
-    CLUTTER_BACKEND = "wayland";
-
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_TYPE = "wayland";
-    XDG_SESSION_DESKTOP = "Hyprland";
-
-    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-    QT_QPA_PLATFORM = "wayland;xcb";
-    WLR_RENDERER_ALLOW_SOFTWARE = 1;
     MOZ_ENABLE_WAYLAND = 1;
+    QT_QPA_PLATFORM = "wayland;xcb";
     LIBSEAT_BACKEND = "logind";
-    NIXOS_OZONE_WL = "1";
   };
+
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
 }

@@ -8,21 +8,33 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
     hardware.url = "github:nixos/nixos-hardware";
     impermanence.url = "github:nix-community/impermanence";
     nix-colors.url = "github:misterio77/nix-colors";
-    nur.url = "github:nix-community/NUR";
-    nh = {
-      url = "github:viperml/nh";
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    firefly = {
+      url = "github:timhae/firefly";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    sops-nix = {
+      url = "github:mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-stable.follows = "nixpkgs";
+    };
+    
+    nur.url = "github:nix-community/NUR";
     nixos-mailserver = {
       url = "gitlab:simple-nixos-mailserver/nixos-mailserver";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-22_11.follows = "nixpkgs";
       inputs.nixpkgs-23_05.follows = "nixpkgs";
     };
-    nixvim.url = "github:nix-community/nixvim";
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
     hyprland = {
@@ -33,19 +45,15 @@
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
     hyprsome.url = "github:sopa0/hyprsome";
     hyprpicker.url = "github:hyprwm/hyprpicker";
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    firefly.url = "github:timhae/firefly";
-    sops-nix = {
-      url = "github:mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nixpkgs-stable.follows = "nixpkgs";
-    };
+
     web.url = "github:JosefKatic/web";
+    
   };
 
   outputs = { self, nixpkgs, home-manager, nur, nixvim, ... }@inputs:
@@ -54,7 +62,10 @@
       lib = nixpkgs.lib // home-manager.lib;
       systems = [ "x86_64-linux" "aarch64-linux" ];
       forEachSystem = f: lib.genAttrs systems (sys: f pkgsFor.${sys});
-      pkgsFor = nixpkgs.legacyPackages;
+      pkgsFor = lib.genAttrs systems (system: import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      });
     in
     {
       inherit lib;

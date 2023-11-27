@@ -17,9 +17,5 @@
     ./vscode.nix
     ./youtube-music.nix
   ] ;
-
-  xdg.mimeApps.enable = true;
-  home.packages = with pkgs; [
-    xdg-utils-spawn-terminal
-  ];
+  xdg.portal.enable = true;
 }
