@@ -3,10 +3,8 @@
     ../common
     ../common/wayland-wm
 
-    ./tty-init.nix
     ./basic-binds.nix
     ./hyprpaper.nix
-    ./systemd-fixes.nix
   ];
 
   home.packages = with pkgs; [
@@ -23,6 +21,14 @@
       enable = true;
     };
     enableNvidiaPatches = true;
+    systemd = {
+      enable = true;
+      # Same as default, but stop graphical-session too
+      extraCommands = lib.mkBefore [
+        "systemctl --user stop graphical-session.target"
+        "systemctl --user start hyprland-session.target"
+      ];
+    };
     settings = {
       general = {
         gaps_in = 15;
