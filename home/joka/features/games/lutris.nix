@@ -1,15 +1,16 @@
 { pkgs, lib, ... }: {
-  home.packages = [ pkgs.lutris ];
-
+  home.packages = [
+    (pkgs.lutris.override { extraPkgs = p: [
+      p.wineWowPackages.staging
+      p.pixman
+      p.libjpeg
+      p.gnome.zenity
+    ]; })
+  ];
   home.persistence = {
     "/persist/home/joka" = {
       allowOther = true;
       directories = [
-        {
-          # Use symlink, as games may be IO-heavy
-          directory = "Games";
-          method = "symlink";
-        }
         ".config/lutris"
         ".local/share/lutris"
       ];
