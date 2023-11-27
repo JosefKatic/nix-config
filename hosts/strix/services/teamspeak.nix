@@ -1,7 +1,7 @@
 {
   services = {
     teamspeak3 = {
-      enable = false;
+      enable = true;
     };
   };
 
