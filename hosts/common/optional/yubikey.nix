@@ -8,7 +8,10 @@
 
   security.pam.u2f = {
     enable = true;
-    authFile = "${config.sops.secrets.u2f-key.path} origin=pam://joka00.dev appid=pam://joka00.dev cue [cue_prompt=🔑 Tap the key...]";
+    origin = "pam://joka00.dev";
+    appId = "pam://joka00.dev";
+    interactive = true;
+    authFile = "${config.sops.secrets.u2f-key.path} [cue_prompt=🔑 Tap the key...]";
     cue = true;
   };
   security.pam.services = {
