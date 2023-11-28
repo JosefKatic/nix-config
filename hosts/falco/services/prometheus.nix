@@ -8,13 +8,13 @@
         scrape_interval = "30s";
       };
       scrapeConfigs = [
-        # {
-        #   job_name = "hydra";
-        #   scheme = "https";
-        #   static_configs = [{
-        #     targets = [ "hydra.joka00.dev" ];
-        #   }];
-        # }
+        {
+          job_name = "hydra";
+          scheme = "https";
+          static_configs = [{
+            targets = [ "hydra.joka00.dev" ];
+          }];
+        }
         {
           job_name = "headscale";
           scheme = "https";

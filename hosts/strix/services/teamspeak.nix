@@ -2,6 +2,10 @@
   services = {
     teamspeak3 = {
       enable = true;
+      openFirewall = true;
+      defaultQueryPort = 19102;
+      defaultVoicePort = 29102;
+      fileTransferPort = 39102;
     };
   };
 
