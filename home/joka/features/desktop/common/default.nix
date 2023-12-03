@@ -1,7 +1,6 @@
 { pkgs, lib, outputs, ... }:
 {
   imports = [
-    ./brave.nix
     ./discord.nix
     ./firefox
     ./font.nix
