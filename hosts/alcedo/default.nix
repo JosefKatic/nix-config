@@ -22,17 +22,46 @@
     ../common/optional/opengl.nix
     ../common/optional/pipewire.nix
     ../common/optional/printing.nix
-    ../common/optional/steam-hardware.nix
     ../common/optional/quietboot.nix
+    ../common/optional/secureboot.nix
+    ../common/optional/wireshark.nix
     ../common/optional/yubikey.nix
-
-    ./kernel.nix
-    ./networking.nix
-    ./programs.nix
   ];
 
 
+  networking = {
+    hostName = "alcedo";
+    firewall = {
+      enable = true;
+    };
+  };
 
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+
+  programs = {
+    dconf.enable = true;
+    kdeconnect.enable = true;
+  };
+
+  # Check which of these are used
+  environment.systemPackages = with pkgs; [
+    libgnome-keyring
+    libsecret
+    curl
+    rustup
+    virt-manager
+    ntfs3g
+
+    (wine.override { wineBuild = "wine64"; })
+
+    # winetricks (all versions)
+    winetricks
+
+    # native wayland support (unstable)
+    wineWowPackages.waylandFull
+
+    xwaylandvideobridge
+  ];
   
   system.stateVersion = "23.05"; # Did you read the comment?
 }
