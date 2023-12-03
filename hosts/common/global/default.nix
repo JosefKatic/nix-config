@@ -5,13 +5,16 @@
     ./acme.nix
     ./auto-upgrade.nix
     ./fish.nix
-    ./fonts.nix
+    ./gamemode.nix
     ./locale.nix
     ./nix.nix
     ./openssh.nix
     ./optin-persistence.nix
+    ./podman.nix
     ./sops.nix
     ./ssh-serve-store.nix
+    ./steam-hardware.nix
+    ./systemd-initrd.nix
     ./tailscale.nix
   ] ++ (builtins.attrValues outputs.nixosModules);
 
@@ -30,7 +33,7 @@
     QT_PLUGIN_PATH = [ "/lib/qt-6/plugins" ];
   };
 
-  environment.enableAllTerminfo = true;
+  # environment.enableAllTerminfo = true;
 
   hardware.enableRedistributableFirmware = true;
   networking.domain = "joka00.dev";
