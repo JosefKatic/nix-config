@@ -21,6 +21,7 @@
     ../common/optional/printing.nix
     ../common/optional/quietboot.nix
     ../common/optional/secureboot.nix
+    ../common/optional/trezor.nix
     ../common/optional/wireless.nix
     ../common/optional/wireshark.nix
     ../common/optional/yubikey.nix
