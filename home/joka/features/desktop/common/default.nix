@@ -11,11 +11,12 @@
     ./qt.nix
     ./vscode.nix
     ./youtube-music.nix
-  ] ++ (lib.optionals (pkgs.system != "aarch64-linux") [
+   
+  #  Non aarch64 TODO
     ./discord.nix
     ./nordpass.nix
     ./obs.nix
     ./teamspeak.nix
-  ]);
+  ];
   xdg.portal.enable = true;
 }

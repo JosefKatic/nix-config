@@ -9,8 +9,6 @@
     inputs.hardware.nixosModules.common-pc-ssd
     ./hardware-configuration.nix
 
-    inputs.lanzaboote.nixosModules.lanzaboote
-
     ../common/global
     ../common/users/joka
 
@@ -34,7 +32,7 @@
       enable = true;
     };
   };
-
+ hardware.xone.enable = true;
  powerManagement.powertop.enable = true;
  programs = {
     light.enable = true;

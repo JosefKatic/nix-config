@@ -1,7 +1,10 @@
-{config, pkgs, lib, ...}: 
+{config, inputs, pkgs, lib, ...}: 
 let
   hasOptinPersistence = config.environment.persistence ? "/persist";
 in {
+  imports = [
+    inputs.lanzaboote.nixosModules.lanzaboote
+  ];
   boot = {
     bootspec.enable = true;
     loader = {

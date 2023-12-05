@@ -1,5 +1,5 @@
-{pkgs, ...}: {
-  home.packages = with pkgs; [
-    discord
-  ];
+{pkgs, lib, ...}: {
+  home.packages = (lib.optionals (pkgs.system != "aarch64-linux") [
+    pkgs.discord
+  ]);
 }
