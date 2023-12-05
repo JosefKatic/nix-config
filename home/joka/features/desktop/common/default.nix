@@ -9,6 +9,7 @@
     ./pavucontrol.nix
     ./playerctl.nix
     ./qt.nix
+    ./trezor.nix
     ./vscode.nix
     ./youtube-music.nix
    
