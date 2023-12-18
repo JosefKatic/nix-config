@@ -5,6 +5,7 @@
     ./acme.nix
     ./auto-upgrade.nix
     ./fish.nix
+    ./fonts.nix
     ./gamemode.nix
     ./locale.nix
     ./nix.nix
