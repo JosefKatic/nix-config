@@ -4,7 +4,7 @@
 
 let
   pname = "nordvpn";
-  version = "3.16.5";
+  version = "3.16.9";
   buildEnv = if builtins.typeOf buildFHSEnvChroot == "set" then
     buildFHSEnvChroot
   else
@@ -16,7 +16,7 @@ let
     src = fetchurl {
       url =
         "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn_${version}_amd64.deb";
-      sha256 = "0107rd6f03cgb7wc4nr2mn709qrnhxfzgl2cy3sjqkxzcn15fqbp";
+      sha256 = "sha256-QLh/4Kq8LvcZfc5ngLuw7BOAqYroykUlK2xy3M0rDkw=";
     };
 
     buildInputs = [ libxml2 libidn2 ];
