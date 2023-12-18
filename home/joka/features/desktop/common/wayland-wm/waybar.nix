@@ -28,7 +28,7 @@ let
   wofi = "${pkgs.wofi}/bin/wofi";
 #  ikhal = "${pkgs.khal}/bin/ikhal";
 
-  terminal = "${pkgs.wezterm}/bin/wezterm";
+  terminal = "${pkgs.kitty}/bin/kitty";
   terminal-spawn = cmd: "${terminal} $SHELL -i -c ${cmd}";
 
   #calendar = terminal-spawn ikhal;
@@ -47,6 +47,11 @@ let
       --arg percentage "${percentage}" \
       '{text:$text,tooltip:$tooltip,alt:$alt,class:$class,percentage:$percentage}'
   ''}/bin/waybar-${name}";
+
+  hasSway = config.wayland.windowManager.sway.enable;
+  sway = config.wayland.windowManager.sway.package;
+  hasHyprland = config.wayland.windowManager.hyprland.enable;
+  hyprland = config.wayland.windowManager.hyprland.package;
 in
 {
   programs.waybar = {
@@ -264,11 +269,15 @@ in
             text = "";
             tooltip = ''$(${cat} /etc/os-release | ${grep} PRETTY_NAME | ${cut} -d '"' -f2)'';
           };
-          on-click = "${wofi} -S drun -x 10 -y 10 -W 25% -H 60%";
+          on-click-left = "${wofi} -S drun -x 10 -y 10 -W 25% -H 60%";
+          on-click-right = lib.concatStringsSep ";" (
+            (lib.optional hasHyprland "${hyprland}/bin/hyprctl dispatch togglespecialworkspace") ++
+            (lib.optional hasSway "${sway}/bin/swaymsg scratchpad show")
+          );
         };
         "custom/hostname" = {
           exec = "echo $USER@$HOSTNAME";
-          on-click = terminal;
+          on-click = "${systemctl} --user restart waybar";
         };
         "custom/gpg-agent" = {
           interval = 2;
