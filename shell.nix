@@ -16,7 +16,6 @@
       nix
       home-manager
       git
-      nil
 
       sops
       ssh-to-age
