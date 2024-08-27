@@ -853,8 +853,10 @@
         "web": "web"
       },
       "locked": {
-        "lastModified": 0,
-        "narHash": "sha256-mBVcxza+WSCSBuISQuQW1Z0Ac41nFXKsy1KUFaE0qv8=",
+        "dirtyRev": "e4734dbf008f02cc5763b3cfd7aa6b16ade0c1d3-dirty",
+        "dirtyShortRev": "e4734db-dirty",
+        "lastModified": 1724718309,
+        "narHash": "sha256-KWLAdvYceiTu9V9Tubggz+MW329w/twNj21+bTBL8fc=",
         "type": "git",
         "url": "file:///home/joka/.nix-modules"
       },
