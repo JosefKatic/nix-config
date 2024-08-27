@@ -853,16 +853,17 @@
         "web": "web"
       },
       "locked": {
-        "dirtyRev": "e4734dbf008f02cc5763b3cfd7aa6b16ade0c1d3-dirty",
-        "dirtyShortRev": "e4734db-dirty",
-        "lastModified": 1724718309,
-        "narHash": "sha256-KWLAdvYceiTu9V9Tubggz+MW329w/twNj21+bTBL8fc=",
-        "type": "git",
-        "url": "file:///home/joka/.nix-modules"
+        "lastModified": 1724797761,
+        "narHash": "sha256-ghlEmx9ztwLb2ERLxwlEDIkKDMApTHvQUIB5WsyiMDs=",
+        "owner": "JosefKatic",
+        "repo": "nix-modules",
+        "rev": "f0923359f978a659bfcc09f7ed34c1ec209d796e",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/joka/.nix-modules"
+        "owner": "JosefKatic",
+        "repo": "nix-modules",
+        "type": "github"
       }
     },
     "lanzaboote": {

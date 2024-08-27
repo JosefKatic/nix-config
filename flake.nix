@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     joka00-modules = {
-      url = "/home/joka/.nix-modules";
+      url = "github:JosefKatic/nix-modules";
     };
     systems.url = "github:nix-systems/default-linux";
   };
