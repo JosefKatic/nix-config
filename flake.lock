@@ -854,7 +854,7 @@
       },
       "locked": {
         "lastModified": 0,
-        "narHash": "sha256-tErlpBfTqyiMKlLEnw7oPTpNnlbOCGUZcQ6x6ubkcPk=",
+        "narHash": "sha256-mBVcxza+WSCSBuISQuQW1Z0Ac41nFXKsy1KUFaE0qv8=",
         "type": "git",
         "url": "file:///home/joka/.nix-modules"
       },
