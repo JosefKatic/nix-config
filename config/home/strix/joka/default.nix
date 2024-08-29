@@ -10,6 +10,6 @@
     };
   };
   theme = rec {
-    colorcheme.source = "#BC9A55";
+    colorscheme.source = "#BC9A55";
   };
 }
