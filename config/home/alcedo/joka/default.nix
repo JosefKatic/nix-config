@@ -53,10 +53,17 @@
       gtk.enable = true;
       monitors = [
         {
-          name = "eDP-1";
-          width = 1920;
-          height = 1080;
+          name = "DP-1";
+          width = 2560;
+          height = 1440;
+          x = 2560;
           primary = true;
+        }
+        {
+          name = "DP-2";
+          width = 2560;
+          height = 1440;
+          x = 0;
         }
       ];
     };
