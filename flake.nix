@@ -3,6 +3,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     joka00-modules = {
       url = "github:JosefKatic/nix-modules";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
@@ -28,6 +29,9 @@
         _module.args.pkgs = import nixpkgs {
           inherit system;
           overlays = [inputs.joka00-modules.overlays.joka00-modules];
+          config = {
+            allowUnfree = true;
+          };
         };
       };
       flake = {
@@ -63,6 +67,7 @@
                     networking.hostName = host;
                     imports = [
                       joka00-modules.nixosModules.default
+                      joka00-modules.nixosModules.nordvpn
                       "${self}/config/nixos/${host}/default.nix"
                     ];
                   }

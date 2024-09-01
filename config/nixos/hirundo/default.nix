@@ -2,6 +2,7 @@
   nixpkgs.hostPlatform = "x86_64-linux";
   boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc"];
   powerManagement.cpuFreqGovernor = "powersave";
+  services.nordvpn.enable = true;
   device = {
     type = "laptop";
     virtualized = false;
