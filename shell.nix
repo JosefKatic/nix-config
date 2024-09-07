@@ -14,6 +14,7 @@
         ssh-to-age
         gnupg
         age
+        home-manager
       ];
       name = "config";
       DIRENV_LOG_FORMAT = "";

@@ -14,6 +14,12 @@
         secureboot = true;
       };
     };
+    home = {
+      users = ["joka-ipa"];
+      init = {
+        url = "https://github.com/JosefKatic/nix-config";
+      };
+    };
     core = {
       disableDefaults = true;
       locale = {

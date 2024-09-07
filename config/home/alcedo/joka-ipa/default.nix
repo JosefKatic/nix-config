@@ -4,7 +4,7 @@
   ...
 }: {
   user = {
-    name = "joka";
+    name = "joka-ipa";
     desktop = {
       programs = {
         browsers = {
@@ -76,6 +76,5 @@
   };
   theme = rec {
     wallpaper = inputs.joka00-modules.legacyPackages.${pkgs.system}.wallpapers.astronaut-minimalism.outPath;
-    colorscheme.type = "fidelity";
   };
 }

@@ -4,7 +4,7 @@
   ...
 }: {
   user = {
-    name = "joka";
+    name = "joka-ipa";
     desktop = {
       programs = {
         browsers = {
@@ -53,16 +53,10 @@
       gtk.enable = true;
       monitors = [
         {
-          name = "DP-1";
-          width = 2560;
-          height = 1440;
+          name = "eDP-1";
+          width = 1920;
+          height = 1080;
           primary = true;
-        }
-        {
-          name = "DP-2";
-          width = 2560;
-          height = 1440;
-          position = "auto-left";
         }
       ];
     };
@@ -74,8 +68,8 @@
       shell.fish.enable = true;
     };
   };
-  theme = rec {
-    wallpaper = inputs.joka00-modules.legacyPackages.${pkgs.system}.wallpapers.astronaut-minimalism.outPath;
-    colorscheme.type = "fidelity";
+  theme = {
+    wallpaper = inputs.joka00-modules.legacyPackages.${pkgs.system}.wallpapers.deer.outPath;
+    colorscheme.type = "monochrome";
   };
 }

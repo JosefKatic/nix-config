@@ -1,10 +1,19 @@
 {
+  nixConfig = {
+    extra-substituters = [
+      "https://hyprland.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+    ];
+  };
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     joka00-modules = {
       url = "github:JosefKatic/nix-modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hm.url = "github:nix-community/home-manager";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -18,6 +27,7 @@
     flake-parts,
     joka00-modules,
     systems,
+    hm,
     ...
   } @ inputs:
     flake-parts.lib.mkFlake {inherit inputs;} {
@@ -25,7 +35,11 @@
       imports = [
         ./shell.nix
       ];
-      perSystem = {system, ...}: {
+      perSystem = {
+        system,
+        pkgs,
+        ...
+      }: {
         _module.args.pkgs = import nixpkgs {
           inherit system;
           overlays = [inputs.joka00-modules.overlays.joka00-modules];
@@ -34,41 +48,47 @@
           };
         };
       };
-      flake = {
+      flake = let
+        lib = nixpkgs.lib // hm.lib;
+        forEachSystem = f: lib.genAttrs (import systems) (system: f pkgsFor.${system});
+        pkgsFor = lib.genAttrs (import systems) (
+          system:
+            import nixpkgs {
+              inherit system;
+              overlays = [inputs.joka00-modules.overlays.joka00-modules];
+              config.allowUnfree = true;
+            }
+        );
+        hosts = import "${self}/config/nixos/hosts.nix";
+      in {
         nixosConfigurations = let
           specialArgs = {inherit inputs self;};
-          hosts = import "${self}/config/nixos/hosts.nix";
           inherit (nixpkgs.lib) nixosSystem;
           deviceConfigurations =
             map (host: {
               name = host;
               value = nixosSystem {
                 specialArgs = specialArgs;
-                modules = [
+                modules = let
+                  hostConfig = import "${self}/config/nixos/${host}/default.nix";
+                in [
                   {
                     home-manager = {
-                      users = let
-                        usersForDevice = import "${self}/config/home/${host}/users.nix";
-                        userConfigurations =
-                          map (user: {
-                            name = user;
-                            value = {
-                              imports = [
-                                inputs.joka00-modules.homeManagerModules.default
-                                "${self}/config/home/${host}/${user}/default.nix"
-                              ];
-                            };
-                          })
-                          usersForDevice;
-                      in
-                        builtins.listToAttrs userConfigurations;
+                      users = {
+                        "joka" = {
+                          imports = [
+                            "${self}/config/home/${host}/joka/default.nix"
+                            inputs.joka00-modules.homeManagerModules.default
+                          ];
+                        };
+                      };
                       extraSpecialArgs = specialArgs;
                     };
                     networking.hostName = host;
                     imports = [
                       joka00-modules.nixosModules.default
                       joka00-modules.nixosModules.nordvpn
-                      "${self}/config/nixos/${host}/default.nix"
+                      hostConfig
                     ];
                   }
                 ];
@@ -77,6 +97,48 @@
             hosts;
         in
           builtins.listToAttrs deviceConfigurations;
+
+        homeConfigurations = let
+          inherit (lib) homeManagerConfiguration concatMap;
+          configs =
+            concatMap (
+              host: let
+                hostConfig = import "${self}/config/nixos/${host}/default.nix";
+                listOfUsers = hostConfig.device.home.users;
+              in
+                map (user: {
+                  name = "${user}@${host}";
+                  value = homeManagerConfiguration {
+                    modules = [
+                      inputs.joka00-modules.homeManagerModules.default
+                      "${self}/config/home/${host}/${user}/default.nix"
+                    ];
+                    pkgs = pkgsFor.x86_64-linux;
+                    extraSpecialArgs = {inherit inputs self;};
+                  };
+                })
+                listOfUsers
+            )
+            hosts;
+        in
+          builtins.listToAttrs configs;
+        # {
+        #   "joka@alcedo" = homeManagerConfiguration {
+        #     modules = [
+        #       inputs.joka00-modules.homeManagerModules.default
+        #       "${self}/config/home/alcedo/joka/default.nix"
+        #     ];
+        #     pkgs = pkgsFor.x86_64-linux;
+        #     extraSpecialArgs = {inherit inputs self;};
+        #   };
+        #   "joka@hirundo" = homeManagerConfiguration {
+        #     modules = [
+        #       inputs.joka00-modules.homeManagerModules.default
+        #       "${self}/config/home/hirundo/joka/default.nix"
+        #     ];
+        #     pkgs = pkgsFor.x86_64-linux;
+        #     extraSpecialArgs = {inherit inputs self;};
+        #   };
       };
     };
 }

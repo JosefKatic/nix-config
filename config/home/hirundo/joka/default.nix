@@ -68,7 +68,8 @@
       shell.fish.enable = true;
     };
   };
-  theme = rec {
-    wallpaper = inputs.joka00-modules.legacyPackages.${pkgs.system}.wallpapers.astronaut-minimalism;
+  theme = {
+    wallpaper = inputs.joka00-modules.legacyPackages.${pkgs.system}.wallpapers.deer.outPath;
+    colorscheme.type = "monochrome";
   };
 }
