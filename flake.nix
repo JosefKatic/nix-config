@@ -10,7 +10,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     joka00-modules = {
-      url = "github:JosefKatic/nix-modules";
+      url = "/home/joka/.nix-modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hm.url = "github:nix-community/home-manager";
@@ -122,23 +122,6 @@
             hosts;
         in
           builtins.listToAttrs configs;
-        # {
-        #   "joka@alcedo" = homeManagerConfiguration {
-        #     modules = [
-        #       inputs.joka00-modules.homeManagerModules.default
-        #       "${self}/config/home/alcedo/joka/default.nix"
-        #     ];
-        #     pkgs = pkgsFor.x86_64-linux;
-        #     extraSpecialArgs = {inherit inputs self;};
-        #   };
-        #   "joka@hirundo" = homeManagerConfiguration {
-        #     modules = [
-        #       inputs.joka00-modules.homeManagerModules.default
-        #       "${self}/config/home/hirundo/joka/default.nix"
-        #     ];
-        #     pkgs = pkgsFor.x86_64-linux;
-        #     extraSpecialArgs = {inherit inputs self;};
-        #   };
       };
     };
 }
