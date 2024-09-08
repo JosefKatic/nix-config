@@ -3,6 +3,9 @@
 
 current=$(dirname $(readlink --canonicalize-existing $0))
 hostname=$(hostname)
+echo $current
+echo $hostname
+echo $USER
 if [[ ! -d $current/config/home/$hostname ]]; then
     echo "No config for this machine:" >&2
     for i in $(ls -d $current/config/home/*); do
