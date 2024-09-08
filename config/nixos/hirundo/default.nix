@@ -15,7 +15,7 @@
       };
     };
     home = {
-      users = ["joka-ipa"];
+      users = ["joka" "joka-ipa"];
       init = {
         url = "https://github.com/JosefKatic/nix-config";
       };

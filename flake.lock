@@ -821,11 +821,11 @@
         "web": "web"
       },
       "locked": {
-        "lastModified": 1725320206,
-        "narHash": "sha256-wkZS0/T21FEydPiLsMqem6N47uwC2k7sBQxAiX05FkI=",
+        "lastModified": 1725754915,
+        "narHash": "sha256-Um18QOLx+olkYWqfY507Mn87/e23scO+1MMIj9uQCNU=",
         "owner": "JosefKatic",
         "repo": "nix-modules",
-        "rev": "021a80eed6b2c5eadfe6136a65a49aec9516dcfe",
+        "rev": "3c7bbc054ae9faf0c2544a2ac79bcf5bb6f56d47",
         "type": "github"
       },
       "original": {

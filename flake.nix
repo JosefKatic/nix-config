@@ -73,17 +73,17 @@
                   hostConfig = import "${self}/config/nixos/${host}/default.nix";
                 in [
                   {
-                    home-manager = {
-                      users = {
-                        "joka" = {
-                          imports = [
-                            "${self}/config/home/${host}/joka/default.nix"
-                            inputs.joka00-modules.homeManagerModules.default
-                          ];
-                        };
-                      };
-                      extraSpecialArgs = specialArgs;
-                    };
+                    # home-manager = {
+                    #   users = {
+                    #     "joka" = {
+                    #       imports = [
+                    #         "${self}/config/home/${host}/joka/default.nix"
+                    #         inputs.joka00-modules.homeManagerModules.default
+                    #       ];
+                    #     };
+                    #   };
+                    #   extraSpecialArgs = specialArgs;
+                    # };
                     networking.hostName = host;
                     imports = [
                       joka00-modules.nixosModules.default
