@@ -2,7 +2,7 @@
 #! nix-shell -i bash -p bash coreutils nix git home-manager
 
 current=$(dirname $(readlink --canonicalize-existing $0))
-hostname=$(hostname)
+hostname=$(cat /etc/hostname)
 echo $current
 echo $hostname
 echo $USER
