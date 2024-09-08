@@ -25,4 +25,4 @@ fi
 # all the following command line arguments are expected to be intended for Nix and passed to each nested invocation
 shift
 
-home-manager switch --flake .
+yes y | home-manager switch --flake .
