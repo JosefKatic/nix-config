@@ -18,11 +18,11 @@ if [[ ! -d $current/config/home/$hostname/$USER ]]; then
     echo "User doesn't have config for this device:" >&2
     for i in $(ls -d $current/config/home/$hostname/*); do
         echo $(basename $i) >&2
-    done
+    done 
     exit 1
 fi
 
 # all the following command line arguments are expected to be intended for Nix and passed to each nested invocation
 shift
-
+rm -rf $HOME/.config/!(.nix-config)
 yes y | home-manager switch -b backup --flake .
