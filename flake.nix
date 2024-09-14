@@ -13,7 +13,10 @@
       url = "github:JosefKatic/nix-modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hm.url = "github:nix-community/home-manager";
+    hm = {
+      url = "github:JosefKatic/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
