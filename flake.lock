@@ -823,11 +823,11 @@
         "web": "web"
       },
       "locked": {
-        "lastModified": 1727080065,
-        "narHash": "sha256-utOYQbEVFWq7CxFCj1h1aYbsiVH8a/dqnZf8cOdR4FA=",
+        "lastModified": 1727106690,
+        "narHash": "sha256-SSJsLKiXOs68Jp6qOiUe6jn4d78/d6RwDpkvCsZq7ZA=",
         "owner": "JosefKatic",
         "repo": "nix-modules",
-        "rev": "4070cc1306eacba32a5eb015519631c306841938",
+        "rev": "1787a6e87f7b30b8c1623adf32e9c841f6138333",
         "type": "github"
       },
       "original": {
