@@ -14,7 +14,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hm = {
-      url = "github:JosefKatic/home-manager";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-parts = {
@@ -76,22 +76,12 @@
                   hostConfig = import "${self}/config/nixos/${host}/default.nix";
                 in [
                   {
-                    # home-manager = {
-                    #   users = {
-                    #     "joka" = {
-                    #       imports = [
-                    #         "${self}/config/home/${host}/joka/default.nix"
-                    #         inputs.joka00-modules.homeManagerModules.default
-                    #       ];
-                    #     };
-                    #   };
-                    #   extraSpecialArgs = specialArgs;
-                    # };
                     networking.hostName = host;
                     imports = [
                       joka00-modules.nixosModules.default
                       joka00-modules.nixosModules.nordvpn
                       hostConfig
+                      "${self}/config/nixos/company.nix"
                     ];
                   }
                 ];

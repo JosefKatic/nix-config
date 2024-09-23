@@ -127,7 +127,6 @@
       };
     };
     utils = {
-      autoUpgrade = {enable = false;};
       kdeconnect = {enable = false;};
       virtualisation = {
         docker = {enable = false;};
