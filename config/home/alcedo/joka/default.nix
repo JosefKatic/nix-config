@@ -62,6 +62,7 @@
           name = "DP-2";
           width = 2560;
           height = 1440;
+          position = "auto-left";
         }
       ];
     };
