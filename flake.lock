@@ -442,11 +442,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1726985855,
-        "narHash": "sha256-NJPGK030Y3qETpWBhj9oobDQRbXdXOPxtu+YgGvZ84o=",
+        "lastModified": 1727246346,
+        "narHash": "sha256-TcUaKtya339Asu+g6KTJ8h7KiKcKXKp2V+At+7tksyY=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "04213d1ce4221f5d9b40bcee30706ce9a91d148d",
+        "rev": "1e22ef1518fb175d762006f9cae7f6312b8caedb",
         "type": "github"
       },
       "original": {
@@ -823,17 +823,16 @@
         "web": "web"
       },
       "locked": {
-        "lastModified": 1727106854,
-        "narHash": "sha256-zIfPLgt0Zh09eTVkpQmi5j657n9h88YGI1SWO0gI1ZI=",
-        "owner": "JosefKatic",
-        "repo": "nix-modules",
-        "rev": "d1fe08eddbcda8d2123842a8c3c716c24a9116b1",
-        "type": "github"
+        "dirtyRev": "1945f807f91d52ffc3c38d84f209f60702f32584-dirty",
+        "dirtyShortRev": "1945f80-dirty",
+        "lastModified": 1727310915,
+        "narHash": "sha256-UHWIN9bRCv4Ojets7lTBg7B5WehLetRGTKuBK34dEFc=",
+        "type": "git",
+        "url": "file:///home/joka/.nix-modules"
       },
       "original": {
-        "owner": "JosefKatic",
-        "repo": "nix-modules",
-        "type": "github"
+        "type": "git",
+        "url": "file:///home/joka/.nix-modules"
       }
     },
     "lanzaboote": {
@@ -1152,11 +1151,11 @@
     },
     "nixpkgs_8": {
       "locked": {
-        "lastModified": 1726871744,
-        "narHash": "sha256-V5LpfdHyQkUF7RfOaDPrZDP+oqz88lTJrMT1+stXNwo=",
+        "lastModified": 1727140925,
+        "narHash": "sha256-ZHSasdLwEEjSOD/WTW1o7dr3/EjuYsdwYB4NSgICZ2I=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "a1d92660c6b3b7c26fb883500a80ea9d33321be2",
+        "rev": "189e5f171b163feb7791a9118afa778d9a1db81f",
         "type": "github"
       },
       "original": {
