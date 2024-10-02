@@ -76,6 +76,6 @@
   };
   theme = rec {
     wallpaper = inputs.joka00-modules.legacyPackages.${pkgs.system}.wallpapers.astronaut-minimalism.outPath;
-    colorscheme.type = "fidelity";
+    colorscheme.type = "monochrome";
   };
 }
