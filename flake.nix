@@ -10,7 +10,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     joka00-modules = {
-      url = "/home/joka/.nix-modules";
+      url = "github:JosefKatic/nix-modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hm = {
