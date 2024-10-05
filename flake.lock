@@ -851,11 +851,11 @@
         "web": "web"
       },
       "locked": {
-        "lastModified": 1728090999,
-        "narHash": "sha256-W9UkAXQAEj6k6MGHYvveBsIbuxj1lyUD7HLyWC66ud4=",
+        "lastModified": 1728127119,
+        "narHash": "sha256-9tVt0F+he086NsMVqf8Fudz9mtwhjVrMDt2Ct/UGJoE=",
         "owner": "JosefKatic",
         "repo": "nix-modules",
-        "rev": "9b50c4dd891c6ee1c5de17fd24dd2fc243dd8e60",
+        "rev": "c1b1f3b7db02280fa849bed93d260976d20b8951",
         "type": "github"
       },
       "original": {
