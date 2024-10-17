@@ -41,10 +41,10 @@
             ];
           };
           defaultGateway = {
-            address = "10.34.70.62";
+            address = "10.34.70.61";
             interface = "eno2";
           };
-          nameservers = ["10.34.70.20" "10.34.70.62"];
+          nameservers = ["10.34.70.20" "10.34.70.61"];
         };
       };
       securityRules = {enable = true;};
