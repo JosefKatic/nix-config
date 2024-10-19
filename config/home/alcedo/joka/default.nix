@@ -56,13 +56,13 @@
           name = "DP-1";
           width = 2560;
           height = 1440;
-          primary = true;
+          position = "auto-left";
         }
         {
           name = "DP-2";
           width = 2560;
           height = 1440;
-          position = "auto-left";
+          primary = true;
         }
       ];
     };
