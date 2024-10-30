@@ -1,6 +1,9 @@
 {
   nixpkgs.hostPlatform = "x86_64-linux";
   boot.initrd.availableKernelModules = ["ata_piix" "sr_mod" "uhci_hcd" "virtio_blk" "virtio_pci"];
+  boot.binfmt.emulatedSystems = [
+    "aarch64-linux"
+  ];
   device.type = "laptop";
   device.virtualized = false;
   device.build = "FmK7W5o44OWWB0mBXr2xjSUn+4Q=";
@@ -16,9 +19,9 @@
   device.core.locale.supportedLocales = ["en_US.UTF-8/UTF-8" "cs_CZ.UTF-8/UTF-8"];
   device.core.locale.timeZone = "Europe/Prague";
   device.core.network.domain = "clients.joka00.dev";
-  device.core.network.services.enableAvahi = false;
-  device.core.network.services.enableNetworkManager = false;
-  device.core.network.services.enableResolved = false;
+  device.core.network.services.enableAvahi = true;
+  device.core.network.services.enableNetworkManager = true;
+  device.core.network.services.enableResolved = true;
   device.core.securityRules.enable = true;
   device.core.shells.fish.enable = true;
   device.core.shells.zsh.enable = false;
@@ -31,35 +34,35 @@
   device.core.storage.systemDrive.encrypted.path = "/dev/disk/by-partlabel/cryptsystem";
   device.core.storage.systemDrive.name = "system";
   device.core.storage.systemDrive.path = "/dev/disk/by-label/system";
-  device.desktop.gamemode.enable = false;
+  device.desktop.gamemode.enable = true;
   device.desktop.wayland.desktopManager.gnome.enable = false;
   device.desktop.wayland.desktopManager.plasma6.enable = false;
-  device.desktop.wayland.displayManager.gdm.enable = false;
+  device.desktop.wayland.displayManager.gdm.enable = true;
   device.desktop.wayland.displayManager.regreet.enable = false;
-  device.desktop.wayland.windowManager.hyprland.enable = false;
+  device.desktop.wayland.windowManager.hyprland.enable = true;
   device.desktop.wayland.windowManager.sway.enable = false;
   device.hardware.bluetooth.enable = true;
   device.hardware.bluetooth.enableManager = false;
-  device.hardware.cpu.amd.enable = false;
-  device.hardware.cpu.intel.enable = true;
+  device.hardware.cpu.amd.enable = true;
+  device.hardware.cpu.intel.enable = false;
   device.hardware.disks.hdd.enable = false;
   device.hardware.disks.ssd.enable = true;
-  device.hardware.gpu.amd.enable = false;
-  device.hardware.gpu.intel.enable = true;
+  device.hardware.gpu.amd.enable = true;
+  device.hardware.gpu.intel.enable = false;
   device.hardware.gpu.nvidia.enable = false;
-  device.hardware.misc.trezor.enable = false;
-  device.hardware.misc.xbox.enable = false;
-  device.hardware.misc.yubikey.enable = false;
-  device.server.homelab.enable = true;
-  device.server.homelab.blocky.enable = true;
-  device.server.homelab.homeassistant.enable = true;
-  device.server.homelab.mosquitto.enable = true;
-  device.server.homelab.zigbee2mqtt.enable = true;
+  device.hardware.misc.trezor.enable = true;
+  device.hardware.misc.xbox.enable = true;
+  device.hardware.misc.yubikey.enable = true;
+  device.server.homelab.enable = false;
+  device.server.homelab.blocky.enable = false;
+  device.server.homelab.homeassistant.enable = false;
+  device.server.homelab.mosquitto.enable = false;
+  device.server.homelab.zigbee2mqtt.enable = false;
   device.server.services.frigate.enable = false;
-  device.server.services.web.nginx.enable = true;
-  device.server.services.web.acme.enable = true;
-  device.utils.kdeconnect.enable = false;
-  device.utils.virtualisation.docker.enable = false;
+  device.server.services.web.nginx.enable = false;
+  device.server.services.web.acme.enable = false;
+  device.utils.kdeconnect.enable = true;
+  device.utils.virtualisation.docker.enable = true;
   device.utils.virtualisation.libvirtd.enable = false;
-  device.utils.virtualisation.podman.enable = true;
+  device.utils.virtualisation.podman.enable = false;
 }

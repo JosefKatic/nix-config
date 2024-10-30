@@ -1,14 +1,12 @@
 {
   nixpkgs.hostPlatform = "x86_64-linux";
   boot.initrd.availableKernelModules = ["ata_piix" "sr_mod" "uhci_hcd" "virtio_blk" "virtio_pci"];
-  device.type = "server";
+
   device.virtualized = true;
-  device.build = "FmK7W5o44OWWB0mBXr2xjSUn+4Q=";
-  device.boot.quietboot.enable = false;
-  device.boot.uefi.enable = false;
-  device.boot.uefi.secureboot = false;
+  device.boot.quietboot.enable = true;
+  device.boot.uefi.enable = true;
+  device.boot.uefi.secureboot = true;
   device.home.users = ["joka" "joka-ipa"];
-  device.core.disableDefaults = true;
   device.core.locale.defaultLocale = "en_US.UTF-8";
   device.core.locale.supportedLocales = ["en_US.UTF-8/UTF-8" "cs_CZ.UTF-8/UTF-8"];
   device.core.locale.timeZone = "Europe/Prague";
@@ -18,7 +16,6 @@
   device.core.network.services.enableResolved = false;
   device.core.securityRules.enable = true;
   device.core.shells.fish.enable = true;
-  device.core.shells.zsh.enable = false;
   device.core.storage.enablePersistence = true;
   device.core.storage.otherDrives = [];
   device.core.storage.swapFile.enable = true;
@@ -44,7 +41,7 @@
   device.hardware.bluetooth.enable = false;
   device.hardware.bluetooth.enableManager = false;
   device.hardware.cpu.amd.enable = false;
-  device.hardware.cpu.intel.enable = true;
+  device.hardware.cpu.intel.enable = false;
   device.hardware.disks.hdd.enable = false;
   device.hardware.disks.ssd.enable = true;
   device.hardware.gpu.amd.enable = false;

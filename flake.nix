@@ -2,9 +2,11 @@
   nixConfig = {
     extra-substituters = [
       "https://hyprland.cachix.org"
+      "https://cache.joka00.dev"
     ];
     extra-trusted-public-keys = [
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      "cache.joka00.dev:ELw0BiKSycBVWYgv0lFW+Uqjez0Y9gnKEh7sQ/8eHvE="
     ];
   };
   inputs = {
@@ -60,7 +62,10 @@
             import nixpkgs {
               inherit system;
               overlays = [inputs.joka00-modules.overlays.joka00-modules];
-              config.allowUnfree = true;
+              config = {
+                allowUnfree = true;
+                allowUnsupportedSystem = true;
+              };
             }
         );
         hosts = import "${self}/config/nixos/hosts.nix";
