@@ -855,11 +855,11 @@
         "web": "web"
       },
       "locked": {
-        "lastModified": 1730448653,
-        "narHash": "sha256-e516VZrfRIErR29ejxuElLQDpU41dawfES5R0dHWB+4=",
+        "lastModified": 1730459401,
+        "narHash": "sha256-bpd3Z/pIPrK7A17mNMmLexyg8quE6kJB/EHuYtqGPQ4=",
         "owner": "JosefKatic",
         "repo": "nix-modules",
-        "rev": "1346f10181daee14309dbc8d0a4bc07954d6a8c5",
+        "rev": "99e674e688d9d871889ecb124f35970546e7c27d",
         "type": "github"
       },
       "original": {
