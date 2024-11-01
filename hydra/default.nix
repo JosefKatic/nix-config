@@ -15,12 +15,13 @@
       && isDistributable pkg)
     pkgs;
   getConfigTopLevel = _: cfg: cfg.config.system.build.toplevel;
+  getActivationPackage = _: cfg: cfg.home.activationPackage;
 in {
   flake = {
     hydraJobs = {
       pkgs = lib.mapAttrs filterValidPkgs inputs.self.packages // lib.mapAttrs filterValidPkgs inputs.self.legacyPackages;
       hosts = lib.mapAttrs getConfigTopLevel self.nixosConfigurations;
-      users = lib.mapAttrs getConfigTopLevel self.homeConfigurations;
+      users = lib.mapAttrs getActivationPackage self.homeConfigurations;
     };
   };
 }
