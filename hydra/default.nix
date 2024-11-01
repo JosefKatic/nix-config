@@ -15,7 +15,7 @@
       && isDistributable pkg)
     pkgs;
   getConfigTopLevel = _: cfg: cfg.config.system.build.toplevel;
-  getActivationPackage = _: cfg: cfg.home.activationPackage;
+  getActivationPackage = _: cfg: cfg.config.home.activationPackage;
 in {
   flake = {
     hydraJobs = {
