@@ -20,6 +20,7 @@ in {
     hydraJobs = {
       pkgs = lib.mapAttrs filterValidPkgs inputs.self.packages // lib.mapAttrs filterValidPkgs inputs.self.legacyPackages;
       hosts = lib.mapAttrs getConfigTopLevel self.nixosConfigurations;
+      users = lib.mapAttrs getConfigTopLevel self.homeConfigurations;
     };
   };
 }
