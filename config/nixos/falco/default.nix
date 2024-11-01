@@ -2,6 +2,7 @@
   nixpkgs.hostPlatform = "x86_64-linux";
   boot.initrd.availableKernelModules = ["ata_piix" "sr_mod" "uhci_hcd" "virtio_blk" "virtio_pci"];
 
+  device.type = "server";
   device.virtualized = true;
   device.boot.quietboot.enable = true;
   device.boot.uefi.enable = true;

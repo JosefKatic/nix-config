@@ -855,11 +855,11 @@
         "web": "web"
       },
       "locked": {
-        "lastModified": 1730329761,
-        "narHash": "sha256-gQwytBkURp7dJGY8d08qLpgILLxmu7ouChlfc3tnijQ=",
+        "lastModified": 1730448653,
+        "narHash": "sha256-e516VZrfRIErR29ejxuElLQDpU41dawfES5R0dHWB+4=",
         "owner": "JosefKatic",
         "repo": "nix-modules",
-        "rev": "f7c6c3ad9b5682c1969813e580ec1122db2f5403",
+        "rev": "1346f10181daee14309dbc8d0a4bc07954d6a8c5",
         "type": "github"
       },
       "original": {
@@ -1200,11 +1200,11 @@
     },
     "nixpkgs_8": {
       "locked": {
-        "lastModified": 1730170245,
-        "narHash": "sha256-PRq4vJjDa+m1mNwkV9H7zVzMhuMqsHJrTGx0iJZ0e0w=",
+        "lastModified": 1730272153,
+        "narHash": "sha256-B5WRZYsRlJgwVHIV6DvidFN7VX7Fg9uuwkRW9Ha8z+w=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "30c9efeef01e2ad4880bff6a01a61dd99536b3c9",
+        "rev": "2d2a9ddbe3f2c00747398f3dc9b05f7f2ebb0f53",
         "type": "github"
       },
       "original": {
