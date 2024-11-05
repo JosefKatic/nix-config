@@ -32,6 +32,22 @@
           enableNetworkManager = false;
           enableResolved = false;
         };
+        static = {
+          enable = true;
+          interfaces = {
+            "ens3".ipv4.addresses = [
+              {
+                address = "193.41.237.192";
+                prefixLength = 24;
+              }
+            ];
+          };
+          defaultGateway = {
+            address = "193.41.237.1";
+            interface = "ens3";
+          };
+          nameservers = ["100.64.0.4" "1.1.1.1"];
+        };
       };
       securityRules = {enable = true;};
       shells = {
