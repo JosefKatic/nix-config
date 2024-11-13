@@ -58,5 +58,5 @@
 	device.utils.virtualisation.docker.enable = false;
 	device.utils.virtualisation.podman.enable = true;
 	device.utils.virtualisation.libvirtd.enable = false;
-	device.build = "30f5207079a519da0122c3def931effdbe4642b7ff7616114b39a185fcd15983";
+	device.build = "1ac6ace64528f17a2f36705dee385a374bc99b3768e7e8533fb8e41aa11d4896";
 }
