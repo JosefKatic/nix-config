@@ -32,6 +32,7 @@
   device.server.databases.mysql.enable = false;
   device.server.databases.postgresql.enable = false;
   device.server.git.daemon.enable = false;
+  device.server.git.cgit.enable = false;
   device.server.hydra.enable = false;
   device.server.homelab.enable = false;
   device.server.homelab.blocky.enable = false;
