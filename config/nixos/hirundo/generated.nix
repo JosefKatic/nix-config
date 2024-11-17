@@ -39,6 +39,7 @@
   device.server.homelab.homeassistant.enable = false;
   device.server.homelab.mosquitto.enable = false;
   device.server.homelab.zigbee2mqtt.enable = false;
+  device.server.hosting.website.enable = false;
   device.server.minecraft.enable = false;
   device.server.services.frigate.enable = false;
   device.server.services.web.nginx.enable = false;
