@@ -29,8 +29,8 @@
   device.server.auth.freeipa.enable = false;
   device.server.auth.keycloak.enable = false;
   device.server.cache.enable = false;
-  device.server.database.mysql.enable = false;
-  device.server.database.postgresql.enable = false;
+  device.server.databases.mysql.enable = false;
+  device.server.databases.postgresql.enable = false;
   device.server.git.daemon.enable = false;
   device.server.hydra.enable = false;
   device.server.homelab.enable = false;
