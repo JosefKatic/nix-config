@@ -41,6 +41,7 @@
   device.server.homelab.zigbee2mqtt.enable = false;
   device.server.hosting.website.enable = false;
   device.server.minecraft.enable = false;
+  device.server.services.fail2ban.enable = false;
   device.server.services.frigate.enable = false;
   device.server.services.web.nginx.enable = false;
   device.server.services.web.acme.enable = false;
