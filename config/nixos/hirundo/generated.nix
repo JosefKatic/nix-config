@@ -24,7 +24,6 @@
   device.desktop.wayland.desktopManager.gnome.enable = false;
   device.desktop.wayland.desktopManager.plasma6.enable = false;
   device.desktop.wayland.displayManager.gdm.enable = true;
-  device.desktop.wayland.displayManager.regreet.enable = false;
   device.desktop.wayland.windowManager.hyprland.enable = true;
   device.desktop.wayland.windowManager.sway.enable = false;
   device.hardware.bluetooth.enable = true;

@@ -1,4 +1,0 @@
-[
-  "joka"
-  # "joka-ipa"
-]
