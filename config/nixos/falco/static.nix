@@ -8,4 +8,5 @@
   device.boot.uefi.enable = true;
   device.boot.uefi.secureboot = false;
   device.home.users = ["joka" "joka-ipa"];
+  device.core.kernel = "linux_6_11";
 }
