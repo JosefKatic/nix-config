@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   device.core.locale.defaultLocale = "en_US.UTF-8";
   device.core.locale.supportedLocales = ["en_US.UTF-8/UTF-8" "cs_CZ.UTF-8/UTF-8"];
   device.core.locale.timeZone = "Europe/Prague";
@@ -7,7 +7,8 @@
   device.core.network.services.enableNetworkManager = false;
   device.core.network.services.enableResolved = false;
   device.core.securityRules.enable = true;
-  device.core.shells.fish.enable = true;
+  device.core.shells.fish.enable = false;
+  users.users.joka.shell = pkgs.bash;
   device.core.storage.enablePersistence = true;
   device.core.storage.otherDrives = [];
   device.core.storage.swapFile.enable = true;
