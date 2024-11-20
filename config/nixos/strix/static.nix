@@ -15,9 +15,7 @@
       };
     };
     home = {
-      users = ["joka" "joka-ipa"];
+      users = ["joka"];
     };
   };
 }
-
-

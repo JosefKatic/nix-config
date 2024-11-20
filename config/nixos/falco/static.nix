@@ -7,5 +7,5 @@
   device.boot.quietboot.enable = true;
   device.boot.uefi.enable = true;
   device.boot.uefi.secureboot = false;
-  device.home.users = ["joka" "joka-ipa"];
+  device.home.users = ["joka"];
 }
