@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   device.core.locale.defaultLocale = "en_US.UTF-8";
   device.core.locale.supportedLocales = ["en_US.UTF-8/UTF-8" "cs_CZ.UTF-8/UTF-8"];
   device.core.locale.timeZone = "Europe/Prague";
