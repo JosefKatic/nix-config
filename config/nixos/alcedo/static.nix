@@ -1,5 +1,5 @@
 {
-  nixpkgs.hostPlatform = "x86_64-linux";
+  device.platform = "x86_64-linux";
   boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "sr_mod"];
   services.nordvpn.enable = true;
   device = {

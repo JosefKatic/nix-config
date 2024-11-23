@@ -1,5 +1,5 @@
 {
-  nixpkgs.hostPlatform = "x86_64-linux";
+  device.platform = "x86_64-linux";
   boot.initrd.availableKernelModules = ["ata_piix" "uhci_hcd" "virtio_pci" "sr_mod" "virtio_blk"];
   boot.binfmt.emulatedSystems = [
     "aarch64-linux"

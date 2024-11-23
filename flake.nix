@@ -111,7 +111,7 @@
                       inputs.joka00-modules.homeManagerModules.default
                       "${self}/config/home/${host}/${user}/default.nix"
                     ];
-                    pkgs = pkgsFor.x86_64-linux;
+                    pkgs = pkgsFor.${hostConfig.device.platform};
                     extraSpecialArgs = {inherit inputs self;};
                   };
                 })
