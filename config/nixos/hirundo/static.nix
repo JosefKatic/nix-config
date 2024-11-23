@@ -22,7 +22,6 @@
   device.hardware.misc.trezor.enable = true;
   device.hardware.misc.xbox.enable = true;
   device.hardware.misc.yubikey.enable = true;
-
   services.nordvpn.enable = true;
   programs.adb.enable = true;
 }

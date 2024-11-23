@@ -102,8 +102,7 @@
           configs =
             concatMap (
               host: let
-                hostConfig = import "${self}/config/nixos/${host}/default.nix";
-                listOfUsers = hostConfig.device.home.users;
+                hostConfig = import "${self}/config/nixos/${host}/static.nix";
               in
                 map (user: {
                   name = "${user}@${host}";
@@ -116,7 +115,7 @@
                     extraSpecialArgs = {inherit inputs self;};
                   };
                 })
-                listOfUsers
+                hostConfig.device.home.users
             )
             hosts;
         in

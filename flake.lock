@@ -848,11 +848,11 @@
         "web": "web"
       },
       "locked": {
-        "lastModified": 1732064906,
-        "narHash": "sha256-n/VRHMg357NjPZRogGe7R6JvIjK0j47UM2lgZbORPMk=",
+        "lastModified": 1732235536,
+        "narHash": "sha256-KJE1MGGvNpbwRjUUnCScLv6Ip5ouBPywO1vRwOWw7oQ=",
         "owner": "JosefKatic",
         "repo": "nix-modules",
-        "rev": "beca9dd050d58e2348f4996d35792cd8b8fb3d5e",
+        "rev": "a0e47fa9b848f2b124e3c2891e82244524332a28",
         "type": "github"
       },
       "original": {

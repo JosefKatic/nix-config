@@ -10,9 +10,8 @@
   device.core.network.services.enableAvahi = false;
   device.core.network.services.enableNetworkManager = false;
   device.core.network.services.enableResolved = false;
-  device.core.securityRules.enable = true;
-  device.core.shells.fish.enable = false;
-  users.users.joka.shell = lib.mkForce pkgs.bash;
+  device.core.securityRules.enable = false;
+  device.core.shells.fish.enable = true;
   device.core.storage.enablePersistence = true;
   device.core.storage.otherDrives = [];
   device.core.storage.swapFile.enable = true;
