@@ -29,7 +29,7 @@
       services = {
         kdeconnect.enable = true;
         mako.enable = true;
-        polkit-agent.enable = true;
+        polkit_agent.enable = true;
         rnnoise.enable = true;
       };
 
