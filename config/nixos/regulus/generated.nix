@@ -62,9 +62,6 @@
       };
       displayManager = {
         gdm = {enable = false;};
-        regreet = {
-          enable = false;
-        };
       };
       windowManager = {
         hyprland = {enable = false;};

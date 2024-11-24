@@ -48,23 +48,6 @@
         };
         displayManager = {
           gdm = {enable = true;};
-          regreet = {
-            enable = false;
-            themes = {
-              cursor = {
-                name = "";
-                package = "";
-              };
-              gtk = {
-                name = "";
-                package = "";
-              };
-              icons = {
-                name = "";
-                package = "";
-              };
-            };
-          };
         };
         windowManager = {
           hyprland = {enable = true;};
