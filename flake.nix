@@ -24,6 +24,10 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
     systems.url = "github:nix-systems/default-linux";
+    pre-commit-hooks = {
+      url = "github:cachix/pre-commit-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -40,6 +44,7 @@
       imports = [
         ./shell.nix
         ./hydra
+        ./pre-commit-hooks.nix
       ];
       perSystem = {
         system,

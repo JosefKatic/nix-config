@@ -8,4 +8,13 @@
   device.boot.uefi.enable = true;
   device.boot.uefi.secureboot = false;
   device.home.users = ["joka"];
+
+  device.server.nix-configurator = {
+    client = {
+      enable = true;
+    };
+    api = {
+      enable = true;
+    };
+  };
 }

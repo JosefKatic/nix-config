@@ -25,5 +25,5 @@
   services.nordvpn.enable = true;
   programs.adb.enable = true;
 
-  device.server.web-config.server.enable = true;
+  device.server.web-config.api.enable = true;
 }
