@@ -24,4 +24,6 @@
   device.hardware.misc.yubikey.enable = true;
   services.nordvpn.enable = true;
   programs.adb.enable = true;
+
+  device.server.web-config.server.enable = true;
 }

@@ -15,6 +15,7 @@
               end = "512MiB";
               type = "EF00";
               content = {
+                extraArgs = ["-n EFI"];
                 type = "filesystem";
                 format = "vfat";
                 mountpoint = "/efi";

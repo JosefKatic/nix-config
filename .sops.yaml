@@ -58,3 +58,11 @@ creation_rules:
           - *regulus
         pgp:
           - *joka
+  - path_regex: secrets/services/nix-configurator/secrets.ya?ml$
+    key_groups:
+      - age:
+          - *falco
+          - *strix
+          - *hirundo
+        pgp:
+          - *joka

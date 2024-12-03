@@ -16,6 +16,7 @@
               type = "EF00";
               content = {
                 type = "filesystem";
+                extraArgs = ["-n EFI"];
                 format = "vfat";
                 mountpoint = "/efi";
               };
