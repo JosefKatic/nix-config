@@ -34,8 +34,8 @@
     } {
       systems = ["x86_64-linux" "aarch64-linux"];
       imports = [
+        ./.hydra
         ./shell.nix
-        ./hydra
         ./pre-commit-hooks.nix
       ];
       perSystem = {
