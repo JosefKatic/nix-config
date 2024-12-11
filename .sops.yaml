@@ -46,6 +46,8 @@ creation_rules:
     key_groups:
       - age:
           - *regulus
+          - *strix
+          - *falco
         pgp:
           - *joka
   - path_regex: secrets/joka/secrets.ya?ml$

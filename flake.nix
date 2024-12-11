@@ -10,24 +10,14 @@
     ];
   };
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     joka00-modules = {
       url = "github:JosefKatic/nix-modules";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
-    hm = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
-    };
-    systems.url = "github:nix-systems/default-linux";
-    pre-commit-hooks = {
-      url = "github:cachix/pre-commit-hooks.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixpkgs.follows = "joka00-modules/nixpkgs";
+    hm.follows = "joka00-modules/hm";
+    flake-parts.follows = "joka00-modules/flake-parts";
+    systems.follows = "joka00-modules/systems";
+    pre-commit-hooks.follows = "joka00-modules/pre-commit-hooks";
   };
 
   outputs = {
@@ -39,7 +29,9 @@
     hm,
     ...
   } @ inputs:
-    flake-parts.lib.mkFlake {inherit inputs;} {
+    flake-parts.lib.mkFlake {
+      inherit inputs;
+    } {
       systems = ["x86_64-linux" "aarch64-linux"];
       imports = [
         ./shell.nix
@@ -53,7 +45,7 @@
       }: {
         _module.args.pkgs = import nixpkgs {
           inherit system;
-          overlays = [inputs.joka00-modules.overlays.joka00-modules];
+          overlays = [joka00-modules.overlays.joka00-modules];
           config = {
             allowUnfree = true;
           };
@@ -66,7 +58,7 @@
           system:
             import nixpkgs {
               inherit system;
-              overlays = [inputs.joka00-modules.overlays.joka00-modules];
+              overlays = [joka00-modules.overlays.joka00-modules];
               config = {
                 allowUnfree = true;
                 allowUnsupportedSystem = true;

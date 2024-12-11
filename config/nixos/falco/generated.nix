@@ -33,13 +33,13 @@
   device.server.git.daemon.enable = false;
   device.server.git.cgit.enable = false;
   device.server.hydra.enable = false;
-  device.server.hosting.website.enable = false;
+  device.server.hosting.website.enable = true;
   device.server.minecraft.enable = false;
   device.server.teamspeak.enable = false;
   device.server.databases.mysql.enable = false;
   device.server.databases.postgresql.enable = false;
-  device.server.services.web.acme.enable = false;
-  device.server.services.web.nginx.enable = false;
+  device.server.services.web.acme.enable = true;
+  device.server.services.web.nginx.enable = true;
   device.server.services.fail2ban.enable = false;
   device.utils.kdeconnect.enable = false;
   device.utils.virtualisation.docker.enable = false;
