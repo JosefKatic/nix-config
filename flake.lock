@@ -1115,11 +1115,11 @@
         "web": "web"
       },
       "locked": {
-        "lastModified": 1734397867,
-        "narHash": "sha256-WELhOUQyljJu84TkRrXj2yzGldUStOr60RENuu1h4dM=",
+        "lastModified": 1734448410,
+        "narHash": "sha256-wGerLPRP0knkrUkvKsJM5OptuQzlHmS3TnYo0W/Bhj8=",
         "owner": "JosefKatic",
         "repo": "nix-modules",
-        "rev": "f1c6531af0208af8954fc8c1451dc7a087bc2bec",
+        "rev": "9d668894375d6dd9a56648217f36a82e2be4c0ba",
         "type": "github"
       },
       "original": {
