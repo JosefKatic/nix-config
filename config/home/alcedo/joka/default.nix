@@ -57,7 +57,7 @@
           width = 2560;
           height = 1440;
           position = "auto-left";
-          workspace = "10";
+          workspace = "11";
         }
         {
           name = "DP-2";
