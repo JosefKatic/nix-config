@@ -57,14 +57,14 @@
           width = 2560;
           height = 1440;
           position = "auto-left";
-          workspace = "11";
+          workspace = "1";
         }
         {
           name = "DP-2";
           width = 2560;
           height = 1440;
           primary = true;
-          workspace = "1";
+          workspace = "11";
         }
       ];
     };
