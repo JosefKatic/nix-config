@@ -1115,11 +1115,11 @@
         "web": "web"
       },
       "locked": {
-        "lastModified": 1737100558,
-        "narHash": "sha256-8tDQIfmnqUEFHhXFnDO4+xRJreHjicQxqVepEyhWAHw=",
+        "lastModified": 1737100828,
+        "narHash": "sha256-gjW4/H+QikTX3kHVOgnt6zifQrZKiTpSo5yHqs9RxTM=",
         "owner": "JosefKatic",
         "repo": "nix-modules",
-        "rev": "8d70c20f3c8d6e95ffc5f0de3c6565bb3af05774",
+        "rev": "04720889ef9e53e55ec754668590266b50196122",
         "type": "github"
       },
       "original": {
@@ -1223,11 +1223,11 @@
         "pre-commit-hooks": "pre-commit-hooks_2"
       },
       "locked": {
-        "lastModified": 1737100458,
-        "narHash": "sha256-ffBuoNWqoArk3MxNCBo1cSG+7i4tcDRkvpBNve53Vv8=",
+        "lastModified": 1737100794,
+        "narHash": "sha256-c+hzcZoJHDKywI/SjSVmHiuy/8aKxMWoc9dks5PX9EI=",
         "owner": "JosefKatic",
         "repo": "nix-configurator-api",
-        "rev": "a3987f2db30f444a9f2fff431d211af5bab3b5ab",
+        "rev": "7353590569461e7219baf9b8c6264e8f25996862",
         "type": "github"
       },
       "original": {
