@@ -1,93 +1,41 @@
 {
-  device = {
-    core = {
-      disableDefaults = true;
-      locale = {
-        defaultLocale = "en_US.UTF-8";
-        supportedLocales = ["en_US.UTF-8/UTF-8" "cs_CZ.UTF-8/UTF-8"];
-        timeZone = "Europe/Prague";
-      };
-      network = {
-        domain = "clients.joka00.dev";
-        services = {
-          enableAvahi = true;
-          enableNetworkManager = true;
-          enableResolved = true;
-        };
-      };
-      securityRules = {enable = true;};
-      shells = {
-        fish = {enable = true;};
-        zsh = {enable = false;};
-      };
-      storage = {
-        enablePersistence = true;
-        otherDrives = [];
-        swapFile = {
-          enable = true;
-          path = "/swap/swapfile";
-          size = 18;
-        };
-        systemDrive = {
-          encrypted = {
-            enable = true;
-            path = "/dev/disk/by-partlabel/cryptsystem";
-          };
-          name = "system";
-          path = "/dev/disk/by-label/system";
-        };
-      };
-    };
-    desktop = {
-      gamemode = {enable = true;};
-      wayland = {
-        desktopManager = {
-          gnome = {enable = false;};
-          plasma6 = {enable = false;};
-        };
-        displayManager = {
-          gdm = {enable = true;};
-        };
-        windowManager = {
-          hyprland = {enable = true;};
-          sway = {enable = false;};
-        };
-      };
-    };
-
-    server = {
-      auth = {
-        freeipa = {enable = false;};
-        keycloak = {enable = false;};
-      };
-      cache = {enable = false;};
-      git = {
-        daemon = {
-          enable = false;
-        };
-      };
-      hydra = {enable = false;};
-      minecraft = {enable = false;};
-      teamspeak = {enable = false;};
-      databases = {
-        mysql = {enable = false;};
-        postgresql = {enable = false;};
-      };
-      services = {
-        web = {
-          acme = {enable = false;};
-          nginx = {enable = false;};
-        };
-        fail2ban = {enable = false;};
-      };
-    };
-    utils = {
-      kdeconnect = {enable = true;};
-      virtualisation = {
-        docker = {enable = true;};
-        libvirtd = {enable = true;};
-        podman = {enable = false;};
-      };
-    };
-  };
+  device.build = "FmK7W5o44OWWB0mBXr2xjSUn+4Q=";
+  device.core.disableDefaults = true;
+  device.core.locale.defaultLocale = "en_US.UTF-8";
+  device.core.locale.supportedLocales = ["en_US.UTF-8/UTF-8" "cs_CZ.UTF-8/UTF-8"];
+  device.core.locale.timeZone = "Europe/Prague";
+  device.core.network.domain = "clients.joka00.dev";
+  device.core.network.services.enableAvahi = true;
+  device.core.network.services.enableNetworkManager = true;
+  device.core.network.services.enableResolved = true;
+  device.core.securityRules.enable = true;
+  device.core.shells.fish.enable = true;
+  device.core.shells.zsh.enable = false;
+  device.core.storage.enablePersistence = true;
+  device.core.storage.otherDrives = [];
+  device.core.storage.swapFile.enable = true;
+  device.core.storage.swapFile.path = "/swap/swapfile";
+  device.core.storage.swapFile.size = 18;
+  device.desktop.gamemode.enable = true;
+  device.desktop.wayland.desktopManager.gnome.enable = false;
+  device.desktop.wayland.desktopManager.plasma6.enable = false;
+  device.desktop.wayland.displayManager.gdm.enable = true;
+  device.desktop.wayland.windowManager.hyprland.enable = true;
+  device.desktop.wayland.windowManager.sway.enable = false;
+  device.server.auth.freeipa.enable = false;
+  device.server.auth.keycloak.enable = false;
+  device.server.cache.enable = false;
+  device.server.git.daemon.enable = false;
+  device.server.hydra.enable = false;
+  device.server.minecraft.enable = false;
+  device.server.teamspeak.enable = false;
+  device.server.databases.mysql.enable = false;
+  device.server.databases.postgresql.enable = false;
+  device.server.services.web.acme.enable = false;
+  device.server.services.web.nginx.enable = false;
+  device.server.services.fail2ban.enable = false;
+  device.utils.kdeconnect.enable = true;
+  device.utils.virtualisation.docker.enable = true;
+  device.utils.virtualisation.libvirtd.enable = true;
+  device.utils.virtualisation.podman.enable = false;
 }

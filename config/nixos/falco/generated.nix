@@ -1,8 +1,5 @@
 {
-  pkgs,
-  lib,
-  ...
-}: {
+  device.build = "FmK7W5o44OWWB0mBXr2xjSUn+4Q=";
   device.core.locale.defaultLocale = "en_US.UTF-8";
   device.core.locale.supportedLocales = ["en_US.UTF-8/UTF-8" "cs_CZ.UTF-8/UTF-8"];
   device.core.locale.timeZone = "Europe/Prague";
@@ -13,14 +10,9 @@
   device.core.securityRules.enable = false;
   device.core.shells.fish.enable = true;
   device.core.storage.enablePersistence = true;
-  device.core.storage.otherDrives = [];
   device.core.storage.swapFile.enable = true;
   device.core.storage.swapFile.path = "/swap/swapfile";
   device.core.storage.swapFile.size = 16;
-  device.core.storage.systemDrive.encrypted.enable = false;
-  device.core.storage.systemDrive.encrypted.path = "";
-  device.core.storage.systemDrive.name = "system";
-  device.core.storage.systemDrive.path = "/dev/disk/by-label/system";
   device.desktop.gamemode.enable = false;
   device.desktop.wayland.desktopManager.gnome.enable = false;
   device.desktop.wayland.desktopManager.plasma6.enable = false;

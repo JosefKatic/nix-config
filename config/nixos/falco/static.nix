@@ -8,7 +8,11 @@
   device.boot.uefi.enable = true;
   device.boot.uefi.secureboot = false;
   device.home.users = ["joka"];
-
+  device.core.storage.systemDrive.encrypted.enable = false;
+  device.core.storage.systemDrive.encrypted.path = "";
+  device.core.storage.systemDrive.name = "system";
+  device.core.storage.systemDrive.path = "/dev/disk/by-label/system";
+  device.core.storage.otherDrives = [];
   device.server.nix-configurator = {
     client = {
       enable = true;

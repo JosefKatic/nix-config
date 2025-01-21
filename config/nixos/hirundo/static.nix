@@ -9,6 +9,11 @@
   device.boot.quietboot.enable = true;
   device.boot.uefi.enable = true;
   device.boot.uefi.secureboot = true;
+  device.core.storage.otherDrives = [];
+  device.core.storage.systemDrive.encrypted.enable = true;
+  device.core.storage.systemDrive.encrypted.path = "/dev/disk/by-partlabel/cryptsystem";
+  device.core.storage.systemDrive.name = "system";
+  device.core.storage.systemDrive.path = "/dev/disk/by-label/system";
   device.home.users = ["joka" "joka-ipa"];
   device.hardware.bluetooth.enable = true;
   device.hardware.bluetooth.enableManager = false;

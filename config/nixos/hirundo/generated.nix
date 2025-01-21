@@ -12,14 +12,9 @@
   device.core.shells.fish.enable = true;
   device.core.shells.zsh.enable = false;
   device.core.storage.enablePersistence = true;
-  device.core.storage.otherDrives = [];
   device.core.storage.swapFile.enable = true;
   device.core.storage.swapFile.path = "/swap/swapfile";
   device.core.storage.swapFile.size = 8;
-  device.core.storage.systemDrive.encrypted.enable = true;
-  device.core.storage.systemDrive.encrypted.path = "/dev/disk/by-partlabel/cryptsystem";
-  device.core.storage.systemDrive.name = "system";
-  device.core.storage.systemDrive.path = "/dev/disk/by-label/system";
   device.desktop.gamemode.enable = true;
   device.desktop.wayland.desktopManager.gnome.enable = false;
   device.desktop.wayland.desktopManager.plasma6.enable = false;
