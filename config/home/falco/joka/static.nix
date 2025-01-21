@@ -5,9 +5,6 @@
 }: {
   user = {
     name = "joka";
-    terminal = {
-      shell.fish.enable = true;
-    };
   };
   theme = rec {
     colorscheme.source = "#717568";

@@ -1,9 +1,9 @@
 {
-  inputs,
   pkgs,
+  inputs,
   ...
 }: {
-  theme = {
+  theme = rec {
     wallpaper = inputs.joka00-modules.legacyPackages.${pkgs.system}.wallpapers.astronaut-minimalism.outPath;
     colorscheme.type = "monochrome";
   };
@@ -11,11 +11,18 @@
     name = "joka";
     desktop.monitors = [
       {
-        name = "eDP-1";
-        width = 1920;
-        height = 1080;
-        primary = true;
+        name = "DP-1";
+        width = 2560;
+        height = 1440;
+        position = "auto-left";
         workspace = "1";
+      }
+      {
+        name = "DP-2";
+        width = 2560;
+        height = 1440;
+        primary = true;
+        workspace = "11";
       }
     ];
   };
