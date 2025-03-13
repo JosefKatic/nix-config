@@ -1155,14 +1155,15 @@
         "rust-overlay": "rust-overlay_2",
         "sops-nix": "sops-nix",
         "systems": "systems_7",
-        "web": "web"
+        "web": "web",
+        "zen-browser": "zen-browser"
       },
       "locked": {
-        "lastModified": 1740614314,
-        "narHash": "sha256-mlHMLUyPlcx3R8wKVxATMOIiGNqQqYxSb3+V3HDcCdk=",
+        "lastModified": 1741878217,
+        "narHash": "sha256-Tuv/7YiYOH22Rw9wX9Zx6puQNJWzTAj12PorUxkgN4M=",
         "owner": "JosefKatic",
         "repo": "nix-modules",
-        "rev": "5ff12ac559d8ed31ff28f9f223acb1cac73113ff",
+        "rev": "83f534d8e8e7d76aeaa921ea32195bed2c06284f",
         "type": "github"
       },
       "original": {
@@ -2215,6 +2216,27 @@
       "original": {
         "owner": "hyprwm",
         "repo": "xdg-desktop-portal-hyprland",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "nixpkgs": [
+          "joka00-modules",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1741838758,
+        "narHash": "sha256-nGTC/y9e+1+QIVCzIbiSpPiXM2HfS8YwIDCp52CcOQ4=",
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
+        "rev": "03a7fc89bc48344aed00e01b409c1d6ffc4c52ce",
+        "type": "github"
+      },
+      "original": {
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
         "type": "github"
       }
     }
