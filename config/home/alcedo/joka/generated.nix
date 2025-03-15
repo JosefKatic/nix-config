@@ -4,7 +4,7 @@
   user.desktop.programs.browsers.firefox.enable = true;
   user.desktop.programs.browsers.chromium.enable = true;
   user.desktop.programs.browsers.zen.enable = true;
-  user.desktop.programs.browsers.defaultBrowser = "zen";
+  user.desktop.programs.browsers.default = "zen";
   user.desktop.programs.editors.vscode.enable = true;
   user.desktop.programs.emulators.alacritty.enable = false;
   user.desktop.programs.emulators.kitty.enable = true;
