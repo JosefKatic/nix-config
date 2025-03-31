@@ -1,19 +1,22 @@
 {
-  config,
-  lib,
   pkgs,
+  modulesPath,
+  lib,
   ...
 }: {
-  nixpkgs.hostPlatform.system = "aarch64-linux";
-  nixpkgs.buildPlatform.system = "x86_64-linux";
-  networking.hostName = "installers";
-
-  # Include support for various filesystems and tools to create / manipulate them.
-  boot.supportedFilesystems = ["btrfs" "cifs" "f2fs" "ntfs" "vfat" "xfs"];
-  # Configure host id for ZFS to work
-  networking.hostId = lib.mkDefault "8425e349";
-
-  users.users.root.openssh.authorizedKeys.keys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIOyTynZ2jFg3/FderkubGqccjY1lI+h4vLCqT7NQMNp openpgp:0x4AF78C5A"
+  imports = [
+    "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
   ];
+  environment.systemPackages = with pkgs; [
+    git
+    nh
+    networkmanager
+    tailscale
+    headscale
+    nano
+  ];
+  # use the latest Linux kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # Needed for https://github.com/NixOS/nixpkgs/issues/58959
+  boot.supportedFilesystems = lib.mkForce ["btrfs" "reiserfs" "vfat" "f2fs" "xfs" "ntfs" "cifs"];
 }

@@ -1,7 +1,6 @@
 {
   device.platform = "x86_64-linux";
   boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "sr_mod"];
-  services.nordvpn.enable = true;
   device.type = "desktop";
   device.virtualized = false;
   device.boot.quietboot.enable = true;
@@ -24,4 +23,5 @@
   device.hardware.misc.trezor.enable = true;
   device.hardware.misc.xbox.enable = true;
   device.hardware.misc.yubikey.enable = true;
+  device.utils.proton.vpn.enable = true;
 }

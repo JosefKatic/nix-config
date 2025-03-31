@@ -18,5 +18,6 @@
         workspace = "1";
       }
     ];
+    productivity.proton.pass.enable = true;
   };
 }
