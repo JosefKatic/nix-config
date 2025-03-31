@@ -18,6 +18,6 @@
         workspace = "1";
       }
     ];
-    productivity.proton.pass.enable = true;
+    programs.productivity.proton.pass.enable = true;
   };
 }

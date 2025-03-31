@@ -25,6 +25,6 @@
         workspace = "11";
       }
     ];
-    productivity.proton.pass.enable = true;
+    programs.productivity.proton.pass.enable = true;
   };
 }
