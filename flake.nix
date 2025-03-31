@@ -82,7 +82,6 @@
                     networking.hostName = host;
                     imports = [
                       joka00-modules.nixosModules.default
-                      joka00-modules.nixosModules.nordvpn
                       hostConfig
                       "${self}/config/nixos/company.nix"
                     ];
