@@ -6,6 +6,7 @@
   device.boot.quietboot.enable = true;
   device.boot.uefi.enable = true;
   device.boot.uefi.secureboot = true;
+  device.core.network.static.enable = true;
   device.core.network.static.interfaces."eno2".ipv4.addresses = [
     {
       address = "10.34.70.20";
