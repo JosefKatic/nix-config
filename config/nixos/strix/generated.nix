@@ -47,7 +47,7 @@
   device.hardware.misc.trezor.enable = false;
   device.hardware.misc.xbox.enable = false;
   device.hardware.misc.yubikey.enable = false;
-  device.server.auth.freeipa.enable = true;
+  device.server.auth.freeipa.enable = false;
   device.server.auth.keycloak.enable = true;
   device.server.cache.enable = true;
   device.server.git.daemon.enable = false;
