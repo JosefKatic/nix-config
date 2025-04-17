@@ -21,7 +21,7 @@
   device.desktop.wayland.displayManager.gdm.enable = false;
   device.desktop.wayland.windowManager.hyprland.enable = false;
   device.desktop.wayland.windowManager.sway.enable = false;
-  device.server.auth.freeipa = true;
+  device.server.auth.freeipa.enable = true;
   device.server.homelab.enable = true;
   device.server.homelab.blocky.enable = true;
   device.server.homelab.homeassistant.enable = true;
