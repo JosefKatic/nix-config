@@ -21,6 +21,7 @@ creation_rules:
       - age:
           - *strix
           - *hirundo
+          - *regulus
         pgp:
           - *joka
   - path_regex: secrets/services/headscale/secrets.ya?ml$
