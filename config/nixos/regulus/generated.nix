@@ -23,7 +23,7 @@
   device.desktop.wayland.windowManager.sway.enable = false;
   device.server.auth.freeipa.enable = true;
   device.server.homelab.enable = true;
-  device.server.homelab.blocky.enable = true;
+  device.server.homelab.blocky.enable = false;
   device.server.homelab.homeassistant.enable = true;
   device.server.homelab.mosquitto.enable = true;
   device.server.homelab.zigbee2mqtt.enable = true;
