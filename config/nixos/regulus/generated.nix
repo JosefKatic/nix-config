@@ -28,8 +28,8 @@
   device.server.homelab.mosquitto.enable = true;
   device.server.homelab.zigbee2mqtt.enable = true;
   device.server.services.frigate.enable = false;
-  device.server.services.web.nginx.enable = true;
-  device.server.services.web.acme.enable = true;
+  device.server.services.web.nginx.enable = false;
+  device.server.services.web.acme.enable = false;
   device.utils.kdeconnect.enable = false;
   device.utils.virtualisation.docker.enable = false;
   device.utils.virtualisation.libvirtd.enable = false;
