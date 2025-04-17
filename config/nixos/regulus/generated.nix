@@ -21,12 +21,13 @@
   device.desktop.wayland.displayManager.gdm.enable = false;
   device.desktop.wayland.windowManager.hyprland.enable = false;
   device.desktop.wayland.windowManager.sway.enable = false;
+  device.server.auth.freeipa = true;
   device.server.homelab.enable = true;
   device.server.homelab.blocky.enable = true;
   device.server.homelab.homeassistant.enable = true;
   device.server.homelab.mosquitto.enable = true;
   device.server.homelab.zigbee2mqtt.enable = true;
-  device.server.services.frigate.enable = true;
+  device.server.services.frigate.enable = false;
   device.server.services.web.nginx.enable = true;
   device.server.services.web.acme.enable = true;
   device.utils.kdeconnect.enable = false;
