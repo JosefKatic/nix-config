@@ -15,7 +15,7 @@
   ];
   device.core.network.static.defaultGateway.address = "10.34.70.61";
   device.core.network.static.defaultGateway.interface = "eno2";
-  device.core.network.static.nameservers = ["10.24.0.8"];
+  device.core.network.static.nameservers = ["10.34.70.20" "10.34.70.61"];
   device.core.storage.systemDrive.encrypted.enable = true;
   device.core.storage.systemDrive.encrypted.path = "/dev/disk/by-partlabel/cryptsystem";
   device.core.storage.systemDrive.name = "system";
