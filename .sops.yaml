@@ -10,6 +10,13 @@ keys:
     - &regulus age1zy59ayt0ex94dzjjued3cgq9294ylu4ynskqhhgmna4jpxup6g0q3j2afq
     - &strix age1nuvx2zd6keg07mjt8n88rxzuavuzs75yzydy477ae6fyg4g4eu4q09k2jz
 creation_rules:
+  - path_regex: secrets/services/config/secrets.ya?ml$
+    key_groups:
+      - age:
+          - *falco
+          - *hirundo
+        pgp:
+          - *joka
   - path_regex: secrets/services/minecraft/secrets.ya?ml$
     key_groups:
       - age:
