@@ -13,12 +13,5 @@
   device.core.storage.systemDrive.name = "system";
   device.core.storage.systemDrive.path = "/dev/disk/by-label/system";
   device.core.storage.otherDrives = [];
-  device.server.nix-configurator = {
-    client = {
-      enable = true;
-    };
-    api = {
-      enable = true;
-    };
-  };
+  device.server.nix-configurator.enable = true;
 }
