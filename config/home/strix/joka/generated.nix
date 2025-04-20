@@ -10,6 +10,8 @@
   user.desktop.programs.games.lutris.enable = false;
   user.desktop.programs.games.minecraft.enable = false;
   user.desktop.programs.media.mpv.enable = false;
+  user.desktop.programs.productivity.proton.mail.enable = false;
+  user.desktop.programs.productivity.proton.pass.enable = false;
   user.desktop.programs.productivity.zathura.enable = false;
   user.desktop.services.kdeconnect.enable = false;
   user.desktop.services.mako.enable = false;

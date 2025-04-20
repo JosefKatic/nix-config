@@ -12,6 +12,8 @@
   user.desktop.programs.games.lutris.enable = true;
   user.desktop.programs.games.minecraft.enable = true;
   user.desktop.programs.media.mpv.enable = true;
+  user.desktop.programs.productivity.proton.mail.enable = false;
+  user.desktop.programs.productivity.proton.pass.enable = false;
   user.desktop.programs.productivity.zathura.enable = true;
   user.desktop.services.kdeconnect.enable = true;
   user.desktop.services.mako.enable = true;

@@ -18,7 +18,5 @@
         workspace = "1";
       }
     ];
-    desktop.programs.productivity.proton.pass.enable = true;
-    desktop.programs.productivity.proton.mail.enable = true;
   };
 }
