@@ -29,5 +29,4 @@
   device.hardware.misc.yubikey.enable = true;
   device.utils.proton.vpn.enable = true;
   programs.adb.enable = true;
-  device.server.nix-configurator.api.enable = false;
 }
