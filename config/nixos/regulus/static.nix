@@ -16,12 +16,15 @@
   device.core.network.static.defaultGateway.address = "10.34.70.61";
   device.core.network.static.defaultGateway.interface = "eno2";
   device.core.network.static.nameservers = ["10.34.70.20" "10.34.70.61"];
+  device.core.storage.enablePersistence = true;
+  device.core.storage.otherDrives = [];
+  device.core.storage.swapFile.enable = true;
+  device.core.storage.swapFile.path = "/swap/swapfile";
+  device.core.storage.swapFile.size = 8;
   device.core.storage.systemDrive.encrypted.enable = true;
   device.core.storage.systemDrive.encrypted.path = "/dev/disk/by-partlabel/cryptsystem";
   device.core.storage.systemDrive.name = "system";
   device.core.storage.systemDrive.path = "/dev/disk/by-label/system";
-  device.core.storage.otherDrives = [];
-  device.home.users = ["joka"];
   device.hardware.bluetooth.enable = true;
   device.hardware.bluetooth.enableManager = false;
   device.hardware.cpu.amd.enable = false;
@@ -34,4 +37,5 @@
   device.hardware.misc.trezor.enable = false;
   device.hardware.misc.xbox.enable = false;
   device.hardware.misc.yubikey.enable = false;
+  device.home.users = ["joka"];
 }

@@ -6,6 +6,11 @@
   device.boot.quietboot.enable = true;
   device.boot.uefi.enable = true;
   device.boot.uefi.secureboot = true;
+  device.core.storage.enablePersistence = true;
+  device.core.storage.otherDrives = [];
+  device.core.storage.swapFile.enable = true;
+  device.core.storage.swapFile.path = "/swap/swapfile";
+  device.core.storage.swapFile.size = 18;
   device.core.storage.systemDrive.encrypted.enable = true;
   device.core.storage.systemDrive.encrypted.path = "/dev/disk/by-partlabel/cryptsystem";
   device.core.storage.systemDrive.name = "system";

@@ -8,10 +8,14 @@
   device.boot.uefi.enable = true;
   device.boot.uefi.secureboot = false;
   device.home.users = ["joka"];
+  device.core.storage.enablePersistence = true;
+  device.core.storage.otherDrives = [];
+  device.core.storage.swapFile.enable = true;
+  device.core.storage.swapFile.path = "/swap/swapfile";
+  device.core.storage.swapFile.size = 16;
   device.core.storage.systemDrive.encrypted.enable = false;
   device.core.storage.systemDrive.encrypted.path = "";
   device.core.storage.systemDrive.name = "system";
   device.core.storage.systemDrive.path = "/dev/disk/by-label/system";
-  device.core.storage.otherDrives = [];
   device.server.nix-configurator.enable = true;
 }

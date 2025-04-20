@@ -1,4 +1,5 @@
 {
+  device.build = "FzmK7W5o44OWWB0mBXr2xjSUn+4Q=";
   device.core.disableDefaults = true;
   device.core.locale.defaultLocale = "en_US.UTF-8";
   device.core.locale.supportedLocales = ["en_US.UTF-8/UTF-8" "cs_CZ.UTF-8/UTF-8"];
@@ -7,55 +8,26 @@
   device.core.network.services.enableAvahi = false;
   device.core.network.services.enableNetworkManager = false;
   device.core.network.services.enableResolved = false;
-  device.core.network.static.enable = true;
-  device.core.network.static.interfaces."ens3".ipv4.addresses = [
-    {
-      address = "193.41.237.192";
-      prefixLength = 24;
-    }
-  ];
-  device.core.network.static.defaultGateway.address = "193.41.237.1";
-  device.core.network.static.defaultGateway.interface = "ens3";
-  device.core.network.static.nameservers = ["100.64.0.4" "1.1.1.1"];
   device.core.securityRules.enable = true;
   device.core.shells.fish.enable = true;
   device.core.shells.zsh.enable = false;
-  device.core.storage.enablePersistence = true;
-  device.core.storage.otherDrives = [];
-  device.core.storage.swapFile.enable = true;
-  device.core.storage.swapFile.path = "/swap/swapfile";
-  device.core.storage.swapFile.size = 8;
-  device.core.storage.systemDrive.encrypted.enable = false;
-  device.core.storage.systemDrive.encrypted.path = "";
-  device.core.storage.systemDrive.name = "system";
-  device.core.storage.systemDrive.path = "/dev/disk/by-label/system";
   device.desktop.gamemode.enable = false;
   device.desktop.wayland.desktopManager.gnome.enable = false;
   device.desktop.wayland.desktopManager.plasma6.enable = false;
   device.desktop.wayland.displayManager.gdm.enable = false;
   device.desktop.wayland.windowManager.hyprland.enable = false;
   device.desktop.wayland.windowManager.sway.enable = false;
-  device.hardware.bluetooth.enable = false;
-  device.hardware.bluetooth.enableManager = false;
-  device.hardware.cpu.amd.enable = true;
-  device.hardware.cpu.intel.enable = false;
-  device.hardware.disks.hdd.enable = false;
-  device.hardware.disks.ssd.enable = true;
-  device.hardware.gpu.amd.enable = false;
-  device.hardware.gpu.intel.enable = false;
-  device.hardware.gpu.nvidia.enable = false;
-  device.hardware.misc.trezor.enable = false;
-  device.hardware.misc.xbox.enable = false;
-  device.hardware.misc.yubikey.enable = false;
   device.server.auth.freeipa.enable = false;
   device.server.auth.keycloak.enable = true;
   device.server.cache.enable = true;
+  device.server.databases.mysql.enable = false;
+  device.server.databases.postgresql.enable = true;
   device.server.git.daemon.enable = false;
+  device.server.git.cgit.enable = false;
+  device.server.hosting.website.enable = false;
   device.server.hydra.enable = true;
   device.server.minecraft.enable = true;
   device.server.teamspeak.enable = true;
-  device.server.databases.mysql.enable = false;
-  device.server.databases.postgresql.enable = true;
   device.server.services.web.acme.enable = true;
   device.server.services.web.nginx.enable = true;
   device.server.services.fail2ban.enable = true;
@@ -64,5 +36,4 @@
   device.utils.virtualisation.docker.enable = false;
   device.utils.virtualisation.libvirtd.enable = false;
   device.utils.virtualisation.podman.enable = true;
-  device.build = "FzmK7W5o44OWWB0mBXr2xjSUn+4Q=";
 }
