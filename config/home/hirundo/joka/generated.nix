@@ -14,6 +14,7 @@
   user.desktop.programs.media.mpv.enable = true;
   user.desktop.programs.productivity.proton.mail.enable = true;
   user.desktop.programs.productivity.proton.pass.enable = true;
+  user.desktop.programs.productivity.proton.vpn.enable = true;
   user.desktop.programs.productivity.zathura.enable = true;
   user.desktop.services.kdeconnect.enable = true;
   user.desktop.services.mako.enable = true;

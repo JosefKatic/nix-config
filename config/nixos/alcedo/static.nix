@@ -28,5 +28,5 @@
   device.hardware.misc.trezor.enable = true;
   device.hardware.misc.xbox.enable = true;
   device.hardware.misc.yubikey.enable = true;
-  device.utils.proton.vpn.enable = true;
+  # device.utils.proton.vpn.enable = true;
 }
