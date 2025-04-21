@@ -19,7 +19,7 @@
   device.desktop.wayland.windowManager.sway.enable = false;
   device.server.auth.freeipa.enable = false;
   device.server.auth.keycloak.enable = false;
-  device.server.cache.enable = true;
+  device.server.cache.enable = false;
   device.server.databases.mysql.enable = false;
   device.server.databases.postgresql.enable = true;
   device.server.git.daemon.enable = false;
