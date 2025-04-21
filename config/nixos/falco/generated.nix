@@ -27,11 +27,12 @@
   device.server.hosting.website.enable = true;
   device.server.hydra.enable = false;
   device.server.minecraft.enable = false;
+  device.server.nixConfigurator.enable = true;
   device.server.teamspeak.enable = false;
-  device.server.services.web.acme.enable = true;
-  device.server.services.web.nginx.enable = true;
   device.server.services.fail2ban.enable = true;
   device.server.services.headscale.enable = false;
+  device.server.services.web.acme.enable = true;
+  device.server.services.web.nginx.enable = true;
   device.utils.kdeconnect.enable = false;
   device.utils.virtualisation.docker.enable = false;
   device.utils.virtualisation.libvirtd.enable = false;

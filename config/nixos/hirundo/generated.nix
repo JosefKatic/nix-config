@@ -27,6 +27,7 @@
   device.server.hosting.website.enable = false;
   device.server.hydra.enable = false;
   device.server.minecraft.enable = false;
+  device.server.nixConfigurator.enable = false;
   device.server.services.fail2ban.enable = false;
   device.server.services.headscale.enable = false;
   device.server.services.web.nginx.enable = false;

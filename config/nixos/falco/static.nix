@@ -17,5 +17,4 @@
   device.core.storage.systemDrive.encrypted.path = "";
   device.core.storage.systemDrive.name = "system";
   device.core.storage.systemDrive.path = "/dev/disk/by-label/system";
-  device.server.nixConfigurator.enable = true;
 }
