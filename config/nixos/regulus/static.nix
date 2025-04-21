@@ -15,7 +15,8 @@
   ];
   device.core.network.static.defaultGateway.address = "10.34.70.61";
   device.core.network.static.defaultGateway.interface = "eno2";
-  device.core.network.static.nameservers = ["10.34.70.20" "10.34.70.61"];
+  device.core.network.static.nameservers = ["10.34.70.20" "10.34.70.61" "100.100.100.100"];
+  device.core.network.static.search = ["clients.joka00.dev" "internal.joka00.dev" "oraclevcn.com"];
   device.core.storage.enablePersistence = true;
   device.core.storage.otherDrives = [];
   device.core.storage.swapFile.enable = true;
