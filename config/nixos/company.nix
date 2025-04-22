@@ -2,7 +2,7 @@
   company = {
     autoUpgrade = {
       enable = inputs.self ? rev;
-      dates = "hourly";
+      dates = "*:0/10";
       flake = "github:JosefKatic/nix-config"; # Is used for home-manager-setup
       oldFlakeRef = "self";
     };

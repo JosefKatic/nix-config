@@ -15,7 +15,7 @@
   device.core.storage.systemDrive.encrypted.path = "/dev/disk/by-partlabel/cryptsystem";
   device.core.storage.systemDrive.name = "system";
   device.core.storage.systemDrive.path = "/dev/disk/by-label/system";
-  device.home.users = ["joka" "joka-ipa"];
+  device.home.users = ["joka"];
   device.hardware.bluetooth.enable = true;
   device.hardware.bluetooth.enableManager = true;
   device.hardware.cpu.amd.enable = false;
