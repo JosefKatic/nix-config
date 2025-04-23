@@ -1159,11 +1159,11 @@
         "zen-browser": "zen-browser"
       },
       "locked": {
-        "lastModified": 1745419913,
-        "narHash": "sha256-Uj7ZvhzHwSa+yniPWUDKgsvfxkgbhvWpS7V20VVcaSg=",
+        "lastModified": 1745422952,
+        "narHash": "sha256-KAfxPy/dHjcTejdviw1C0G2WnZr0iPtIFj28eWzZay8=",
         "owner": "JosefKatic",
         "repo": "nix-modules",
-        "rev": "9708b0e7c1a3aae5e690a3240be45b480352c24f",
+        "rev": "296b9cbf0b3266dd251a8d18bb4d2e12ecfeabf0",
         "type": "github"
       },
       "original": {
@@ -1267,11 +1267,11 @@
         "pre-commit-hooks": "pre-commit-hooks_2"
       },
       "locked": {
-        "lastModified": 1745419864,
-        "narHash": "sha256-E5E5hmVV3LybMtXPUziyeOBzEifFjM1AWqfVbQ3TFV0=",
+        "lastModified": 1745422921,
+        "narHash": "sha256-ZFjx/B84Il6UfbbvtrwaB+cl7cgkSm23ML0Cpml/XDU=",
         "owner": "JosefKatic",
         "repo": "nix-configurator-api",
-        "rev": "6ffada0832af2254daee02415e2319dba5107153",
+        "rev": "69ffd84ecca84c2571eea2789bc86ff04e7bcbcf",
         "type": "github"
       },
       "original": {
