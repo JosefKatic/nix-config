@@ -1,12 +1,12 @@
 {inputs, ...}: {
   company = {
-    autoUpgrade = {
-      enable = inputs.self ? rev;
+    autoUpgrade = let
+      enableIfClean = inputs.self ? rev;
+    in {
       dates = "*:0/10";
-      flake = "github:JosefKatic/nix-config"; # Is used for home-manager-setup
       oldFlakeRef = "self";
-      system.enable = true;
-      user.enable = true;
+      system.enable = enableIfClean;
+      user.enable = enableIfClean;
     };
   };
 }
