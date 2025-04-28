@@ -24,6 +24,7 @@
   user.desktop.wayland.hyprland.services.hypridle.enable = false;
   user.desktop.wayland.hyprland.services.hyprlock.enable = false;
   user.desktop.wayland.hyprland.services.hyprpaper.enable = false;
+  user.desktop.wayland.hyprland.services.hyprsunset.enable = false;
   user.desktop.wayland.hyprland.plugins.hyprsplit.enable = false;
   user.desktop.wayland.hyprland.plugins.hyprsplit.numberOfWorkspaces = 10;
   user.desktop.wayland.waybar.enable = false;
