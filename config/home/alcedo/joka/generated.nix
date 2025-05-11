@@ -20,11 +20,6 @@
   user.desktop.services.polkit_agent.enable = true;
   user.desktop.wayland.hyprland.enable = true;
   user.desktop.wayland.hyprland.settings.mod = "SUPER";
-  user.desktop.wayland.hyprland.services.anyrun.enable = true;
-  user.desktop.wayland.hyprland.services.hypridle.enable = true;
-  user.desktop.wayland.hyprland.services.hyprlock.enable = true;
-  user.desktop.wayland.hyprland.services.hyprpaper.enable = true;
-  user.desktop.wayland.hyprland.services.hyprsunset.enable = true;
   user.desktop.wayland.hyprland.plugins.hyprsplit.enable = true;
   user.desktop.wayland.hyprland.plugins.hyprsplit.numberOfWorkspaces = 10;
   user.desktop.wayland.waybar.enable = true;
