@@ -18,6 +18,7 @@
   user.desktop.services.kdeconnect.enable = true;
   user.desktop.services.mako.enable = true;
   user.desktop.services.polkit_agent.enable = true;
+  user.desktop.services.rnnnoise.enable = true;
   user.desktop.wayland.hyprland.enable = true;
   user.desktop.wayland.hyprland.settings.mod = "SUPER";
   user.desktop.wayland.hyprland.plugins.hyprsplit.enable = true;
