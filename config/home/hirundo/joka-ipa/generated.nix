@@ -11,7 +11,7 @@
   user.desktop.programs.games.lutris.enable = true;
   user.desktop.programs.games.minecraft.enable = true;
   user.desktop.programs.media.mpv.enable = true;
-  user.desktop.programs.media.music.youtube-music = true;
+  user.desktop.programs.media.music.youtube-music.enable = true;
   user.desktop.programs.productivity.proton.mail.enable = false;
   user.desktop.programs.productivity.proton.pass.enable = false;
   user.desktop.programs.productivity.proton.vpn.enable = false;
