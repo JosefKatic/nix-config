@@ -8,6 +8,7 @@
   user.desktop.programs.emulators.alacritty.enable = false;
   user.desktop.programs.emulators.kitty.enable = true;
   user.desktop.programs.emulators.wezterm.enable = false;
+  user.desktop.programs.games.communication.teamspeak.enable = false;
   user.desktop.programs.games.lutris.enable = false;
   user.desktop.programs.games.minecraft.enable = false;
   user.desktop.programs.media.mpv.enable = false;
