@@ -20,7 +20,7 @@
   device.server.auth.freeipa.enable = false;
   device.server.auth.keycloak.enable = true;
   device.server.cache.enable = true;
-  device.server.databases.mysql.enable = false;
+  device.server.databases.mysql.enable = true;
   device.server.databases.postgresql.enable = true;
   device.server.git.daemon.enable = false;
   device.server.git.cgit.enable = false;
