@@ -14,6 +14,7 @@
         name = "DP-1";
         width = 2560;
         height = 1440;
+        primary = true;
         position = "auto-left";
         workspace = "1";
       }
@@ -21,7 +22,6 @@
         name = "DP-2";
         width = 2560;
         height = 1440;
-        primary = true;
         workspace = "11";
       }
     ];
