@@ -635,11 +635,11 @@
         "zen-browser": "zen-browser"
       },
       "locked": {
-        "lastModified": 1748010987,
-        "narHash": "sha256-JELTBs3Ldd8oZ4ejN7fM8i7BA5gkr8IHEMhg+yoWnmM=",
+        "lastModified": 1748012480,
+        "narHash": "sha256-f7GZOTHPC3N7FELAfQA6SZiAJGoZ+aIZarVOC09fqnY=",
         "owner": "JosefKatic",
         "repo": "nix-modules",
-        "rev": "77fdf82f8988ed603bc1c503c9647535ccb5014c",
+        "rev": "075c5c92dc999bb62be1f85f04a714116792cacf",
         "type": "github"
       },
       "original": {
