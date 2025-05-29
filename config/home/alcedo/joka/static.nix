@@ -4,8 +4,8 @@
   ...
 }: {
   theme = rec {
-    wallpaper = inputs.joka00-modules.legacyPackages.${pkgs.system}.wallpapers.astronaut-minimalism.outPath;
-    colorscheme.type = "content";
+    wallpaper = inputs.joka00-modules.legacyPackages.${pkgs.system}.wallpapers.binary-black-8k.outPath;
+    colorscheme.type = "monochrome";
   };
   user = {
     name = "joka";

@@ -5,7 +5,7 @@
 }: {
   theme = {
     wallpaper = inputs.joka00-modules.legacyPackages.${pkgs.system}.wallpapers.binary-black-8k.outPath;
-    colorscheme.type = "content";
+    colorscheme.type = "monochrome";
   };
   user = {
     name = "joka";
