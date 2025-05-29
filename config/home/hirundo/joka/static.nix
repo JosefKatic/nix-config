@@ -4,7 +4,7 @@
   ...
 }: {
   theme = {
-    wallpaper = inputs.joka00-modules.legacyPackages.${pkgs.system}.wallpapers.binary-black.outPath;
+    wallpaper = inputs.joka00-modules.legacyPackages.${pkgs.system}.wallpapers.binary-black-8k.outPath;
     colorscheme.type = "content";
   };
   user = {
