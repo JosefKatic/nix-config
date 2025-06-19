@@ -1,6 +1,7 @@
 {
   device.platform = "x86_64-linux";
-  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "sr_mod"];
+  hardware.i2c.enable = true;
+  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "sr_mod" "ddcci_backlight"];
   device.type = "desktop";
   device.virtualized = false;
   device.boot.quietboot.enable = true;
