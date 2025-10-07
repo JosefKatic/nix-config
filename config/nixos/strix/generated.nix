@@ -26,7 +26,7 @@
   device.server.git.cgit.enable = false;
   device.server.hosting.website.enable = false;
   device.server.hydra.enable = true;
-  device.server.minecraft.enable = true;
+  device.server.minecraft.enable = false;
   device.server.nixConfigurator.enable = false;
   device.server.teamspeak.enable = true;
   device.server.services.fail2ban.enable = true;
