@@ -4,6 +4,7 @@
   user.desktop.programs.browsers.chromium.enable = true;
   user.desktop.programs.browsers.zen.enable = true;
   user.desktop.programs.browsers.default = "zen";
+  user.desktop.programs.editors.davinci.enable = true;
   user.desktop.programs.editors.vscode.enable = true;
   user.desktop.programs.emulators.alacritty.enable = false;
   user.desktop.programs.emulators.kitty.enable = true;
@@ -13,6 +14,7 @@
   user.desktop.programs.games.minecraft.enable = true;
   user.desktop.programs.media.mpv.enable = true;
   user.desktop.programs.media.music.youtube-music.enable = true;
+  user.desktop.programs.media.video.obs.enable = true;
   user.desktop.programs.productivity.proton.mail.enable = true;
   user.desktop.programs.productivity.proton.pass.enable = true;
   user.desktop.programs.productivity.proton.vpn.enable = true;

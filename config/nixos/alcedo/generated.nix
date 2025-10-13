@@ -35,6 +35,7 @@
   device.server.services.web.acme.enable = false;
   device.server.services.web.nginx.enable = false;
   device.utils.kdeconnect.enable = true;
+  device.utils.opendrop.enable = true;
   device.utils.virtualisation.docker.enable = true;
   device.utils.virtualisation.libvirtd.enable = true;
   device.utils.virtualisation.podman.enable = false;
