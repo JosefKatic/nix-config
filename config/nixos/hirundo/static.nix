@@ -24,6 +24,7 @@
   device.hardware.gpu.amd.enable = true;
   device.hardware.gpu.intel.enable = false;
   device.hardware.gpu.nvidia.enable = false;
+  device.hardware.misc.ios.enable = true;
   device.hardware.misc.trezor.enable = true;
   device.hardware.misc.xbox.enable = true;
   device.hardware.misc.yubikey.enable = true;
