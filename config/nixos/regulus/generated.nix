@@ -17,7 +17,8 @@
   device.desktop.wayland.displayManager.gdm.enable = false;
   device.desktop.wayland.windowManager.hyprland.enable = false;
   device.desktop.wayland.windowManager.sway.enable = false;
-  device.server.auth.freeipa.enable = true;
+  device.server.auth.authentik.enable = true;
+  device.server.auth.freeipa.enable = false;
   device.server.auth.keycloak.enable = false;
   device.server.cache.enable = false;
   device.server.databases.mysql.enable = false;
