@@ -23,7 +23,7 @@ creation_rules:
           - *strix
         pgp:
           - *joka
-  - path_regex: secrets/servi2ces/auth/secrets.ya?ml$
+  - path_regex: secrets/services/auth/secrets.ya?ml$
     key_groups:
       - age:
           - *strix
